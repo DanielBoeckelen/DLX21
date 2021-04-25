@@ -8,34 +8,35 @@ use work.instruction_set.all;
 entity hardwired_cu is
     generic(NBIT : integer);
 	port (
-              -- decode cu signals
-              REG_LATCH_EN      : out std_logic; -- Enables the register file and the pipeline registers
-              RD1		: out std_logic; -- Enables the read port 1 of the register file
-	      RD2		: out std_logic; -- Enables the read port 2 of the register file
+            -- decode cu signals
+			REG_LATCH_EN      : out std_logic; -- Enables the register file and the pipeline registers
+            RD1		: out std_logic; -- Enables the read port 1 of the register file
+			RD2		: out std_logic; -- Enables the read port 2 of the register file
              
-              -- execute cu signals
-              MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
-	      MUX_B_SEL     : out std_logic; -- Mux Selection for Operand B or IMM
-	      ALU_OPC       : out aluOp; -- Operation type for ALU
-	      ALU_OUTREG_EN : out std_logic; -- Enable output register
-              DRAM_R_IN    : out std_logic; -- DRAM read enable
+            -- execute cu signals
+            MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
+			MUX_B_SEL     : out std_logic; -- Mux Selection for Operand B or IMM
+			ALU_OPC       : out aluOp; -- Operation type for ALU
+			ALU_OUTREG_EN : out std_logic; -- Enable output register
+            DRAM_R_IN    : out std_logic; -- DRAM read enable
      
-              -- memory cu signals
-              MEM_EN_IN     : out std_logic; -- Register enable signal
-	      DRAM_W_IN     : out std_logic; -- DRAM write enable
-              RF_WE    	    : out std_logic; -- RF write enable, sent at this stage for forwarding check
-              DRAM_EN_IN   : out std_logic; -- DRAM enable
+            -- memory cu signals
+            MEM_EN_IN     : out std_logic; -- Register enable signal
+			DRAM_W_IN     : out std_logic; -- DRAM write enable
+            RF_WE    	    : out std_logic; -- RF write enable, sent at this stage for forwarding check
+            DRAM_EN_IN   : out std_logic; -- DRAM enable
 
-              -- writeback CU signals
+            -- writeback CU signals
         
-	      WB_MUX_SEL    : out std_logic; -- Control signal for WB mux
+			WB_MUX_SEL    : out std_logic; -- Control signal for WB mux
 	      	  
-
-              -- INPUTS
-              OPCODE : in  std_logic_vector(OP_CODE_SIZE - 1 downto 0);
-              FUNC   : in  std_logic_vector(FUNC_SIZE - 1 downto 0);              
-              Clk : in std_logic;
-              Rst : in std_logic);                  -- Active Low
+			  
+			-- INPUTS
+			OPCODE : in  std_logic_vector(OP_CODE_SIZE - 1 downto 0);
+			FUNC   : in  std_logic_vector(FUNC_SIZE - 1 downto 0);
+			Bubble : in std_logic;
+			Clk : in std_logic;
+			Rst : in std_logic);                  -- Active Low
 end hardwired_cu;
 
 architecture bhv of hardwired_cu is
@@ -131,13 +132,17 @@ begin
                         CW4 <= (others => '0');
                        
 		elsif(Clk = '1' and Clk'event) then -- Assigning to the correct stage of the pipeline
-			CW1 <= CW;
-			CW2 <= CW1(CW_SIZE-1 - 3 downto 0);
-			CW3 <= CW2(CW_SIZE-1 - 7 downto 0);
-                        CW4 <= CW3(CW_SIZE-1 - 11 downto 0);
+			if(Bubble = '1') then 
+				CW1 <= (others => '0');
+			else
+				CW1 <= CW;
+				CW2 <= CW1(CW_SIZE-1 - 3 downto 0);
+				CW3 <= CW2(CW_SIZE-1 - 7 downto 0);
+				CW4 <= CW3(CW_SIZE-1 - 11 downto 0);
 
-                        AluOP_E <= AluOP_D;
-                        ALU_OPC <= AluOP_E; 
+				AluOP_E <= AluOP_D;
+				ALU_OPC <= AluOP_E; 
+			end if;
 		end if;
 	end process CU_PROC;
 
@@ -201,8 +206,8 @@ begin
 			when SW_OP   => AluOP_D <= ADDS;
 			when ADDI_OP => AluOP_D <= ADDS;
 			when ANDI_OP => AluOP_D <= ANDS;
-			when BEQZ_OP => AluOP_D <= NEQS;
-			when BNEZ_OP => AluOP_D <= NEQS;
+			when BEQZ_OP => AluOP_D <= ADDS;
+			when BNEZ_OP => AluOP_D <= ADDS;
 			when ORI_OP  => AluOP_D <= ORS;
 			when SGEI_OP => AluOP_D <= SGES;
 			when SLEI_OP => AluOP_D <= SLES;
@@ -216,9 +221,4 @@ begin
 			when others  => AluOP_D <= NOP; -- NOP
 	 	end case;
 	end process ALUOPC_GEN;
-
-
-
-
-
 end bhv;
