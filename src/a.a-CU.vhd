@@ -206,8 +206,8 @@ begin
 			when SW_OP   => AluOP_D <= ADDS;
 			when ADDI_OP => AluOP_D <= ADDS;
 			when ANDI_OP => AluOP_D <= ANDS;
-			when BEQZ_OP => AluOP_D <= ADDS;
-			when BNEZ_OP => AluOP_D <= ADDS;
+			when BEQZ_OP => AluOP_D <= BEQZS;
+			when BNEZ_OP => AluOP_D <= BNEZS;
 			when ORI_OP  => AluOP_D <= ORS;
 			when SGEI_OP => AluOP_D <= SGES;
 			when SLEI_OP => AluOP_D <= SLES;
