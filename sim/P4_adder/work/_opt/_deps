@@ -1,0 +1,30 @@
+H 2141964 11 3 0 13 13 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 30 ./work.carry_generator(struct) dIGcoz2<=0l28nCKUZm6?2 10 1
+D 33 ./work.carry_select_basic(struct) gPKoC8S:c0[W9c5BifIZ73 8 1
+D 16 ./work.constants 8CDRjHm>dA2YG@GKoEMZK1 2 1
+D 21 ./work.fa(behavioral) =o<Y;3fB5IWb;D<3XbD`m2 6 1
+D 20 ./work.func_external Oe7iV=Nc]kUKSOO8eATMP2 1 1
+D 26 ./work.func_external(body) Oe7iV=Nc]kUKSOO8eATMP2 0 1
+D 18 ./work.gblock(bhv) UGXiffie_R2bnXPhAn9]J3 4 1
+D 22 ./work.p4adder(struct) AagdPAzUo=EM?G9YDZT2O2 11 1
+D 18 ./work.pg_net(bhv) b2dMA`;7z25chkf1`CGfT0 3 1
+D 19 ./work.pgblock(bhv) mD_zc2azQ[@TCLVAA]LA`3 5 1
+D 22 ./work.rca(structural) E:ZCdD92DmTHYGNGBMjZn0 7 1
+D 32 ./work.sum_generator(structural) <fHGak<<HkfAN>5cZ?=5o1 9 1
+D 23 ./work.tb_p4adder(test) UZHYA>@;NgO0JAGIKLgi`1 12 1
+2 0  1 9TQP8K7F>KR=:<MYVnK4g0 8 8 1
+2 0  1 3@lQc5@>ED:nF4[DcJOF:2 9 9 1
+2 0  1 jENhWjUSHX2>X6UV^JVY03 10 10 1
+2 0  0 Oe7iV=Nc]kUKSOO8eATMP2 0 0 1
+2 0  0 _ldknLcgH>9YR2kEH3QO`0 1 1 1
+2 0  0 G764SMdXC@d=>43_GXQ<N2 2 2 1
+2 0  0 UnSJz2g=KIX40QRN665?H2 3 3 1
+2 0  0 1o`mUY:OIYfNzYlDnSkoh2 4 4 1
+2 0  0 abh:8A8U=iT[fEeb[3=FM1 5 5 1
+2 0  0 zIc=bQVgRRP3HWOEF95TE3 6 6 1
+2 0  1 mQT7ACifEI^SIDM6C43Z]3 7 7 1
+2 0  1 VTiXX2b_[:1AlQI@l;0zQ3 12 12 1
+2 0  1 T648_G0a4W;@Pm8]YS]mO0 11 11 1

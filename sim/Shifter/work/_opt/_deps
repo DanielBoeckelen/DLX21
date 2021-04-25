@@ -1,0 +1,10 @@
+H 2141964 11 3 0 3 3 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 16 ./work.constants 8CDRjHm>dA2YG@GKoEMZK1 1 1
+D 19 ./work.shifter(bhv) 8R?@S3kalX2KeZ5:h9=0g0 0 1
+D 23 ./work.tb_shifter(test) 7Y]L`aABNPgPcoiCaAh^E2 2 1
+2 0  0 G764SMdXC@d=>43_GXQ<N2 1 1 1
+2 0  1 BF_<kT:AGG:G_CR2Q=o0<3 2 2 1
+2 0  1 Mf864@Q1S_V;=OEo]k:fO1 0 0 1

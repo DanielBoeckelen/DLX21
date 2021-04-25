@@ -1,0 +1,12 @@
+H 2141964 11 3 0 4 4 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 16 ./work.constants ;U1Z5TQIzJcM;X_Mj=lKJ1 1 1
+D 24 ./work.hardwired_cu(bhv) >KY8ziLjYeVE7oGAdK;WG3 2 1
+D 22 ./work.instruction_set lIe[LJVWc@4hWV4=5hN>`0 0 1
+D 18 ./work.tb_cu(test) j=H8KW;jgJ?3`]PU43>BE2 3 1
+2 0  0 IXZY>2^IU:09eN0fnZnc@2 0 0 1
+2 0  0 48BI9^1AlM2T=X[=dQY_83 1 1 1
+2 0  1 AJTK872bj@O6ILFOZh9bc0 3 3 1
+2 0  1 O<4CTh3UW<z>@_]62RmB;2 2 2 1

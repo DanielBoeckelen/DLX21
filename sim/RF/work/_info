@@ -1,0 +1,118 @@
+m255
+13
+cModel Technology
+d/home/ms21.21/Desktop/GR21_DLX/sim/RF
+T_opt
+VET6zLmo]U0E@P^73<CPT^0
+06 5 4 ./work tb_rf test 1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+Ccfg_rf_beh
+aa
+eregister_file
+DA work register_file a DfEFcCTfQ`gY`Y_zj:oTA3
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work register_file UzLf>lM>o5;bT[bkTz=>z1
+w1618233221
+8../../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
+F../../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
+l0
+L67
+VoN>RbU73E@1_;F8F]6ihD2
+OE;C;6.2g;35
+31
+M5 ieee std_logic_1164
+M4 ieee std_logic_unsigned
+M3 ieee std_logic_arith
+M2 ieee numeric_std
+M1 work constants
+o-93 -work ./work
+tExplicit 1
+Pconstants
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
+M1 ieee std_logic_1164
+w1618511067
+8../../src/constants.vhd
+F../../src/constants.vhd
+l0
+L4
+V8CDRjHm>dA2YG@GKoEMZK1
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Eregister_file
+w1618233221
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
+F../../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
+l0
+L7
+VUzLf>lM>o5;bT[bkTz=>z1
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Aa
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work register_file UzLf>lM>o5;bT[bkTz=>z1
+31
+M5 ieee std_logic_1164
+M4 ieee std_logic_unsigned
+M3 ieee std_logic_arith
+M2 ieee numeric_std
+M1 work constants
+l32
+L22
+VDfEFcCTfQ`gY`Y_zj:oTA3
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Etb_rf
+w1618230478
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../../tb/TB_a.b.b.a-registerfile.vhd.vhd
+F../../tb/TB_a.b.b.a-registerfile.vhd.vhd
+l0
+L8
+V1f64NN9c<Paze23?0SYZS1
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Atest
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tb_rf 1f64NN9c<Paze23?0SYZS1
+31
+M5 ieee std_logic_1164
+M4 ieee std_logic_arith
+M3 ieee numeric_std
+M2 ieee std_logic_unsigned
+M1 work constants
+l44
+L11
+VePVSPgMe@HDS[L?0B;R<j1
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1

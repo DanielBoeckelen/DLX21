@@ -1,0 +1,15 @@
+1. copy "open_Modelsim.sh" in the simulation directory
+
+2. using terminal go to the simulation directory and give the following command:
+
+source open_ModelSim.sh
+
+3. create work library with:
+
+vlib work
+
+4. modify the "compile.do" file (updating the file paths) and the "run.do" file
+
+5. in modelsim transcirpts give the command:
+
+do compile.do

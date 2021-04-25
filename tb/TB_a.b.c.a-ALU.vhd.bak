@@ -1,0 +1,66 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
+use work.constants.all;
+
+entity tb_ALU is
+end entity;
+
+architecture test of tb_ALU is
+
+component ALU is
+    generic(NBIT :integer);
+	port( OP1     : in std_logic_vector(NBIT-1 downto 0); -- Coming from mux1, selecting NPC or A
+		  OP2     : in std_logic_vector(NBIT-1 downto 0); -- Coming from mux2, selecting IMM or B
+		  ALU_OPC : in aluOp; -- coming from Control Unit
+		  ALU_RES : out std_logic_vector(NBIT-1 downto 0)); -- going to EX/MEM Pipeline reg
+end component;
+
+  constant tb_period : time := 10ns;
+
+   signal OP1: std_logic_vector(NBIT-1 downto 0);
+   signal OP2: std_logic_vector(NBIT-1 downto 0);
+   signal ALU_OPC: aluOP;
+   signal ALU_RES: std_logic_vector(NBIT-1 downto 0);
+
+begin
+
+  DUT : ALU
+    generic map (NBIT => 32)
+    port map(
+                 OP1 => OP1,
+                 OP2 => OP2,
+                 ALU_OPC => ALU_OPC,
+                 ALU_RES => ALU_RES
+                );
+
+  stimuli : process
+
+                procedure apply_stimuli (
+                        constant OP1_val : in integer;
+                        constant OP2_val : in integer;
+                        constant ALU_OPC_val : in aluOP;
+                        
+                        signal OP1 : out std_logic_vector(NBIT-1 downto 0);
+                        signal OP2 : out std_logic_vector(NBIT-1 downto 0);
+                        signal ALU_OPC : out aluOP) is
+                begin
+                       OP1 <= std_logic_vector(to_signed(OP1_val, NBIT)); --integer
+                       OP2 <= std_logic_vector(to_signed(OP2_val, NBIT)); --integer
+                       ALU_OPC <= ALU_OPC_val;
+                       
+                        wait for tb_period;
+                       
+                end apply_stimuli;
+  begin
+
+   --apply_stimuli(input values, signals);
+
+    apply_stimuli(7, 5, SUBS, OP1, OP2, ALU_OPC);
+    apply_stimuli(14, 6, ADD, OP1, OP2, ALU_OPC);
+  
+  end process;
+
+end test;

@@ -1,0 +1,91 @@
+m255
+13
+cModel Technology
+d/home/ms21.21/Desktop/GR21_DLX/sim/Shifter
+T_opt
+VDaMWCBcKZFGk4@13:ZY_;3
+06 10 4 ./work tb_shifter test 1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+Pconstants
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
+M1 ieee std_logic_1164
+w1618511067
+8../../src/constants.vhd
+F../../src/constants.vhd
+l0
+L4
+V8CDRjHm>dA2YG@GKoEMZK1
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Eshifter
+w1618390083
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
+8../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd
+F../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd
+l0
+L7
+V:C:K3n;lnSm_@aMI[]8[e0
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Abhv
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work shifter :C:K3n;lnSm_@aMI[]8[e0
+31
+M4 ieee std_logic_1164
+M3 ieee std_logic_arith
+M2 ieee std_logic_unsigned
+M1 work constants
+l21
+L17
+V8R?@S3kalX2KeZ5:h9=0g0
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Etb_shifter
+w1618742117
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
+8../../tb/TB_a.b.c.a.b-shifter.vhd
+F../../tb/TB_a.b.c.a.b-shifter.vhd
+l0
+L8
+Vn?=ViLKDL0im=8iRi]c_X1
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Atest
+DE work shifter :C:K3n;lnSm_@aMI[]8[e0
+DP work constants 8CDRjHm>dA2YG@GKoEMZK1
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tb_shifter n?=ViLKDL0im=8iRi]c_X1
+31
+M5 ieee std_logic_1164
+M4 ieee std_logic_arith
+M3 ieee numeric_std
+M2 ieee std_logic_unsigned
+M1 work constants
+l30
+L11
+V7Y]L`aABNPgPcoiCaAh^E2
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1

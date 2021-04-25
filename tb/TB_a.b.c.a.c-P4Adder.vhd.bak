@@ -1,0 +1,75 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
+use work.constants.all;
+
+entity tb_P4adder is
+end entity;
+
+architecture test of tb_P4adder is
+
+component P4adder is
+	generic(NBIT : integer);
+	port(	A 	: in std_logic_vector(NBIT-1 downto 0); --operand A
+		B 	: in std_logic_vector(NBIT-1 downto 0); --operand B
+		Cin 	: in std_logic; --C_0
+		S	: out std_logic_vector(NBIT-1 downto 0); --sum
+		Cout	: out std_logic -- carry out of the P4 adder
+	);
+end component;
+
+  constant tb_period : time := 10ns;
+
+  signal	A 	: std_logic_vector(NBIT-1 downto 0); --operand A
+  signal	B 	: std_logic_vector(NBIT-1 downto 0); --operand B
+  signal	Cin 	: std_logic; --C_0
+
+  signal	S	: std_logic_vector(NBIT-1 downto 0); --sum
+  signal	Cout	: std_logic; -- carry out of the P4 adder
+
+begin
+
+  DUT : P4adder
+    generic map (NBIT => 32)
+    port map(
+                 A => A,
+                 B => B,
+                 Cin => Cin,
+                 S => S,
+                 Cout => Cout
+                );
+
+  stimuli : process
+
+                procedure apply_stimuli (
+                        constant A_val : in std_logic_vector(NBIT-1 downto 0);
+                        constant B_val : in std_logic_vector(NBIT-1 downto 0);
+                        constant Cin_val : in std_logic;
+
+                        signal A : out std_logic_vector(NBIT-1 downto 0);
+                        signal B : out std_logic_vector(NBIT-1 downto 0);
+                        signal Cin : out std_logic) is
+                begin
+                        --A <= conv_std_logic_vector(A_val, NBIT); --integer
+                       -- B <= conv_std_logic_vector(B_val, NBIT); --integer
+	
+                        A <= A_val; --hex
+                        B <= B_val; --hex
+                        Cin <= Cin_val;
+                        wait for tb_period;
+                end apply_stimuli;
+  begin
+
+   --apply_stimuli(input signals, output signals);
+  
+  apply_stimuli(x"00000000", x"00000000", '1', A, B, Cin); 
+  apply_stimuli(x"00FF0000", x"00330000", '0', A, B, Cin); 
+  apply_stimuli(x"0000FFFF", x"0000FFFF", '1', A, B, Cin); 
+  apply_stimuli(x"03030303", x"30303030", '0', A, B, Cin); 
+  apply_stimuli(x"0F338888", x"0F333030", '1', A, B, Cin); 
+  apply_stimuli(x"FFFF_0000", x"FFFF_0000", '0', A, B, Cin); 
+  end process;
+
+end test;
