@@ -12,11 +12,11 @@ entity Decode is
 		  RD2		   : in std_logic; -- Enables the read port 2 of the register file
 		  RF_WE		   : in std_logic; -- Enables the write port of the register file
 		  ZERO_FLAG    : in std_logic; -- Zero Flag coming from Execute stage, used as flush if branch taken
-		  NPC_IN	   : in std_logic_vector(NBIT-1 downto 0); -- NPC coming from the Fetch stage
+		  PC_IN        : in std_logic_vector(NBIT-1 downto 0); -- PC coming from the Fetch stage
 		  INS_IN	   : in std_logic_vector(NBIT-1 downto 0); -- Instruction coming from the IR in the Fetch stage
 		  ADD_WR       : in std_logic_vector(NBIT-1 downto 0); -- Address of the destination register, from WB stage
 		  DATA_WR_IN   : in std_logic_vector(NBIT-1 downto 0); -- Data to be written in the RF coming from the WB stage
-		  NPC_OUT	   : out std_logic_vector(NBIT-1 downto 0); -- NPC to Execute stage
+		  PC_OUT       : out std_logic_vector(NBIT-1 downto 0); -- PC to Execute stage
 		  A_OUT        : out std_logic_vector(NBIT-1 downto 0); -- First operand output
 		  B_OUT        : out std_logic_vector(NBIT-1 downto 0); -- Second operand output
 		  IMM_OUT      : out std_logic_vector(NBIT-1 downto 0); -- Immediate register output
@@ -24,7 +24,7 @@ entity Decode is
 		  ADD_RS2_HDU  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS2 address for Hazard Detection
 		  ADD_WR_OUT   : out std_logic_vector(NBIT_ADD-1 downto 0); -- ADD_WR output, will be used for writeback
 		  ADD_RS1_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS1 address for forwarding
-		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RS2 address for forwarding  
+		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RS2 address for forwarding   
 end Decode;
 
 architecture struct of Decode is
@@ -103,8 +103,8 @@ begin
 	ADD_RS1_HDU <= sig_ADD_RS1;
 	ADD_RS2_HDU <= sig_ADD_RS2;
 
-	regNPC : regn generic map(N => NBIT)
-		port map(DIN => NPC_IN, CLK => CLK, EN => REG_LATCH_EN, RST => sig_RST, DOUT => NPC_OUT);
+	regPC : regn generic map(N => NBIT)
+		port map(DIN => PC_IN, CLK => CLK, EN => REG_LATCH_EN, RST => sig_RST, DOUT => PC_OUT);
 		
 	--regA : regn generic map(N => NBIT)
 		--port map(DIN => sig_A, CLK => CLK, EN => REG_LATCH_EN, RST => RST, DOUT => A_OUT);

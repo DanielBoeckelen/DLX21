@@ -123,16 +123,16 @@ begin
                                 select_type_sig <= "10"; --shift_res
                                
 			when BEQZS =>
-                                ADD_SUB <= '0';
-				B <= OP2;
+                                --ADD_SUB <= '0';
+				--B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
-                                select_zero_sig <= '0';
+                                select_zero_sig <= '1';
                 
 			when BNEZS =>
-                                ADD_SUB <= '0';
-				B <= OP2;
+                                --ADD_SUB <= '0';
+				--B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
-                                select_zero_sig <= '0';
+                                select_zero_sig <= '1';
                 
 			when SGES =>
                                 OPSel <= 3;

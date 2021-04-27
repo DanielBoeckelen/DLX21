@@ -10,8 +10,10 @@ entity Memory is
 		  MEM_EN_IN     : in std_logic; -- coming from Control Unit
 		  DRAM_R_IN     : in std_logic; -- coming from Control Unit
 		  DRAM_W_IN     : in std_logic; -- coming from Control Unit
-		  ZERO_FLAG     : in std_logic; -- from EX stage
+		  PC_SEL        : in std_logic_vector(1 downto 0); -- PC MUX Selection, from EX stage
 		  NPC_IN        : in std_logic_vector(NBIT-1 downto 0); -- NPC, from Fetch stage
+		  NPC_ABS       : in std_logic_vector(NBIT-1 downto 0); -- Absolute NPC (for JALR/JR)
+		  NPC_REL       : in std_logic_vector(NBIT-1 downto 0); -- Relative NPC (for J/JAL/BEQZ/BNEZ)
 		  ALU_RES_IN    : in std_logic_vector(NBIT-1 downto 0); -- ALUREG output, from EX stage
 		  B_IN          : in std_logic_vector(NBIT-1 downto 0); -- Data for store, from EX stage
 		  ADD_WR_IN     : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address for WB, from EX stage
@@ -40,11 +42,13 @@ component regn is
 		  DOUT : out std_logic_vector(N-1 downto 0));
 end component;
 
-component mux21 is
+component mux41 is
 	generic(NBIT : integer);
 	port( A : in std_logic_vector(NBIT-1 downto 0);
 		  B : in std_logic_vector(NBIT-1 downto 0);
-		  S : in std_logic;
+		  C : in std_logic_vector(NBIT-1 downto 0);
+		  D : in std_logic_vector(NBIT-1 downto 0);
+		  S : in std_logic_vector(1 downto 0);
 		  Z : out std_logic_vector(NBIT-1 downto 0));
 end component;
 
@@ -66,7 +70,7 @@ begin
 	reg1 : regn generic map(N => NBIT)
 		port map(DIN => ALU_RES_IN, CLK => CLK, EN => MEM_EN_IN, RST => RST, DOUT => ALU_RES_OUT);
 		
-	PCsel : mux21 generic map(NBIT => NBIT)
-		port map(A => NPC_IN, B => ALU_RES_IN, S => ZERO_FLAG, Z => PC_OUT);
+	PCsel: mux41 generic map(NBIT => NBIT)
+		port map( A => NPC_IN, B => NPC_REL, C => NPC_ABS, D => (others => '0'), S => PC_SEL, Z => PC_OUT);
 
 end struct;

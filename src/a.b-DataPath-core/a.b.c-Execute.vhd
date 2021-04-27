@@ -8,10 +8,11 @@ entity Execute is
 	port( CLK           : in std_logic; 
 		  RST           : in std_logic;
 		  MUX_A_SEL     : in std_logic; -- coming from Control Unit
-		  MUX_B_SEL     : in std_logic; -- coming from Control Unit
+		  MUX_B_SEL     : in std_logic_vector(1 downto 0); -- coming from Control Unit
 		  ALU_OPC       : in aluOp; -- coming from Control Unit
 		  ALU_OUTREG_EN : in std_logic; -- coming from Control Unit
-		  NPC_IN        : in std_logic_vector(NBIT-1 downto 0); -- From ID stage
+		  JUMP_TYPE     : in std_logic_vector(1 downto 0); -- coming from CU
+		  PC_IN         : in std_logic_vector(NBIT-1 downto 0); -- From ID stage
 		  A_IN          : in std_logic_vector(NBIT-1 downto 0); -- From ID stage
 		  B_IN          : in std_logic_vector(NBIT-1 downto 0); -- From ID stage
 		  IMM_IN        : in std_logic_vector(NBIT-1 downto 0); -- From ID stage
@@ -24,7 +25,10 @@ entity Execute is
 		  RF_WE_WB      : in std_logic; -- RF Write signal for instruction currently in WB stage
 		  OP_MEM		: in std_logic_vector(NBIT-1 downto 0); -- Operand in MEM stage
 		  OP_WB		    : in std_logic_vector(NBIT-1 downto 0); -- Operand in WB stage
-		  ZERO_FLAG     : out std_logic; -- Jump evaluation, to MEM stage
+		  PC_SEL        : out std_logic_vector(1 downto 0); -- PC MUX Selection signal, to MEM stage
+		  ZERO_FLAG     : out std_logic; -- Used for Flush in Fetch and Decode
+		  NPC_ABS       : out std_logic_vector(NBIT-1 downto 0); -- Absolute NPC (for JALR/JR)
+		  NPC_REL       : out std_logic_vector(NBIT-1 downto 0); -- Relative NPC (for J/JAL/BEQZ/BNEZ)
 		  ALU_RES       : out std_logic_vector(NBIT-1 downto 0); -- ALUREG output, to MEM stage
 		  B_OUT         : out std_logic_vector(NBIT-1 downto 0);
 		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RF address for writeback, to MEM stage
@@ -33,11 +37,13 @@ end Execute;
 architecture struct of Execute is
 
 -- Component declarations
-component ZeroUnit is
+component Branch_Cond_Unit is
 	generic(N : integer);
-	port( A       : in std_logic_vector(N-1 downto 0);
-		  ALU_OPC : in aluOp; -- coming from Control Unit
-		  ZERO    : out std_logic);
+	port( A         : in std_logic_vector(N-1 downto 0);
+		  ALU_OPC   : in aluOp; -- coming from Control Unit
+		  JUMP_TYPE : in std_logic_vector(1 downto 0);
+		  PC_SEL    : out std_logic_vector(1 downto 0);
+		  ZERO      : out std_logic);
 end component;
 
 component ALU is
@@ -96,17 +102,24 @@ end component;
 
 -- Signal declarations
 signal sig_ZERO_FLAG, sig_RST : std_logic;
-signal sig_OP1, sig_OP2, sig_ALU_RES, OP1_FW, OP2_FW : std_logic_vector(NBIT-1 downto 0);
-signal FWDA, FWDB : std_logic_vector(1 downto 0);
+signal sig_OP1, sig_OP2, sig_ALU_RES, OP1_FW, OP2_FW, sig_NPC_ABS, sig_NPC_REL : std_logic_vector(NBIT-1 downto 0);
+signal FWDA, FWDB, sig_PC_SEL : std_logic_vector(1 downto 0);
 
 begin
 	
 	sig_RST <= (not(ZERO_FLAG)) and RST; -- If a branch is taken in the EX stage, reset the registers containing instructions fetched after the branch
 	
-	isZero : ZeroUnit generic map(N => NBIT)
-		port map(A => A_IN, ALU_OPC => ALU_OPC, ZERO => sig_ZERO_FLAG);
+	sig_NPC_ABS <= OP1_FW; -- Absolute jump (JALR/JR): PC <- regA
+	
+	sig_NPC_REL <= PC_IN + IMM_IN; -- Relative jump (J/JAL/BEQZ/BNEZ): PC <- PC + IMM
+		
+	Branch_Cond : Branch_Cond_Unit generic map(N => NBIT)
+		port map(A => A_IN, ALU_OPC => ALU_OPC, JUMP_TYPE => JUMP_TYPE, PC_SEL => sig_PC_SEL, ZERO => sig_ZERO_FLAG);
 		
 	ff0 : ff port map(D => sig_ZERO_FLAG, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, Q => ZERO_FLAG);
+	
+	reg0 : regn generic map(N => 2)
+		port map(DIN => sig_PC_SEL, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => PC_SEL);
 	
 	FWD_Unit port map(RST => sig_RST, ADD_RS1 => ADD_RS1_IN, ADD_RS2 => ADD_RS2_IN, ADD_WR_MEM => ADD_WR_MEM, ADD_WR_WB => ADD_WR_WB,
 		RF_WE_MEM => RF_WE_MEM, RF_WE_WB => RF_WE_WB, FWDA => FWDA, FWDB => FWDB);
@@ -118,10 +131,10 @@ begin
 		port map( A => B_IN, B => (others => '0'), C => OP_WB, D => OP_MEM, S => FWDB, Z => OP2_FW);
 	
 	muxA : mux21 generic map(NBIT => NBIT)
-		port map(A => OP1_FW, B => NPC_IN, S => MUX_A_SEL, Z => sig_OP1);
+		port map(A => OP1_FW, B => PC_IN, S => MUX_A_SEL, Z => sig_OP1);
 		
-	muxB : mux21 generic map(NBIT => NBIT)
-		port map(A => OP2_FW, B => IMM_IN, S => MUX_B_SEL, Z => sig_OP2);
+	muxB : mux41 generic map(NBIT => NBIT)
+		port map( A => OP2_FW, B => IMM_IN, C => std_logic_vector(to_unsigned(4, OP2_FW'length)), D => (others => '0'), S => MUX_B_SEL, Z => sig_OP2);
 		
 	alu0 : ALU port map(OP1 => sig_OP1, OP2 => sig_OP2, ALU_OPC => ALU_OPC, ALU_RES => sig_ALU_RES);
 	
@@ -133,5 +146,11 @@ begin
 	
 	ADD_WR_reg : regn generic map(N => NBIT_ADD)
 		port map(DIN => ADD_WR_IN, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => ADD_WR_OUT);
+		
+	NPC_ABS_reg : regn generic map(N => NBIT)
+		port map(DIN => sig_NPC_ABS, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => NPC_ABS);
+	
+	NPC_REL_reg : regn generic map(N => NBIT)
+		port map(DIN => sig_NPC_REL, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => NPC_REL);
 
 end struct;
