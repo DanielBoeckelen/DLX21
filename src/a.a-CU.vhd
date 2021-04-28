@@ -80,7 +80,7 @@ architecture bhv of hardwired_cu is
                                                                  
 
                                   "110" & "1011100" & "1011" & '0', -- LW RD, imm(RS1)
-                                  "111" & "1011000" & "1111" & '0', -- SW imm(RS1),RD
+                                  "111" & "1011000" & "1111" & '0', -- SW imm(RS1),RS2
 
                                   --In BEZQ and BNEZ: ALU output reg turned off because the adder
                                   --of the EXE stage performs PC+imm26
@@ -96,7 +96,9 @@ architecture bhv of hardwired_cu is
 
                                   "110" & "1100011" & "0000" & '0',  -- JR register
                                   "110" & "0101011" & "0110" & '1' -- JALR register
-                                 ); 
+                               -- "110" & "0101011" & "0010" & '1' -- JALR register   To be verified 
+
+                                 );    
         
 	signal IR_opcode : std_logic_vector(OP_CODE_SIZE -1 downto 0);  -- OpCode part of IR
   	signal IR_func : std_logic_vector(FUNC_SIZE-1 downto 0);   -- Func part of IR when Rtype
