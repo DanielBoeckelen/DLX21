@@ -9,22 +9,23 @@ entity hardwired_cu is
     generic(NBIT : integer);
 	port (
             -- decode cu signals
-			REG_LATCH_EN      : out std_logic; -- Enables the register file and the pipeline registers
-            RD1		: out std_logic; -- Enables the read port 1 of the register file
+			REG_LATCH_EN    : out std_logic; -- Enables the register file and the pipeline registers
+                        RD1		: out std_logic; -- Enables the read port 1 of the register file
 			RD2		: out std_logic; -- Enables the read port 2 of the register file
              
             -- execute cu signals
-            MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
-			MUX_B_SEL     : out std_logic; -- Mux Selection for Operand B or IMM
+                        MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
+			MUX_B_SEL     : out std_logic_vector(1 downto 0); -- Mux Selection Operand B, IMM or 4 (used in PC+4)
 			ALU_OPC       : out aluOp; -- Operation type for ALU
 			ALU_OUTREG_EN : out std_logic; -- Enable output register
-            DRAM_R_IN    : out std_logic; -- DRAM read enable
+                        DRAM_R_IN     : out std_logic; -- DRAM read enable
+                        JUMP_TYPE     : out std_logic_vector(1 downto 0);
      
             -- memory cu signals
-            MEM_EN_IN     : out std_logic; -- Register enable signal
+                        MEM_EN_IN     : out std_logic; -- Register enable signal
 			DRAM_W_IN     : out std_logic; -- DRAM write enable
-            RF_WE    	    : out std_logic; -- RF write enable, sent at this stage for forwarding check
-            DRAM_EN_IN   : out std_logic; -- DRAM enable
+                        RF_WE    	    : out std_logic; -- RF write enable, sent at this stage for forwarding check
+                        DRAM_EN_IN   : out std_logic; -- DRAM enable
 
             -- writeback CU signals
         
@@ -40,38 +41,61 @@ entity hardwired_cu is
 end hardwired_cu;
 
 architecture bhv of hardwired_cu is
+  
+---------------------------------------------------------------------
+--NOTES on MUX_B_SEL and JUMP_TYPE
+---------------------------------------------------------------------
 
+  --MUX_B_SEL
+    --"00" for B
+    --"01" for IMM
+    --"10" for 4 (used in PC+4)
+    --"11" unused
+
+  --JUMP_TYPE
+    --"00" when it's not a jump
+    --"01" BEQZ/BNEZ
+    --"10" J/JAL
+    --"11" JR/JALR
+---------------------------------------------------------------------
+  
     -- Control word look-up table, control bits in the order (D, EXE, MEM, WB) in which they are sent to the datapath.
 
 	type mem_array is array (integer range 0 to MICROCODE_MEM_SIZE - 1) of std_logic_vector(CW_SIZE - 1 downto 0);
 
 	signal CW_MEM : mem_array := (
-          --TO BE MODIFIED
           
-          --REG_LATCH_EN, RD1, RD2
-          --MUX_A_SEL, MUX_B_SEL, ALU_OUTREG_EN, DRAM_R_IN
-          --MEM_EN_IN, DRAM_W_IN, RF_WE, DRAM_EN_IN
-          -- WB_MUX_SEL
+          --(D)       REG_LATCH_EN, RD1, RD2
+          --(EX)      MUX_A_SEL, MUX_B_SEL(1), MUX_B_SEL(0), ALU_OUTREG_EN, DRAM_R_IN, JUMP_TYPE(1), JUMP_TYPE(0)
+          --(MEM)     MEM_EN_IN, DRAM_W_IN, RF_WE, DRAM_EN_IN
+          --(WB)      WB_MUX_SEL
 
-          --ALU_OUTREG_IN -> ALU and MEM
-          --MEM_EN_IN -> MEM and WB mux
+          --REG_LATCH_EN -> pipeline regs between RF and A/B muxes
+          --ALU_OUTREG_EN -> pipeline regs between ALU and MEM
+          --MEM_EN_IN -> pipeline regs between MEM and WB mux
           
-                                  "110" & "1110" & "1010" & '1', -- NOP
-				  "111" & "1010" & "1010" & '1', -- R type CWs
-                                  "110" & "1110" & "1010" & '1', -- I type CWs
+                                  "110" & "1011000" & "1010" & '1', -- NOP
+				  "111" & "1001000" & "1010" & '1', -- R type CWs
+                                  "110" & "1011000" & "1010" & '1', -- I type CWs
                                                                  
 
-                                  "110" & "1111" & "1011" & '0', -- LW RD, imm(RS1)
-                                  "111" & "1110" & "1111" & '0', -- SW imm(RS1),RD
-                                  
-                                  "110" & "0110" & "0000" & '0', -- BEQZ
-                                  "110" & "0110" & "0000" & '0', -- BNEZ
-                                  
+                                  "110" & "1011100" & "1011" & '0', -- LW RD, imm(RS1)
+                                  "111" & "1011000" & "1111" & '0', -- SW imm(RS1),RD
 
-                                  "100" & "0110" & "0000" & '0', -- J target
+                                  --In BEZQ and BNEZ: ALU output reg turned off because the adder
+                                  --of the EXE stage performs PC+imm26
+                                  
+                                  "110" & "0011001" & "0000" & '0', -- BEQZ
+                                  "110" & "0011001" & "0000" & '0', -- BNEZ
 
-                                  --to be modified
-                                  "101" & "1111" & "1100" & '0' -- JAL target
+                                  --In JAL the ALU will perform PC+4 while in
+                                  --parallel the adder in EXE stage performs PC+imm26
+
+                                  "100" & "0010010" & "0000" & '0', -- J label
+                                  "101" & "0101010" & "0010" & '1', -- JAL label
+
+                                  "110" & "1100011" & "0000" & '0',  -- JR register
+                                  "110" & "0101011" & "0110" & '1' -- JALR register
                                  ); 
         
 	signal IR_opcode : std_logic_vector(OP_CODE_SIZE -1 downto 0);  -- OpCode part of IR
@@ -81,8 +105,8 @@ architecture bhv of hardwired_cu is
     -- Control words are shifted to the correct cycle
   	signal CW1 : std_logic_vector(CW_SIZE-1 downto 0) := (others => '0'); --1st,2nd,3rd,4th,5th
   	signal CW2 : std_logic_vector(CW_SIZE-1 - 3 downto 0) := (others => '0'); --2nd,3rd,4th,5th
-        signal CW3 : std_logic_vector(CW_SIZE-1 - 7 downto 0) := (others => '0'); --3rd,4th,5th
-        signal CW4 : std_logic_vector(CW_SIZE-1 - 11 downto 0) := (others => '0'); --4th,5th
+        signal CW3 : std_logic_vector(CW_SIZE-1 - 10 downto 0) := (others => '0'); --3rd,4th,5th
+        signal CW4 : std_logic_vector(CW_SIZE-1 - 14 downto 0) := (others => '0'); --4th,5th
         
 
     --AluOp
@@ -97,20 +121,22 @@ begin
   	IR_func <= FUNC;
 
 	-- Control signals assignments
+        
 	-- Decode
-	
-	REG_LATCH_EN <= CW1(11);
-        RD1 <= CW1(10);	
-	RD2 <= CW1(9);
-
-          
+	REG_LATCH_EN <= CW1(14);
+        RD1 <= CW1(13);	
+	RD2 <= CW1(12);
+        
 	-- Execute
-	
-        MUX_A_SEL <= CW2(8);    
-	MUX_B_SEL <= CW2(7);      
+        MUX_A_SEL <= CW2(11);    
+	MUX_B_SEL(1) <= CW2(10);
+        MUX_B_SEL(0) <= CW2(9);
        
-	ALU_OUTREG_EN <= CW2(6);  
-	DRAM_R_IN <= CW2(5);    
+	ALU_OUTREG_EN <= CW2(8);  
+	DRAM_R_IN <= CW2(7);
+
+        JUMP_TYPE(1) <= CW2(6);
+        JUMP_TYPE(0) <= CW2(5);
 
 	-- Memory
 	 MEM_EN_IN <= CW3(4);     
@@ -137,8 +163,8 @@ begin
 			else
 				CW1 <= CW;
 				CW2 <= CW1(CW_SIZE-1 - 3 downto 0);
-				CW3 <= CW2(CW_SIZE-1 - 7 downto 0);
-				CW4 <= CW3(CW_SIZE-1 - 11 downto 0);
+				CW3 <= CW2(CW_SIZE-1 - 10 downto 0);
+				CW4 <= CW3(CW_SIZE-1 - 14 downto 0);
 
 				AluOP_E <= AluOP_D;
 				ALU_OPC <= AluOP_E; 
@@ -180,6 +206,8 @@ begin
 			when XORI_OP => CW <= CW_MEM(2);
                         when J_OP => CW <= CW_MEM(7);
                         when JAL_OP => CW <= CW_MEM(8);
+                        when JR_OP   => CW <= CW_MEM(9);
+                        when JALR_OP => CW <= CW_MEM(10);
 			when others => CW <= CW_MEM(0); -- NOP
 	 	end case;
 	end process CW_GEN;
@@ -216,8 +244,10 @@ begin
 			when SRLI_OP => AluOP_D <= SRLS;
 			when SUBI_OP => AluOP_D <= SUBS;
 			when XORI_OP => AluOP_D<= XORS;
-			when J_OP    => AluOP_D <= ADDS;
+			when J_OP    => AluOP_D <= NOP;
 			when JAL_OP  => AluOP_D <= ADDS;
+                        when JR_OP   => AluOP_D <= NOP;
+                        when JALR_OP => AluOP_D <= ADDS;
 			when others  => AluOP_D <= NOP; -- NOP
 	 	end case;
 	end process ALUOPC_GEN;

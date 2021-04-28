@@ -13,36 +13,37 @@ architecture test of tb_CU is
 
 component hardwired_cu is
   generic(NBIT : integer);
-	port (
-              -- decode cu signals
-              REG_LATCH_EN      : out std_logic; -- Enables the register file and the pipeline registers
-              RD1		: out std_logic; -- Enables the read port 1 of the register file
-	      RD2		: out std_logic; -- Enables the read port 2 of the register file
+    port (
+            -- decode cu signals
+			REG_LATCH_EN    : out std_logic; -- Enables the register file and the pipeline registers
+                        RD1		: out std_logic; -- Enables the read port 1 of the register file
+			RD2		: out std_logic; -- Enables the read port 2 of the register file
              
-              -- execute cu signals
-              MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
-	      MUX_B_SEL     : out std_logic; -- Mux Selection for Operand B or IMM
-	      ALU_OPC       : out aluOp; -- Operation type for ALU
-	      ALU_OUTREG_EN : out std_logic; -- Enable output register
-              DRAM_R_IN    : out std_logic; -- DRAM read enable
+            -- execute cu signals
+                        MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
+			MUX_B_SEL     : out std_logic_vector(1 downto 0); -- Mux Selection Operand B, IMM or 4 (used in PC+4)
+			ALU_OPC       : out aluOp; -- Operation type for ALU
+			ALU_OUTREG_EN : out std_logic; -- Enable output register
+                        DRAM_R_IN     : out std_logic; -- DRAM read enable
+                        JUMP_TYPE     : out std_logic_vector(1 downto 0);
      
-              -- memory cu signals
-              MEM_EN_IN     : out std_logic; -- Register enable signal
-	      DRAM_W_IN     : out std_logic; -- DRAM write enable
-              RF_WE    	    : out std_logic; -- RF write enable, sent at this stage for forwarding check
-              DRAM_EN_IN   : out std_logic; -- DRAM enable
+            -- memory cu signals
+                        MEM_EN_IN     : out std_logic; -- Register enable signal
+			DRAM_W_IN     : out std_logic; -- DRAM write enable
+                        RF_WE    	    : out std_logic; -- RF write enable, sent at this stage for forwarding check
+                        DRAM_EN_IN   : out std_logic; -- DRAM enable
 
-              -- writeback CU signals
+            -- writeback CU signals
         
-	      WB_MUX_SEL    : out std_logic; -- Control signal for WB mux
+			WB_MUX_SEL    : out std_logic; -- Control signal for WB mux
 	      	  
-
-              -- INPUTS
-              OPCODE : in  std_logic_vector(OP_CODE_SIZE - 1 downto 0);
-              FUNC   : in  std_logic_vector(FUNC_SIZE - 1 downto 0);              
-              Clk : in std_logic;
-              Rst : in std_logic -- Active Low
-              );                  
+			  
+			-- INPUTS
+			OPCODE : in  std_logic_vector(OP_CODE_SIZE - 1 downto 0);
+			FUNC   : in  std_logic_vector(FUNC_SIZE - 1 downto 0);
+			Bubble : in std_logic;
+			Clk : in std_logic;
+			Rst : in std_logic);                  -- Active Low
 end component;
 
   constant tb_period : time := 20ns;
@@ -55,10 +56,11 @@ end component;
              
               -- execute cu signals
   signal MUX_A_SEL     : std_logic; -- Mux Selection for Operand A or NPC
-  signal MUX_B_SEL     : std_logic; -- Mux Selection for Operand B or IMM
+  signal MUX_B_SEL     : std_logic_vector(1 downto 0);
   signal ALU_OPC       : aluOp; -- Operation type for ALU
   signal ALU_OUTREG_EN : std_logic; -- Enable output register
-  signal DRAM_R_IN    : std_logic; -- sent to DRAM
+  signal DRAM_R_IN     : std_logic; -- sent to DRAM
+  signal JUMP_TYPE     : std_logic_vector(1 downto 0);
      
               -- memory cu signals
   signal MEM_EN_IN     : std_logic; -- Register enable signal
@@ -72,7 +74,8 @@ end component;
 
               -- INPUTS
   signal OPCODE : std_logic_vector(OP_CODE_SIZE - 1 downto 0);
-  signal FUNC   : std_logic_vector(FUNC_SIZE - 1 downto 0);              
+  signal FUNC   : std_logic_vector(FUNC_SIZE - 1 downto 0);
+  signal Bubble : std_logic;
   signal Clk : std_logic;
   signal Rst : std_logic;                  -- Active Low
 
@@ -93,7 +96,8 @@ begin
 	      MUX_B_SEL => MUX_B_SEL,
 	      ALU_OPC => ALU_OPC,      
 	      ALU_OUTREG_EN => ALU_OUTREG_EN, 
-              DRAM_R_IN => DRAM_R_IN,  
+              DRAM_R_IN => DRAM_R_IN,
+              JUMP_TYPE => JUMP_TYPE,
      
               -- memory cu signals
               MEM_EN_IN => MEM_EN_IN,
@@ -107,7 +111,8 @@ begin
 
               -- INPUTS
               OPCODE => OPCODE,
-              func => func,       
+              func => func,
+              Bubble => Bubble,
               Clk => Clk,
               Rst => Rst
       
@@ -133,17 +138,20 @@ begin
                 procedure apply_stimuli (
 
                         constant OPCODE_val : in std_logic_vector(OP_CODE_SIZE - 1 downto 0);
-                        constant FUNC_val   : in std_logic_vector(FUNC_SIZE - 1 downto 0);              
+                        constant FUNC_val   : in std_logic_vector(FUNC_SIZE - 1 downto 0);
+                        constant Bubble_val : in std_logic;
                         constant Rst_val    : in std_logic;
 
                         signal OPCODE : out std_logic_vector(OP_CODE_SIZE - 1 downto 0);
-                        signal FUNC   : out std_logic_vector(FUNC_SIZE - 1 downto 0);              
+                        signal FUNC   : out std_logic_vector(FUNC_SIZE - 1 downto 0);
+                        signal Bubble : out std_logic;
                         signal Rst : out std_logic 
 
                         ) is
                 begin
                        OPCODE <= OPCODE_val;
                        FUNC <= FUNC_val;
+                       Bubble <= Bubble_val;
                        Rst <= Rst_val;
                        
                         wait for tb_period;
@@ -153,13 +161,13 @@ begin
 
    --apply_stimuli(input values, signals);
 
-    apply_stimuli(RType_OP,ADD_Func,'1',OPCODE, FUNC, Rst);
-    apply_stimuli(RType_OP,AND_Func,'1',OPCODE, FUNC, Rst);
+    apply_stimuli(RType_OP,ADD_Func,'0', '1',OPCODE, FUNC, Bubble, Rst);
+    apply_stimuli(RType_OP,AND_Func,'0', '1',OPCODE, FUNC, Bubble, Rst);
     
     
-    apply_stimuli(XORI_OP,(others => '0'),'1',OPCODE, FUNC, Rst);
-    apply_stimuli(ANDI_OP,(others => '0'),'1',OPCODE, FUNC, Rst);
-    apply_stimuli(BEQZ_OP,(others => '0'),'1',OPCODE, FUNC, Rst);
+    apply_stimuli(XORI_OP,(others => '0'), '0', '1',OPCODE, FUNC, Bubble, Rst);
+    apply_stimuli(ANDI_OP,(others => '0'), '0', '1',OPCODE, FUNC, Bubble, Rst);
+    apply_stimuli(BEQZ_OP,(others => '0'),'0', '1',OPCODE, FUNC, Bubble, Rst);
     
   
   end process;

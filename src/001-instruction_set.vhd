@@ -125,5 +125,9 @@ package instruction_set is
 		constant J_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(2, OPCODE_size)); --x"02"
 		-- JAL
 		constant JAL_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(3, OPCODE_size)); --x"03"
+                -- JR
+                constant JR_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(18, OPCODE_size)); --x"12"
+                -- JALR
+                constant JALR_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(19, OPCODE_size)); --x"13"
 
 end package;

@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/ms21.21/Desktop/GR21_DLX/sim/CU
 T_opt
-VcN@BN3:9PNcolLb4571lN0
+V8YA_lB2aU5>lc;V=l_YM90
 06 5 4 ./work tb_cu test 1
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
@@ -12,40 +12,42 @@ Pconstants
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 31
 M1 ieee std_logic_1164
-w1619260754
+w1619618573
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/CU
 8../../src/constants.vhd
 F../../src/constants.vhd
 l0
 L4
-V;U1Z5TQIzJcM;X_Mj=lKJ1
+V>L7QI;fJLCzi;8GoMK?]11
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Ehardwired_cu
-w1619341521
+w1619618183
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
-DP work instruction_set lIe[LJVWc@4hWV4=5hN>`0
-DP work constants ;U1Z5TQIzJcM;X_Mj=lKJ1
+DP work instruction_set n54EhnEME94KI2@jol;>71
+DP work constants >L7QI;fJLCzi;8GoMK?]11
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 31
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/CU
 8../../src/a.a-CU.vhd
 F../../src/a.a-CU.vhd
 l0
 L8
-Vh@RgnKHYd0QXgndzkd1091
+Vc47izj:XhKO7V5_CzAJa60
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Abhv
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
-DP work instruction_set lIe[LJVWc@4hWV4=5hN>`0
-DP work constants ;U1Z5TQIzJcM;X_Mj=lKJ1
+DP work instruction_set n54EhnEME94KI2@jol;>71
+DP work constants >L7QI;fJLCzi;8GoMK?]11
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work hardwired_cu h@RgnKHYd0QXgndzkd1091
+DE work hardwired_cu c47izj:XhKO7V5_CzAJa60
 31
 M6 ieee std_logic_1164
 M5 ieee std_logic_unsigned
@@ -53,9 +55,9 @@ M4 ieee std_logic_arith
 M3 work constants
 M2 work instruction_set
 M1 ieee numeric_std
-l92
-L41
-V>KY8ziLjYeVE7oGAdK;WG3
+l117
+L43
+VS[KU?gHaaabVMUECghNYX0
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
@@ -67,24 +69,26 @@ DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 M3 ieee std_logic_1164
 M2 ieee std_logic_arith
 M1 ieee numeric_std
-w1618926472
+w1619618390
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/CU
 8../../src/001-instruction_set.vhd
 F../../src/001-instruction_set.vhd
 l0
 L6
-VlIe[LJVWc@4hWV4=5hN>`0
+Vn54EhnEME94KI2@jol;>71
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Etb_cu
-w1619336139
-DP work instruction_set lIe[LJVWc@4hWV4=5hN>`0
-DP work constants ;U1Z5TQIzJcM;X_Mj=lKJ1
+w1619619158
+DP work instruction_set n54EhnEME94KI2@jol;>71
+DP work constants >L7QI;fJLCzi;8GoMK?]11
 DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 31
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/CU
 8../../tb/TB_a.a-CU.vhd
 F../../tb/TB_a.a-CU.vhd
 l0
@@ -94,9 +98,9 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Atest
-DE work hardwired_cu h@RgnKHYd0QXgndzkd1091
-DP work instruction_set lIe[LJVWc@4hWV4=5hN>`0
-DP work constants ;U1Z5TQIzJcM;X_Mj=lKJ1
+DE work hardwired_cu c47izj:XhKO7V5_CzAJa60
+DP work instruction_set n54EhnEME94KI2@jol;>71
+DP work constants >L7QI;fJLCzi;8GoMK?]11
 DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
@@ -109,9 +113,9 @@ M4 ieee numeric_std
 M3 ieee std_logic_unsigned
 M2 work constants
 M1 work instruction_set
-l80
+l83
 L12
-Vj=H8KW;jgJ?3`]PU43>BE2
+V2aCkZk^liNzbfRN7eeH6Z3
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1

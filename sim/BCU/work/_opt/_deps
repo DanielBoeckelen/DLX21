@@ -1,0 +1,12 @@
+H 2141964 11 3 0 4 4 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 28 ./work.branch_cond_unit(bhv) E:X;fncKVUhgZ9MRmk_?Q0 2 1
+D 16 ./work.constants ;U1Z5TQIzJcM;X_Mj=lKJ1 0 1
+D 22 ./work.instruction_set lIe[LJVWc@4hWV4=5hN>`0 1 1
+D 32 ./work.tb_branch_cond_unit(test) 3o641B@HB<d20MF5=Ig2k3 3 1
+2 0  1 i;>Eo^5ahIGV5H3Vk[i^63 2 2 1
+2 0  0 IXZY>2^IU:09eN0fnZnc@2 1 1 1
+2 0  0 48BI9^1AlM2T=X[=dQY_83 0 0 1
+2 0  1 7mN3mzf6V;FISSBENTWd[3 3 3 1
