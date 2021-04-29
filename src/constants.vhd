@@ -8,7 +8,7 @@ package constants is
 	constant NBIT_PER_BLOCK: integer := 4; -- For P4 adder
     	constant NBLOCKS : integer := 8; -- For P4 adder
         constant CW_SIZE : integer := 15; --For CU
-        constant OP_CODE_SIZE : integer := 6; --For CU
+        --constant OP_CODE_SIZE : integer := 6; --For CU (also already declared in "001-instruction_set.vhd")
         --constant FUNC_SIZE : integer := 11; --(already declared in "001-instruction_set.vhd")
         constant MICROCODE_MEM_SIZE : integer := 11; --For CU
 	--constant MEM_size : integer := 1024; -- Memories 1024x32 bit wide = 4kB, both data and instruction

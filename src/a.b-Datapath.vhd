@@ -31,6 +31,7 @@ entity Datapath is
 		  -- Writeback CU signals
 		  WB_MUX_SEL : in std_logic; -- Control signal for WB mux
 		  --
+		  INS_OUT       : out std_logic_vector(NBIT-1 downto 0); -- Instruction sent to CU
 		  IRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- from Fetch stage to IRAM
 		  DRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- from MEM stage to DRAM
 		  DATA_OUT      : out std_logic_vector(NBIT-1 downto 0); -- from MEM stage to DRAM
@@ -184,6 +185,7 @@ signal PC_SEL_EX : std_logic_vector(1 downto 0);
 
 begin
 
+
 	FetchStage : Fetch port map(CLK => CLK,
 								RST => RST,
 							  --IR_LATCH_EN  : in std_logic;
@@ -199,6 +201,8 @@ begin
 								ADDR_OUT => IRAM_ADDR_OUT,
 								NPC_OUT => NPC_FETCH_OUT,
 								INS_OUT => INS_FETCH_OUT);
+								
+	<= INS_FETCH_OUT;
 								
 	DecodeStage : Decode port map(CLK => CLK, 
 								  RST => RST,

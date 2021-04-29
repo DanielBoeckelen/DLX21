@@ -9,23 +9,23 @@ entity hardwired_cu is
     generic(NBIT : integer);
 	port (
             -- decode cu signals
-			REG_LATCH_EN    : out std_logic; -- Enables the register file and the pipeline registers
-                        RD1		: out std_logic; -- Enables the read port 1 of the register file
-			RD2		: out std_logic; -- Enables the read port 2 of the register file
+			REG_LATCH_EN : out std_logic; -- Enables the register file and the pipeline registers
+            RD1		     : out std_logic; -- Enables the read port 1 of the register file
+			RD2		     : out std_logic; -- Enables the read port 2 of the register file
              
             -- execute cu signals
-                        MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
+            MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
 			MUX_B_SEL     : out std_logic_vector(1 downto 0); -- Mux Selection Operand B, IMM or 4 (used in PC+4)
 			ALU_OPC       : out aluOp; -- Operation type for ALU
 			ALU_OUTREG_EN : out std_logic; -- Enable output register
-                        DRAM_R_IN     : out std_logic; -- DRAM read enable
-                        JUMP_TYPE     : out std_logic_vector(1 downto 0);
+            DRAM_R_IN     : out std_logic; -- DRAM read enable
+            JUMP_TYPE     : out std_logic_vector(1 downto 0);
      
             -- memory cu signals
-                        MEM_EN_IN     : out std_logic; -- Register enable signal
+            MEM_EN_IN     : out std_logic; -- Register enable signal
 			DRAM_W_IN     : out std_logic; -- DRAM write enable
-                        RF_WE    	    : out std_logic; -- RF write enable, sent at this stage for forwarding check
-                        DRAM_EN_IN   : out std_logic; -- DRAM enable
+            RF_WE    	  : out std_logic; -- RF write enable, sent at this stage for forwarding check
+            DRAM_EN_IN    : out std_logic; -- DRAM enable
 
             -- writeback CU signals
         
@@ -33,11 +33,10 @@ entity hardwired_cu is
 	      	  
 			  
 			-- INPUTS
-			OPCODE : in  std_logic_vector(OP_CODE_SIZE - 1 downto 0);
-			FUNC   : in  std_logic_vector(FUNC_SIZE - 1 downto 0);
+			INS_IN : in std_logic_vector(NBIT-1 downto 0);
 			Bubble : in std_logic;
-			Clk : in std_logic;
-			Rst : in std_logic);                  -- Active Low
+			Clk    : in std_logic;
+			Rst    : in std_logic);                  -- Active Low
 end hardwired_cu;
 
 architecture bhv of hardwired_cu is
@@ -97,8 +96,8 @@ architecture bhv of hardwired_cu is
                                   "110" & "1101011" & "1010" & '1' --"110" & "0101011" & "0110" & '1' -- JALR register
                                  ); 
         
-	signal IR_opcode : std_logic_vector(OP_CODE_SIZE -1 downto 0);  -- OpCode part of IR
-  	signal IR_func : std_logic_vector(FUNC_SIZE-1 downto 0);   -- Func part of IR when Rtype
+	signal IR_opcode : std_logic_vector(OPCODE_size-1 downto 0);  -- OpCode part of IR
+  	signal IR_func : std_logic_vector(Func_size-1 downto 0);   -- Func part of IR when Rtype
   	signal CW   : std_logic_vector(CW_SIZE - 1 downto 0); -- full control word read from cw_mem
 
     -- Control words are shifted to the correct cycle
@@ -115,9 +114,9 @@ architecture bhv of hardwired_cu is
         
 begin
 
-	-- Internal signals for OPCODE and FUNC inputs
-	IR_opcode <= OPCODE;
-  	IR_func <= FUNC;
+	-- Internal signals for OPCODE and FUNC
+	IR_opcode <= INS_IN(OPCODE_begin downto OPCODE_end);
+  	IR_func <= INS_IN (Func_begin downto Func_end);
 
 	-- Control signals assignments
         
