@@ -88,6 +88,30 @@ package instruction_set is
 		constant SUB_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(34, Func_size)); --x"22"
 		-- XOR
 		constant XOR_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(38, Func_size)); --x"26"
+		
+		--------------advanced instrcutions of R type
+		
+		-- ADDU
+		constant ADDU_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(33, Func_size)); --x"21"
+		-- SEQ
+        constant SEQ_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(40, Func_size)); --x"28"
+        -- SGEU
+		constant SGEU_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(61, Func_size)); --x"3d"
+		-- SGT
+		constant SGT_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(43, Func_size)); --x"2b"
+		-- SGTU
+		constant SGTU_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(59, Func_size)); --x"3b"
+		-- SLT
+		constant SLT_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(42, Func_size)); --x"2a"
+		-- SLTU
+		constant SLTU_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(58, Func_size)); --x"3a"
+		-- SRA
+		constant SRA_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(7, Func_size)); --x"07"
+		-- SUBU
+		constant SUBU_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(35, Func_size)); --x"23"
+		-- MULT
+		constant MULT_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(14, Func_size)); --x"0e"   --Attention : the func_code is copied as it's using fp register
+
 
 	-- I-Type (LW, SW, ADDI, ANDI, BEQZ, BNEZ, ORI, SGEI, SLEI, SLLI, SNEI, SRLI, SUBI, XORI)
 
@@ -119,10 +143,40 @@ package instruction_set is
 		constant SUBI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(10, OPCODE_size)); --x"0a"
 		-- XORI
 		constant XORI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(14, OPCODE_size)); --x"0e"
+
+		----------- advanced instrcutions of I type
 		-- JR
         constant JR_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(18, OPCODE_size)); --x"12"
         -- JALR
         constant JALR_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(19, OPCODE_size)); --x"13"
+        -- ADDUI
+        constant ADDUI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(9, OPCODE_size)); --x"09"
+        -- LB
+        constant LB_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(32, OPCODE_size)); --x"20"
+        -- LBU
+        constant LBU_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(36, OPCODE_size)); --x"24"
+        -- LHI
+        constant LHI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(15, OPCODE_size)); --x"0f"
+        -- LHU
+        constant LHU_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(37, OPCODE_size)); --x"25"
+        -- SB
+        constant SB_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(40, OPCODE_size)); --x"28"
+		-- SEQI
+		constant SEQI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(24, OPCODE_size)); --x"18"
+		-- SGEUI
+		constant SGEUI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(61, OPCODE_size)); --x"3d"
+		-- SGTI
+		constant SGTI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(27, OPCODE_size)); --x"1b"
+		-- SGTUI
+		constant SGTUI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(59, OPCODE_size)); --x"3b"
+		-- SLTI
+		constant SLTI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(26, OPCODE_size)); --x"1a"
+		-- SLTUI
+		constant SLTUI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(58, OPCODE_size)); --x"3a"
+		-- SRAI
+		constant SRAI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(23, OPCODE_size)); --x"17"
+		-- SUBUI
+		constant SUBUI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(11, OPCODE_size)); --x"0b"
 
 	-- J-Type (J, JAL)
 		-- J
