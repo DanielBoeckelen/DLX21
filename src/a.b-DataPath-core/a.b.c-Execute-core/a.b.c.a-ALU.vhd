@@ -86,15 +86,27 @@ begin
 		case(ALU_OPC) is
 			when ADDS =>
                                 ADD_SUB <= '0';
-				B <= OP2;
+								B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '0';
+
+			when ADDUS =>
+                                ADD_SUB <= '0';
+								B <= OP2;
+                                select_type_sig <= "00"; --add_sub_res
+                                select_zero_sig <= '1';
                 
 			when SUBS =>
                                 ADD_SUB <= '1'; -- SUB is treated as a two's complement sum: A + B' + 1
-				B <= not(OP2);
+								B <= not(OP2);
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '0';
+
+			when SUBUS =>
+                                ADD_SUB <= '1'; -- SUB is treated as a two's complement sum: A + B' + 1
+								B <= not(OP2);
+                                select_type_sig <= "00"; --add_sub_res
+                                select_zero_sig <= '1';
                 
 			when ANDS =>
                                 LOGIC_RES <= OP1 and OP2;
@@ -113,32 +125,62 @@ begin
                 
 			when SLLS =>
                                 LOGIC_ARITH <= '1';
-				LEFT_RIGHT <= '1';
+								LEFT_RIGHT <= '1';
                                 select_type_sig <= "10"; --shift_res
                                 select_zero_sig <= '0';
                 
 			when SRLS =>
                                 LOGIC_ARITH <= '1';
-				LEFT_RIGHT <= '0';
+								LEFT_RIGHT <= '0';
                                 select_type_sig <= "10"; --shift_res
+
+			when SRAS => 
+                                LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+                                select_type_sig <= "10"; --shift_res
+
                                
 			when BEQZS =>
                                 --ADD_SUB <= '0';
-				--B <= OP2;
+								--B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '1';
                 
 			when BNEZS =>
                                 --ADD_SUB <= '0';
-				--B <= OP2;
+								--B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '1';
                 
 			when SGES =>
                                 OPSel <= 3;
                                 select_type_sig <= "11"; --comp_res
+                                select_zero_sig <= '0';  --select_zero_sig = 0 means signed operation
+			
+			when SGEUS =>
+                                OPSel <= 3;
+                                select_type_sig <= "11"; --comp_res
+                                select_zero_sig <= '1';  --select_zero_sig = 1 means unsigned operation
+
+			when SGTS =>
+                                OPSel <= 2;
+                                select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';
-                
+
+			when SGTUS =>
+                                OPSel <= 2;
+                                select_type_sig <= "11"; --comp_res
+                                select_zero_sig <= '1';
+
+			when SLTS =>
+			                    OPSel <= 4;
+			                    select_type_sig <= "11"; --comp_res
+			                    select_zero_sig <= '0';    
+			when SLTUS =>
+			                    OPSel <= 4;
+			                    select_type_sig <= "11"; --comp_res
+			                    select_zero_sig <= '1';    
+
 			when SLES  =>
                                 OPSel <= 5;
                                 select_type_sig <= "11"; --comp_res
@@ -148,7 +190,7 @@ begin
                                 OPSel <= 1;
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';
-                
+
 			when NOP =>
                                 select_type_sig <= "00"
                                 select_zero_sig <= '1';
