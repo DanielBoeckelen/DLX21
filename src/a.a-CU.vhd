@@ -74,28 +74,27 @@ architecture bhv of hardwired_cu is
           --ALU_OUTREG_EN -> pipeline regs between ALU and MEM
           --MEM_EN_IN -> pipeline regs between MEM and WB mux
           
-                                  "110" & "1011000" & "1010" & '1', -- NOP
-				  "111" & "1001000" & "1010" & '1', -- R type CWs
-                                  "110" & "1011000" & "1010" & '1', -- I type CWs
+                                  "000" & "0000000" & "0000" & '0', --"110" & "1011000" & "1010" & '1', -- NOP
+								  "111" & "0001000" & "1010" & '1', --"111" & "1001000" & "1010" & '1', -- R type CWs
+                                  "110" & "0011000" & "1010" & '1', --"110" & "1011000" & "1010" & '1', -- I type CWs
                                                                  
-
-                                  "110" & "1011100" & "1011" & '0', -- LW RD, imm(RS1)
-                                  "111" & "1011000" & "1111" & '0', -- SW imm(RS1),RD
+                                  "110" & "0011100" & "1011" & '0', --"110" & "1011100" & "1011" & '0', -- LW RD, imm(RS1)
+                                  "110" & "0011000" & "1101" & '0', --"111" & "1011000" & "1111" & '0', -- SW imm(RS1), RD
 
                                   --In BEZQ and BNEZ: ALU output reg turned off because the adder
                                   --of the EXE stage performs PC+imm26
                                   
-                                  "110" & "0011001" & "0000" & '0', -- BEQZ
-                                  "110" & "0011001" & "0000" & '0', -- BNEZ
+                                  "110" & "1011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BEQZ
+                                  "110" & "1011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BNEZ
 
                                   --In JAL the ALU will perform PC+4 while in
                                   --parallel the adder in EXE stage performs PC+imm26
 
-                                  "100" & "0010010" & "0000" & '0', -- J label
-                                  "101" & "0101010" & "0010" & '1', -- JAL label
+                                  "100" & "1011010" & "0000" & '0', --"100" & "0010010" & "0000" & '0', -- J label
+                                  "100" & "1101010" & "1010" & '1', --"101" & "0101010" & "0010" & '1', -- JAL label
 
-                                  "110" & "1100011" & "0000" & '0',  -- JR register
-                                  "110" & "0101011" & "0110" & '1' -- JALR register
+                                  "110" & "1100011" & "0000" & '0', --"110" & "1100011" & "0000" & '0',  -- JR register
+                                  "110" & "1101011" & "1010" & '1' --"110" & "0101011" & "0110" & '1' -- JALR register
                                  ); 
         
 	signal IR_opcode : std_logic_vector(OP_CODE_SIZE -1 downto 0);  -- OpCode part of IR

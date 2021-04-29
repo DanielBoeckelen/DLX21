@@ -10,6 +10,7 @@ entity Memory is
 		  MEM_EN_IN     : in std_logic; -- coming from Control Unit
 		  DRAM_R_IN     : in std_logic; -- coming from Control Unit
 		  DRAM_W_IN     : in std_logic; -- coming from Control Unit
+		  DRAM_EN_IN    : in std_logic; -- DRAM enable
 		  PC_SEL        : in std_logic_vector(1 downto 0); -- PC MUX Selection, from EX stage
 		  NPC_IN        : in std_logic_vector(NBIT-1 downto 0); -- NPC, from Fetch stage
 		  NPC_ABS       : in std_logic_vector(NBIT-1 downto 0); -- Absolute NPC (for JALR/JR)
@@ -19,7 +20,7 @@ entity Memory is
 		  ADD_WR_IN     : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address for WB, from EX stage
 		  DRAM_DATA_IN  : in std_logic_vector(NBIT-1 downto 0); -- Load data from DRAM
 		  PC_OUT        : out std_logic_vector(NBIT-1 downto 0); -- PC value, to fetch stage
-		  MEM_EN_OUT    : out std_logic; -- control signals to DRAM
+		  DRAM_EN_OUT   : out std_logic; -- control signals to DRAM
 		  DRAM_R_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_W_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- ALU output sent to DRAM
@@ -57,7 +58,7 @@ begin
 	DRAM_DATA_OUT <= B_IN; -- send data to be stored to DRAM
 	DRAM_ADDR_OUT <= ALU_RES_IN; -- data computed in ALU is store address for DRAM (or Jump PC)
 	OP_MEM <= ALU_RES_IN; -- Used for possible forwarding in EX stage
-	MEM_EN_OUT <= MEM_EN_IN; -- control signals sent to DRAM
+	DRAM_EN_OUT <= DRAM_EN_IN; -- control signals sent to DRAM
 	DRAM_R_OUT <= DRAM_R_IN;
 	DRAM_W_OUT <= DRAM_W_IN;
 	

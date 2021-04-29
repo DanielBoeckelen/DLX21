@@ -27,6 +27,7 @@ entity Datapath is
 		  MEM_EN_IN     : in std_logic; -- Register enable signal
 		  DRAM_W_IN     : in std_logic; -- DRAM write enable
 		  RF_WE		    : in std_logic; -- RF write enable, sent at this stage for forwarding check
+		  DRAM_EN_IN    : in std_logic; -- DRAM enable
 		  -- Writeback CU signals
 		  WB_MUX_SEL : in std_logic; -- Control signal for WB mux
 		  --
@@ -127,6 +128,7 @@ component Memory is
 		  MEM_EN_IN     : in std_logic; -- coming from Control Unit
 		  DRAM_R_IN     : in std_logic; -- coming from Control Unit
 		  DRAM_W_IN     : in std_logic; -- coming from Control Unit
+		  DRAM_EN_IN    : in std_logic; -- DRAM enable
 		  PC_SEL        : in std_logic_vector(1 downto 0); -- PC MUX Selection, from EX stage
 		  NPC_IN        : in std_logic_vector(NBIT-1 downto 0); -- NPC, from Fetch stage
 		  NPC_ABS       : in std_logic_vector(NBIT-1 downto 0); -- Absolute NPC (for JALR/JR)
@@ -247,9 +249,9 @@ begin
 									  B_OUT => B_EX_OUT,
 									  ADD_WR_OUT => ADD_WR_EX_OUT);
 		
-	RF_WE_ff : ff port map( D => DRAM_R_IN,
+	DRAM_R_ff : ff port map( D => DRAM_R_IN,
 							CLK => CLK,
-							EN => '1', -- Use MEM_EN_IN?
+							EN => '1',
 							RST => RST,
 							Q => DRAM_R_MEM);
 		
@@ -258,6 +260,7 @@ begin
 								  MEM_EN_IN => MEM_EN_IN,
 								  DRAM_R_IN => DRAM_R_MEM,
 								  DRAM_W_IN => DRAM_W_IN,
+								  DRAM_EN_IN => DRAM_EN_IN,
 								  PC_SEL => PC_SEL_EX,
 								  NPC_IN => NPC_FETCH_OUT,
 								  NPC_ABS => NPC_ABS_EX,
@@ -267,7 +270,7 @@ begin
 								  ADD_WR_IN => ADD_WR_EX_OUT,
 								  DRAM_DATA_IN => DATA_IN,
 								  PC_OUT => PC_MEM_OUT,
-								  MEM_EN_OUT => DRAM_EN_OUT,
+								  DRAM_EN_OUT => DRAM_EN_OUT,
 								  DRAM_R_OUT => DRAM_R_OUT,
 								  DRAM_W_OUT => DRAM_W_OUT,
 								  DRAM_ADDR_OUT => DRAM_ADDR_OUT,
