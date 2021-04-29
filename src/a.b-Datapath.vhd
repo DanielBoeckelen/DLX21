@@ -202,7 +202,7 @@ begin
 								NPC_OUT => NPC_FETCH_OUT,
 								INS_OUT => INS_FETCH_OUT);
 								
-	<= INS_FETCH_OUT;
+	INS_OUT <= INS_FETCH_OUT;
 								
 	DecodeStage : Decode port map(CLK => CLK, 
 								  RST => RST,

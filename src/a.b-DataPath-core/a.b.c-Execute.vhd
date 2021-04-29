@@ -116,10 +116,10 @@ begin
 	Branch_Cond : Branch_Cond_Unit generic map(N => NBIT)
 		port map(A => OP1_FW, ALU_OPC => ALU_OPC, JUMP_TYPE => JUMP_TYPE, PC_SEL => sig_PC_SEL, ZERO => sig_ZERO_FLAG);
 		
-	ff0 : ff port map(D => sig_ZERO_FLAG, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, Q => ZERO_FLAG);
+	ff0 : ff port map(D => sig_ZERO_FLAG, CLK => CLK, EN => '1', RST => RST, Q => ZERO_FLAG);
 	
 	reg0 : regn generic map(N => 2)
-		port map(DIN => sig_PC_SEL, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => PC_SEL);
+		port map(DIN => sig_PC_SEL, CLK => CLK, EN => '1', RST => RST, DOUT => PC_SEL); -- The PC_SEL must always reach the PC MUX in the Memory stage, so it's always enabled
 	
 	FWD_Unit port map(RST => sig_RST, ADD_RS1 => ADD_RS1_IN, ADD_RS2 => ADD_RS2_IN, ADD_WR_MEM => ADD_WR_MEM, ADD_WR_WB => ADD_WR_WB,
 		RF_WE_MEM => RF_WE_MEM, RF_WE_WB => RF_WE_WB, FWDA => FWDA, FWDB => FWDB);
