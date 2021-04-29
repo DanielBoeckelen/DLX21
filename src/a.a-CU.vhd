@@ -216,8 +216,8 @@ begin
 		case IR_opcode is
 			when RType_OP => -- analyze each RTYPE function
 				case IR_func is
-                                        when ADD_Func => AluOP_D <= ADDS;
-                                        when AND_Func => AluOP_D <= ANDS;
+                    when ADD_Func => AluOP_D <= ADDS;
+                    when AND_Func => AluOP_D <= ANDS;
 					when OR_Func  => AluOP_D <= ORS;
 					when SGE_Func => AluOP_D <= SGES;
 					when SLE_Func => AluOP_D <= SLES;
@@ -225,7 +225,19 @@ begin
 					when SNE_Func => AluOP_D <= NEQS;
 					when SRL_Func => AluOP_D <= SRLS;
 					when SUB_Func => AluOP_D <= SUBS;
-					when XOR_Func => AluOP_D <= XORS;      
+					when XOR_Func => AluOP_D <= XORS; 
+					--------   advanced R type
+					when ADDU_Func => AluOP_D <= ADDUS; 
+					when SEQ_Func  => AluOP_D <= BEQZS; 
+					when SGEU_Func => AluOP_D <= SGEUS; 
+					when SGT_Func  => AluOP_D <= SGTS; 
+					when SGTU_Func => AluOP_D <= SGTUS; 
+					when SLT_Func  => AluOP_D <= SLTS; 
+					when SLTU_Func => AluOP_D <= SLTUS; 
+					when SRA_Func  => AluOP_D <= SRAS; 
+					when SUBU_Func => AluOP_D <= SUBUS; 
+					when MULT_Func => AluOP_D <= MULTS; 
+
  					when others   => AluOP_D <= NOP; -- NOP
 				end case;
 			when LW_OP   => AluOP_D <= ADDS;
@@ -246,6 +258,22 @@ begin
 			when JAL_OP  => AluOP_D <= ADDS;
                         when JR_OP   => AluOP_D <= NOP;
                         when JALR_OP => AluOP_D <= ADDS;
+            --   Advanced I type
+			when ADDUI_OP  => AluOP_D <= ADDUS;
+			when LB_OP     => AluOP_D <= ADDS;
+			when LBU_OP    => AluOP_D <= ADDS;
+			when LHI_OP    => AluOP_D <= ????????;
+			when LHU_OP    => AluOP_D <= ADDS;
+			when SB_OP     => AluOP_D <= ADDS;
+			when SEQI_OP   => AluOP_D <= BEQZS;
+			when SGEUI_OP  => AluOP_D <= SGEUS;
+			when SGTI_OP   => AluOP_D <= SGTS;
+			when SGTUI_OP  => AluOP_D <= SGTUS;
+			when SLTI_OP   => AluOP_D <= SLTS;
+			when SLTUI_OP  => AluOP_D <= SLTUS;
+			when SRAI_OP   => AluOP_D <= SRAS;
+			when SUBUI_OP  => AluOP_D <= SUBUS;
+
 			when others  => AluOP_D <= NOP; -- NOP
 	 	end case;
 	end process ALUOPC_GEN;
