@@ -39,11 +39,3 @@ architecture struct of carry_select_basic is
 		S <= Y2 when C_i = '1' else Y1;  -- the selected output is part of the final sum
 
 end struct;
-
-configuration CFG_CSB of carry_select_basic is
-for struct
-	for all: RCA
-		use configuration WORK.CFG_RCA_STRUCTURAL;
-	end for;
-end for;
-end CFG_CSB;

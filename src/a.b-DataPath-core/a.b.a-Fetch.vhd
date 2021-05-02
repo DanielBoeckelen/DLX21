@@ -15,7 +15,7 @@ entity Fetch is
 		  Bubble_in    : in std_logic; -- Bubble signal from HazardDetection, for stall management
 		  HDU_INS_IN   : in std_logic_vector(NBIT-1 downto 0); -- Current instruction, possibly causing Load-Use Hazard
 		  HDU_PC_IN    : in std_logic_vector(NBIT-1 downto 0); -- PC of the current instruction, possibly causing the Load-Use Hazard
-		  HDU_NPC_IN   : in std_logic_vector(NBIT-1 downto 0)); -- NPC, of the instruction after the possible the Load-Use Hazard
+		  HDU_NPC_IN   : in std_logic_vector(NBIT-1 downto 0); -- NPC, of the instruction after the possible the Load-Use Hazard
 		  PC_OUT       : out std_logic_vector(NBIT-1 downto 0); -- Current PC output, used for hazard detection
 		  ADDR_OUT     : out std_logic_vector(NBIT-1 downto 0); -- To Instruction memory
 		  NPC_OUT      : out std_logic_vector(NBIT-1 downto 0); -- Next program counter
@@ -44,7 +44,8 @@ component mux21 is
 end component;
 
 -- Signal declarations
-signal NPC, sig_PC, sig_RST, sig_NPC, PC_MUX_OUT, sig_INS : std_logic_vector(NBIT-1 downto 0);
+signal sig_RST : std_logic;
+signal NPC, sig_PC, sig_NPC, PC_MUX_OUT, sig_INS : std_logic_vector(NBIT-1 downto 0);
 
 begin
 

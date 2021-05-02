@@ -6,7 +6,7 @@ use work.constants.all;
 use work.instruction_set.all;
 
 entity ALU is
-    generic (NBIT : integer);
+	generic(NBIT : integer);
 	port( OP1     : in std_logic_vector(NBIT-1 downto 0); -- Coming from mux1, selecting NPC or A
 	      OP2     : in std_logic_vector(NBIT-1 downto 0); -- Coming from mux2, selecting IMM or B
 	      ALU_OPC : in aluOp; -- coming from Control Unit
@@ -90,11 +90,11 @@ begin
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '0';
 
-			when ADDUS =>
-                                ADD_SUB <= '0';
-								B <= OP2;
-                                select_type_sig <= "00"; --add_sub_res
-                                select_zero_sig <= '1';
+			--when ADDUS =>
+                               -- ADD_SUB <= '0';
+				--				B <= OP2;
+                               -- select_type_sig <= "00"; --add_sub_res
+                               -- select_zero_sig <= '1';
                 
 			when SUBS =>
                                 ADD_SUB <= '1'; -- SUB is treated as a two's complement sum: A + B' + 1
@@ -102,11 +102,11 @@ begin
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '0';
 
-			when SUBUS =>
-                                ADD_SUB <= '1'; -- SUB is treated as a two's complement sum: A + B' + 1
-								B <= not(OP2);
-                                select_type_sig <= "00"; --add_sub_res
-                                select_zero_sig <= '1';
+			--when SUBUS =>
+                        --        ADD_SUB <= '1'; -- SUB is treated as a two's complement sum: A + B' + 1
+			--					B <= not(OP2);
+                          --      select_type_sig <= "00"; --add_sub_res
+                            --    select_zero_sig <= '1';
                 
 			when ANDS =>
                                 LOGIC_RES <= OP1 and OP2;
@@ -134,10 +134,10 @@ begin
 								LEFT_RIGHT <= '0';
                                 select_type_sig <= "10"; --shift_res
 
-			when SRAS => 
-                                LOGIC_ARITH <= '0';
-								LEFT_RIGHT <= '0';
-                                select_type_sig <= "10"; --shift_res
+			--when SRAS => 
+                        --        LOGIC_ARITH <= '0';
+			--					LEFT_RIGHT <= '0';
+                          --      select_type_sig <= "10"; --shift_res
 
                                
 			when BEQZS =>
@@ -157,29 +157,29 @@ begin
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';  --select_zero_sig = 0 means signed operation
 			
-			when SGEUS =>
-                                OPSel <= 3;
-                                select_type_sig <= "11"; --comp_res
-                                select_zero_sig <= '1';  --select_zero_sig = 1 means unsigned operation
+			--when SGEUS =>
+                          --      OPSel <= 3;
+                            --    select_type_sig <= "11"; --comp_res
+                              --  select_zero_sig <= '1';  --select_zero_sig = 1 means unsigned operation
 
-			when SGTS =>
-                                OPSel <= 2;
-                                select_type_sig <= "11"; --comp_res
-                                select_zero_sig <= '0';
+			--when SGTS =>
+                          --      OPSel <= 2;
+                            --    select_type_sig <= "11"; --comp_res
+                              --  select_zero_sig <= '0';
 
-			when SGTUS =>
-                                OPSel <= 2;
-                                select_type_sig <= "11"; --comp_res
-                                select_zero_sig <= '1';
+			--when SGTUS =>
+                          --      OPSel <= 2;
+                            --    select_type_sig <= "11"; --comp_res
+                              --  select_zero_sig <= '1';
 
-			when SLTS =>
-			                    OPSel <= 4;
-			                    select_type_sig <= "11"; --comp_res
-			                    select_zero_sig <= '0';    
-			when SLTUS =>
-			                    OPSel <= 4;
-			                    select_type_sig <= "11"; --comp_res
-			                    select_zero_sig <= '1';    
+			--when SLTS =>
+			  --                  OPSel <= 4;
+			    --                select_type_sig <= "11"; --comp_res
+			      --              select_zero_sig <= '0';    
+			--when SLTUS =>
+			  --                  OPSel <= 4;
+			    --                select_type_sig <= "11"; --comp_res
+			      --              select_zero_sig <= '1';    
 
 			when SLES  =>
                                 OPSel <= 5;
@@ -192,11 +192,11 @@ begin
                                 select_zero_sig <= '0';
 
 			when NOP =>
-                                select_type_sig <= "00"
+                                select_type_sig <= "00";
                                 select_zero_sig <= '1';
                 
 			when others =>
-                                select_type_sig <= "00"
+                                select_type_sig <= "00";
                                 select_zero_sig <= '1';     
 		end case;
 	end process ALU_Proc;

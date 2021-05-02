@@ -14,7 +14,7 @@ begin
 	process(CLK, EN, RST)
 	begin
 		if(RST = '0') then
-			D <= '0';
+			Q <= '0';
 		elsif(CLK = '1' and CLK'event) then
 			if(EN = '1') then
 				Q <= D;

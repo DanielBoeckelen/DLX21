@@ -23,7 +23,7 @@ begin
 
 	HDU_INS_OUT <= INS_IN;
 	HDU_PC_OUT <= PC_IN;
-	NPC_HDU_OUT <= PC_IN + 4;
+	HDU_NPC_OUT <= PC_IN + 4;
 	
 	process(RST, ADD_RS1, ADD_RS2, ADD_WR, DRAM_R)
 	begin

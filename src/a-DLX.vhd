@@ -120,7 +120,7 @@ begin
 						  INS_OUT => INST,
 						  IRAM_ADDR_OUT => IRAM_ADDR_OUT,
 						  DRAM_ADDR_OUT => DRAM_ADDR_OUT,
-						  DATA_OUT => DATA_OUT
+						  DATA_OUT => DATA_OUT,
 						  DRAM_EN_OUT => DRAM_EN_OUT,
 						  DRAM_R_OUT => DRAM_R_OUT,
 						  DRAM_W_OUT => DRAM_W_OUT,

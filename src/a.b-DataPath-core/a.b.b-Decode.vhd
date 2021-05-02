@@ -14,7 +14,7 @@ entity Decode is
 		  ZERO_FLAG    : in std_logic; -- Zero Flag coming from Execute stage, used as flush if branch taken
 		  PC_IN        : in std_logic_vector(NBIT-1 downto 0); -- PC coming from the Fetch stage
 		  INS_IN	   : in std_logic_vector(NBIT-1 downto 0); -- Instruction coming from the IR in the Fetch stage
-		  ADD_WR       : in std_logic_vector(NBIT-1 downto 0); -- Address of the destination register, from WB stage
+		  ADD_WR       : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address of the destination register, from WB stage
 		  DATA_WR_IN   : in std_logic_vector(NBIT-1 downto 0); -- Data to be written in the RF coming from the WB stage
 		  PC_OUT       : out std_logic_vector(NBIT-1 downto 0); -- PC to Execute stage
 		  A_OUT        : out std_logic_vector(NBIT-1 downto 0); -- First operand output
@@ -124,7 +124,7 @@ begin
 	regRS2 : regn generic map(N => NBIT_ADD)
 		port map(DIN => sig_ADD_RS2, CLK => CLK, EN => REG_LATCH_EN, RST => sig_RST, DOUT => ADD_RS2_OUT);
 
-	rf :registerfile generic map(NBIT_ADD => NBIT_ADD, NBIT_DATA => NBIT)
+	rf :register_file generic map(NBIT_ADD => NBIT_ADD, NBIT_DATA => NBIT)
 		port map(CLK => CLK,    
 		RESET => RST,
 		ENABLE => REG_LATCH_EN,

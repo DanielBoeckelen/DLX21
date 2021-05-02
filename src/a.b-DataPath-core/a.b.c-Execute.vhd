@@ -1,6 +1,8 @@
 -- EX Stage top-level entity
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+use IEEE.numeric_std.all;
 use work.constants.all;
 use work.instruction_set.all;
 
@@ -38,8 +40,8 @@ architecture struct of Execute is
 
 -- Component declarations
 component Branch_Cond_Unit is
-	generic(N : integer);
-	port( A         : in std_logic_vector(N-1 downto 0);
+	generic(NBIT : integer);
+	port( A         : in std_logic_vector(NBIT-1 downto 0);
 		  ALU_OPC   : in aluOp; -- coming from Control Unit
 		  JUMP_TYPE : in std_logic_vector(1 downto 0);
 		  PC_SEL    : out std_logic_vector(1 downto 0);
@@ -47,6 +49,7 @@ component Branch_Cond_Unit is
 end component;
 
 component ALU is
+	generic(NBIT : integer);
 	port( OP1     : in std_logic_vector(NBIT-1 downto 0); -- Coming from mux1, selecting NPC or A
 		  OP2     : in std_logic_vector(NBIT-1 downto 0); -- Coming from mux2, selecting IMM or B
 		  ALU_OPC : in aluOp; -- coming from Control Unit
@@ -101,27 +104,29 @@ component FWD_Unit is
 end component;
 
 -- Signal declarations
-signal sig_ZERO_FLAG, sig_RST : std_logic;
+signal sig_ZERO_FLAG, reg_ZERO_FLAG, sig_RST : std_logic;
 signal sig_OP1, sig_OP2, sig_ALU_RES, OP1_FW, OP2_FW, sig_NPC_ABS, sig_NPC_REL : std_logic_vector(NBIT-1 downto 0);
 signal FWDA, FWDB, sig_PC_SEL : std_logic_vector(1 downto 0);
 
 begin
 	
-	sig_RST <= (not(ZERO_FLAG)) and RST; -- If a branch is taken in the EX stage, reset the registers containing instructions fetched after the branch
+	sig_RST <= (not(reg_ZERO_FLAG)) and RST; -- If a branch is taken in the EX stage, reset the registers containing instructions fetched after the branch
 	
 	sig_NPC_ABS <= OP1_FW; -- Absolute jump (JALR/JR): PC <- regA
 	
 	sig_NPC_REL <= PC_IN + IMM_IN; -- Relative jump (J/JAL/BEQZ/BNEZ): PC <- PC + IMM
 		
-	Branch_Cond : Branch_Cond_Unit generic map(N => NBIT)
+	Branch_Cond : Branch_Cond_Unit generic map(NBIT => NBIT)
 		port map(A => OP1_FW, ALU_OPC => ALU_OPC, JUMP_TYPE => JUMP_TYPE, PC_SEL => sig_PC_SEL, ZERO => sig_ZERO_FLAG);
 		
-	ff0 : ff port map(D => sig_ZERO_FLAG, CLK => CLK, EN => '1', RST => RST, Q => ZERO_FLAG);
+	ff0 : ff port map(D => sig_ZERO_FLAG, CLK => CLK, EN => '1', RST => RST, Q => reg_ZERO_FLAG);
+
+	ZERO_FLAG <= reg_ZERO_FLAG;
 	
 	reg0 : regn generic map(N => 2)
 		port map(DIN => sig_PC_SEL, CLK => CLK, EN => '1', RST => RST, DOUT => PC_SEL); -- The PC_SEL must always reach the PC MUX in the Memory stage, so it's always enabled
 	
-	FWD_Unit port map(RST => sig_RST, ADD_RS1 => ADD_RS1_IN, ADD_RS2 => ADD_RS2_IN, ADD_WR_MEM => ADD_WR_MEM, ADD_WR_WB => ADD_WR_WB,
+	FWD: FWD_Unit port map(RST => sig_RST, ADD_RS1 => ADD_RS1_IN, ADD_RS2 => ADD_RS2_IN, ADD_WR_MEM => ADD_WR_MEM, ADD_WR_WB => ADD_WR_WB,
 		RF_WE_MEM => RF_WE_MEM, RF_WE_WB => RF_WE_WB, FWDA => FWDA, FWDB => FWDB);
 	
 	FW1: mux41 generic map(NBIT => NBIT)
@@ -134,9 +139,10 @@ begin
 		port map(A => OP1_FW, B => PC_IN, S => MUX_A_SEL, Z => sig_OP1);
 		
 	muxB : mux41 generic map(NBIT => NBIT)
-		port map( A => OP2_FW, B => IMM_IN, C => std_logic_vector(to_unsigned(4, OP2_FW'length)), D => (others => '0'), S => MUX_B_SEL, Z => sig_OP2);
+		port map( A => OP2_FW, B => IMM_IN, C => std_logic_vector(to_unsigned(4, sig_OP2'length)), D => (others => '0'), S => MUX_B_SEL, Z => sig_OP2);
 		
-	alu0 : ALU port map(OP1 => sig_OP1, OP2 => sig_OP2, ALU_OPC => ALU_OPC, ALU_RES => sig_ALU_RES);
+	alu0 : ALU generic map(NBIT => NBIT)
+		port map(OP1 => sig_OP1, OP2 => sig_OP2, ALU_OPC => ALU_OPC, ALU_RES => sig_ALU_RES);
 	
 	alureg : regn generic map(N => NBIT)
 		port map(DIN => sig_ALU_RES, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => ALU_RES);

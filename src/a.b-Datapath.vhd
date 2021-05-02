@@ -63,7 +63,7 @@ component Fetch is
 		  Bubble_in    : in std_logic; -- Bubble signal from HazardDetection, for stall management
 		  HDU_INS_IN   : in std_logic_vector(NBIT-1 downto 0); -- Current instruction, possibly causing Load-Use Hazard
 		  HDU_PC_IN    : in std_logic_vector(NBIT-1 downto 0); -- PC of the current instruction, possibly causing the Load-Use Hazard
-		  HDU_NPC_IN   : in std_logic_vector(NBIT-1 downto 0)); -- NPC, of the instruction after the possible the Load-Use Hazard
+		  HDU_NPC_IN   : in std_logic_vector(NBIT-1 downto 0); -- NPC, of the instruction after the possible the Load-Use Hazard
 		  PC_OUT       : out std_logic_vector(NBIT-1 downto 0); -- Current PC output, used for hazard detection
 		  ADDR_OUT     : out std_logic_vector(NBIT-1 downto 0); -- To Instruction memory
 		  NPC_OUT      : out std_logic_vector(NBIT-1 downto 0); -- Next program counter
@@ -80,7 +80,7 @@ component Decode is
 		  ZERO_FLAG    : in std_logic; -- Zero Flag coming from Execute stage, used as flush if branch taken
 		  PC_IN        : in std_logic_vector(NBIT-1 downto 0); -- PC coming from the Fetch stage
 		  INS_IN	   : in std_logic_vector(NBIT-1 downto 0); -- Instruction coming from the IR in the Fetch stage
-		  ADD_WR       : in std_logic_vector(NBIT-1 downto 0); -- Address of the destination register, from WB stage
+		  ADD_WR       : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address of the destination register, from WB stage
 		  DATA_WR_IN   : in std_logic_vector(NBIT-1 downto 0); -- Data to be written in the RF coming from the WB stage
 		  PC_OUT       : out std_logic_vector(NBIT-1 downto 0); -- PC to Execute stage
 		  A_OUT        : out std_logic_vector(NBIT-1 downto 0); -- First operand output
@@ -139,7 +139,7 @@ component Memory is
 		  ADD_WR_IN     : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address for WB, from EX stage
 		  DRAM_DATA_IN  : in std_logic_vector(NBIT-1 downto 0); -- Load data from DRAM
 		  PC_OUT        : out std_logic_vector(NBIT-1 downto 0); -- PC value, to fetch stage
-		  MEM_EN_OUT    : out std_logic; -- control signals to DRAM
+		  DRAM_EN_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_R_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_W_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- ALU output sent to DRAM
