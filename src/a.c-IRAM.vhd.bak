@@ -45,16 +45,7 @@ architecture IRam_Bhe of IRAM is
 
 begin  -- IRam_Bhe
 
-  Dout <= IRAM_mem(conv_integer(unsigned(Addr)));
-
-  RESET_MEM_P: process(Rst)
-    begin
-
-      if (Rst = '0') then
-       IRAM_mem <= (others => (others => '0'));
-      end if;
-      
-  end process;
+  Dout <= IRAM_mem(conv_integer(unsigned(Addr));
 
   
 

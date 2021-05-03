@@ -61,34 +61,34 @@ component hardwired_cu is
     generic(NBIT : integer);
 	port (
             -- decode cu signals
-			REG_LATCH_EN : out std_logic; -- Enables the register file and the pipeline registers
-            RD1		     : out std_logic; -- Enables the read port 1 of the register file
-			RD2		     : out std_logic; -- Enables the read port 2 of the register file
+	    REG_LATCH_EN : out std_logic; -- Enables the register file and the pipeline registers
+            RD1		 : out std_logic; -- Enables the read port 1 of the register file
+	    RD2		 : out std_logic; -- Enables the read port 2 of the register file
              
             -- execute cu signals
             MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
-			MUX_B_SEL     : out std_logic_vector(1 downto 0); -- Mux Selection Operand B, IMM or 4 (used in PC+4)
-			ALU_OPC       : out aluOp; -- Operation type for ALU
-			ALU_OUTREG_EN : out std_logic; -- Enable output register
+	    MUX_B_SEL     : out std_logic_vector(1 downto 0); -- Mux Selection Operand B, IMM or 4 (used in PC+4)
+	    ALU_OPC       : out aluOp; -- Operation type for ALU
+	    ALU_OUTREG_EN : out std_logic; -- Enable output register
             DRAM_R_IN     : out std_logic; -- DRAM read enable
             JUMP_TYPE     : out std_logic_vector(1 downto 0);
      
             -- memory cu signals
             MEM_EN_IN     : out std_logic; -- Register enable signal
-			DRAM_W_IN     : out std_logic; -- DRAM write enable
+	    DRAM_W_IN     : out std_logic; -- DRAM write enable
             RF_WE    	  : out std_logic; -- RF write enable, sent at this stage for forwarding check
             DRAM_EN_IN    : out std_logic; -- DRAM enable
 
             -- writeback CU signals
         
-			WB_MUX_SEL    : out std_logic; -- Control signal for WB mux
+	    WB_MUX_SEL    : out std_logic; -- Control signal for WB mux
 	      	  
 			  
-			-- INPUTS
-			INS_IN : in std_logic_vector(NBIT-1 downto 0);
-			Bubble : in std_logic;
-			Clk    : in std_logic;
-			Rst    : in std_logic);                  -- Active Low
+	    -- INPUTS
+	    INS_IN : in std_logic_vector(NBIT-1 downto 0);
+	    Bubble : in std_logic;
+	    Clk    : in std_logic;
+	    Rst    : in std_logic);                  -- Active Low
 end component;
 
 -- Signal declarations

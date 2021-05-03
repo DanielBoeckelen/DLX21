@@ -62,7 +62,7 @@ begin
 
    --apply_stimuli(input values, signals);
 
-    apply_stimuli(7, ADDS, jmp, A, ALU_OPC, JUMP_TYPE);
+    apply_stimuli(7, ADDS, 1, A, ALU_OPC, JUMP_TYPE);
 
     for jmp in 0 to 3 loop
       apply_stimuli(7, BEQZS, jmp, A, ALU_OPC, JUMP_TYPE);
