@@ -83,8 +83,8 @@ architecture bhv of hardwired_cu is
                                   --In BEZQ and BNEZ: ALU output reg turned off because the adder
                                   --of the EXE stage performs PC+imm26
                                   
-                                  "110" & "0011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BEQZ
-                                  "110" & "0011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BNEZ
+                                  "110" & "1011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BEQZ
+                                  "110" & "1011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BNEZ
 
                                   --In JAL the ALU will perform PC+4 while in
                                   --parallel the adder in EXE stage performs PC+imm26
