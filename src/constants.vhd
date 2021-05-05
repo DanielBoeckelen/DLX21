@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 
 package constants is
 	constant NBIT : integer := 32; -- Instructions, data, Program Counter are on 32 bits
-        constant N : integer := 32; -- Instructions, data, Program Counter are on 32 bits
+        --constant N : integer := 32; -- Instructions, data, Program Counter are on 32 bits
 	constant NBIT_ADD : integer := 5; -- Address for RS1, RS2 and RD
         constant NBIT_DATA: integer := 32;
 	constant NBIT_PER_BLOCK: integer := 4; -- For P4 adder

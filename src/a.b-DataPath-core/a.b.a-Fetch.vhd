@@ -43,17 +43,6 @@ component mux21 is
 		  Z : out std_logic_vector(NBIT-1 downto 0));
 end component;
 
-component IRAM is
-  generic (
-    RAM_DEPTH : integer;
-    I_SIZE : integer);
-  port (
-    Rst  : in  std_logic;
-    Addr : in  std_logic_vector(NBIT - 1 downto 0);
-    Dout : out std_logic_vector(NBIT - 1 downto 0)
-    );
-end component;
-
 -- Signal declarations
 signal sig_RST : std_logic;
 signal NPC, sig_PC, sig_NPC, PC_MUX_OUT, sig_INS : std_logic_vector(NBIT-1 downto 0);
@@ -79,8 +68,7 @@ begin
 	PC_reg: regn generic map(N => NBIT)
 		port map(DIN => PC_MUX_OUT, CLK => CLK, EN => '1', RST => sig_RST, DOUT => PC_OUT);
 	
-	IR : IRAM generic map(RAM_DEPTH => 48,
-                              I_SIZE => 32)
-		port map(Addr => sig_INS,  Rst => sig_RST, Dout => INS_OUT);
+	IR : regn generic map(N => NBIT)
+		port map(DIN => sig_INS, CLK => CLK, EN => '1', RST => sig_RST, DOUT => INS_OUT);
 				
 end struct;
