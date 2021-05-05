@@ -4,6 +4,7 @@ use ieee.std_logic_arith.all;
 use std.textio.all;
 use ieee.std_logic_textio.all;
 use work.constants.all;
+use work.instruction_set.all;
 
 -- Instruction memory for DLX
 -- Memory filled by a process which reads from a file
@@ -20,6 +21,8 @@ entity IRAM is
 end IRAM;
 
 architecture IRam_Bhe of IRAM is
+
+-----------------------------------------------FROM DESCRIPTION------------------------------------------------------  
 
   --type RAMtype is array (0 to RAM_DEPTH - 1) of std_logic_vector(I_SIZE-1 downto 0);
 
@@ -51,7 +54,10 @@ architecture IRam_Bhe of IRAM is
       
   --end process;
 
+  --------------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------FROM FILE--------------------------------------------------------------------
 
+  
   type RAMtype is array (0 to RAM_DEPTH - 1) of integer;-- std_logic_vector(NBIT-1 downto 0);
 
   signal IRAM_mem : RAMtype;
