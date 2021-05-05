@@ -52,6 +52,6 @@ vcom -93 -work ./work ../src/a-DLX.vhd
 ######## TESTBENCH ########
 vcom -93 -work ./work ../src/a.c-IRAM.vhd
 vcom -93 -work ./work ../src/a.d-DRAM.vhd
-vlog -work ./work ../tb/TB_DLX.vhd
+vcom -93 -work ./work ../tb/TB_DLX.vhd
 vsim work.tb_DLX
 #vsim -L /software/dk/nangate45/verilog/msim6.2g work.tb_RISCV_lite

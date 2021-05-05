@@ -221,7 +221,7 @@ architecture dlx_rtl of DLX is
 	-- Data Ram Instantiation
 	DRAM_I: DRAM generic map(RAM_DEPTH => MEM_size, D_SIZE => NBIT)
 		port map (
-			En => En,
+			En => DRAM_EN_OUT,
 			Rst => Rst,
 			ADDR_IN => DRAM_ADDR_OUT,
 			DATA_IN => DATA_OUT,
