@@ -7,7 +7,7 @@ use ieee.std_logic_textio.all;
 use work.constants.all;
 
 -- Data memory for DLX
--- Memory filled by a process which reads from/writes to a file
+-- Memory filled by a process which reads from a file
 -- file name is "data.mem"
 entity DRAM is
   generic (
@@ -75,7 +75,7 @@ architecture DRam_Bhe of DRAM is
 	begin 
 		if (Rst = '0') then
 			DATA_OUT <= (others => '0');
-			file_open(mem_fp, "data.mem", READ_MODE);
+			file_open(mem_fp, "../mem/data.mem", READ_MODE);
 			index := 0;
 			while (not endfile(mem_fp)) loop
 				readline(mem_fp, data_line);

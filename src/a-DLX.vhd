@@ -27,7 +27,7 @@ architecture dlx_rtl of DLX is
   port (
     Rst  : in  std_logic;
     Addr : in  std_logic_vector(I_SIZE - 1 downto 0);
-    Dout : out std_logic_vector(I_SIZE - 1 downto 0)
+    Iout : out std_logic_vector(I_SIZE - 1 downto 0)
     );
   end component;
 
@@ -216,7 +216,7 @@ architecture dlx_rtl of DLX is
 		port map (
 			Rst  => Rst,
 			Addr => IRAM_ADDR_OUT,
-			Dout => INS_IN);
+			Iout => INS_IN);
 		  
 	-- Data Ram Instantiation
 	DRAM_I: DRAM generic map(RAM_DEPTH => MEM_size, D_SIZE => NBIT)

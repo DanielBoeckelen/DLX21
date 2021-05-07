@@ -12,7 +12,7 @@ package constants is
         --constant OP_CODE_SIZE : integer := 6; --For CU (also already declared in "001-instruction_set.vhd")
         --constant FUNC_SIZE : integer := 11; --(already declared in "001-instruction_set.vhd")
         constant MICROCODE_MEM_SIZE : integer := 11; --For CU
-	constant MEM_size : integer := 12; -- Memories 1024x32 bit wide = 4kB, both data and instruction (before it was 1024)
+	constant MEM_size : integer := 1024; -- Memories 1024x32 bit wide = 4kB, both data and instruction (before it was 1024)
 	-- File paths for the Instruction and Data memories
 	--constant path_IRAM : string := "../asm/IRAM.text";
 	--constant path_DRAM : string := "../asm/DRAM.data"; 
