@@ -206,7 +206,7 @@ architecture dlx_rtl of DLX is
 					RF_WE => RF_WE,
 					DRAM_EN_IN => DRAM_EN_IN,
 					WB_MUX_SEL => WB_MUX_SEL,
-					INS_IN => INST,
+					INS_IN => INS_IN, -- INST, Note: using INS_IN synchronizes the CU with the decode stage, but it will cause a bad timing with the bubble signal
 					Bubble => Bubble,
 					Clk => Clk,
 					Rst => Rst);

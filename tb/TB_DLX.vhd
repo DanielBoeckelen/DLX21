@@ -38,7 +38,9 @@ begin
 		Clock <= not(Clock) after 0.5 ns;	
 	end process;
 	
-	Reset <= '0', '1' after 6 ns, '0' after 11 ns, '1' after 15 ns;
+	Reset <= '0', '1' after 6 ns, '0' after 11 ns, '1' after 14 ns; --15 ns was the original, and it was coincident with the clock rising edge;
+	-- this caused the first instruction to be ignored. Should be looked into it at some point. The issue makes sense, but the DLX should work
+	-- independently of when the reset is driven
        
 
 end TEST;

@@ -37,7 +37,7 @@ package instruction_set is
 	constant RDI_end   : integer := RDI_begin - RDI_size + 1;
 
 	-- RS2 (5 bit)
-	constant RS2_begin : integer := 15;
+	constant RS2_begin : integer := 20;
         constant RS2_size  : integer := 5;
 	constant RS2_end   : integer := RS2_begin - RS2_size + 1;
 

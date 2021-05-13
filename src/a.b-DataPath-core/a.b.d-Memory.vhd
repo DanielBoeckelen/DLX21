@@ -28,6 +28,7 @@ entity Memory is
 		  DATA_OUT      : out std_logic_vector(NBIT-1 downto 0); -- Output of DRAM, to WB stage
 		  ALU_RES_OUT   : out std_logic_vector(NBIT-1 downto 0); -- Data computed in ALU, to WB stage
 		  OP_MEM        : out std_logic_vector(NBIT-1 downto 0); -- Operand sent back to EX stage for forwarding
+		  ADD_WR_MEM    : out std_logic_vector(NBIT_ADD-1 downto 0); -- Write Address sent back to EX stage for forwarding
 		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0)); -- Address for WB
 end Memory;
 
@@ -58,6 +59,7 @@ begin
 	DRAM_DATA_OUT <= B_IN; -- send data to be stored to DRAM
 	DRAM_ADDR_OUT <= ALU_RES_IN; -- data computed in ALU is store address for DRAM (or Jump PC)
 	OP_MEM <= ALU_RES_IN; -- Used for possible forwarding in EX stage
+	ADD_WR_MEM <= ADD_WR_IN; -- Used for possible forwarding in EX stage
 	DRAM_EN_OUT <= DRAM_EN_IN; -- control signals sent to DRAM
 	DRAM_R_OUT <= DRAM_R_IN;
 	DRAM_W_OUT <= DRAM_W_IN;

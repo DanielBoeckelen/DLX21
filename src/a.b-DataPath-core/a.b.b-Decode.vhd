@@ -78,8 +78,8 @@ end component;
 
 -- Signal declarations
 signal sig_Rtype, sig_Itype, sig_Jtype, sig_RST:  std_logic;
-signal sig_ADD_RS1, sig_ADD_RS2, sig_ADD_WR, ADD_RD_reg, ADD_RS1_reg, ADD_RS2_reg : std_logic_vector(NBIT_ADD-1 downto 0);		
-signal sig_IMM, IMM_reg : std_logic_vector(NBIT-1 downto 0);
+signal sig_ADD_RS1, sig_ADD_RS2, sig_ADD_WR : std_logic_vector(NBIT_ADD-1 downto 0);		
+signal sig_IMM : std_logic_vector(NBIT-1 downto 0);
 --signal sig_A, sig_B : std_logic_vector(NBIT-1 downto 0);
 
 begin

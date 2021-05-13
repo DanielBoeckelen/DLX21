@@ -63,8 +63,9 @@ end component;
 
 -- Signal Declarations
 signal OPSel : integer range 0 to 5;
-signal COMP_RES, SHIFT_RES, LOGIC_RES, ADD_SUB_RES, B : std_logic_vector(NBIT-1 downto 0);
+signal COMP_RES, SHIFT_RES, LOGIC_RES, ADD_SUB_RES : std_logic_vector(NBIT-1 downto 0);
 signal LOGIC_ARITH, LEFT_RIGHT, ADD_SUB, Cout : std_logic;
+signal A_ADD, B_ADD, A_SHF, B_SHF, A_CMP, B_CMP : std_logic_vector(NBIT-1 downto 0);
 
 signal select_type_sig: std_logic_vector(1 downto 0);
 --select_type_sig = 00 -> ADD_SUB_RES
@@ -86,7 +87,8 @@ begin
 		case(ALU_OPC) is
 			when ADDS =>
                                 ADD_SUB <= '0';
-								B <= OP2;
+								A_ADD <= OP1;
+								B_ADD <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '0';
 
@@ -98,7 +100,8 @@ begin
                 
 			when SUBS =>
                                 ADD_SUB <= '1'; -- SUB is treated as a two's complement sum: A + B' + 1
-								B <= not(OP2);
+								A_ADD <= OP1;
+								B_ADD <= not(OP2);
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '0';
 
@@ -126,12 +129,16 @@ begin
 			when SLLS =>
                                 LOGIC_ARITH <= '1';
 								LEFT_RIGHT <= '1';
+								A_SHF <= OP1;
+								B_SHF <= OP2;
                                 select_type_sig <= "10"; --shift_res
                                 select_zero_sig <= '0';
                 
 			when SRLS =>
                                 LOGIC_ARITH <= '1';
 								LEFT_RIGHT <= '0';
+								A_SHF <= OP1;
+								B_SHF <= OP2;
                                 select_type_sig <= "10"; --shift_res
 
 			--when SRAS => 
@@ -154,6 +161,8 @@ begin
                 
 			when SGES =>
                                 OPSel <= 3;
+								A_CMP <= OP1;
+								B_CMP <= OP2;
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';  --select_zero_sig = 0 means signed operation
 			
@@ -183,11 +192,15 @@ begin
 
 			when SLES  =>
                                 OPSel <= 5;
+								A_CMP <= OP1;
+								B_CMP <= OP2;
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';
                 
 			when NEQS =>
                                 OPSel <= 1;
+								A_CMP <= OP1;
+								B_CMP <= OP2;
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';
 
@@ -204,13 +217,13 @@ begin
 	
 	-- Units
 	Comp: comparator generic map(NBIT => NBIT)
-		port map(A => OP1, B => OP2, OPSel => OPSel, RES => COMP_RES);
+		port map(A => A_CMP, B => B_CMP, OPSel => OPSel, RES => COMP_RES);
 		
 	Shift: shifter generic map(NBIT => NBIT)
-		port map(A => OP1, B => OP2, LOGIC_ARITH => LOGIC_ARITH, LEFT_RIGHT => LEFT_RIGHT, RES => SHIFT_RES);
+		port map(A => A_SHF, B => B_SHF, LOGIC_ARITH => LOGIC_ARITH, LEFT_RIGHT => LEFT_RIGHT, RES => SHIFT_RES);
 	
 	Add_Sub_unit : P4Adder generic map(NBIT => NBIT)
-		port map(A => OP1, B => B, Cin => ADD_SUB, S => ADD_SUB_RES, Cout => Cout);
+		port map(A => A_ADD, B => B_ADD, Cin => ADD_SUB, S => ADD_SUB_RES, Cout => Cout);
 
         Res_mux : mux41 generic map (NBIT => NBIT)
                 port map(A => ADD_SUB_RES, B => LOGIC_RES, C => SHIFT_RES, D => COMP_RES, S => select_type_sig, Z => sig_intraMux);

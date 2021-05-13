@@ -147,6 +147,7 @@ component Memory is
 		  DATA_OUT      : out std_logic_vector(NBIT-1 downto 0); -- Output of DRAM, to WB stage
 		  ALU_RES_OUT   : out std_logic_vector(NBIT-1 downto 0); -- Data computed in ALU, to WB stage
 		  OP_MEM        : out std_logic_vector(NBIT-1 downto 0); -- Operand sent back to EX stage for forwarding
+		  ADD_WR_MEM    : out std_logic_vector(NBIT_ADD-1 downto 0); -- Write Address sent back to EX stage for forwarding
 		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0)); -- Address for WB
 end component;
 
@@ -179,7 +180,7 @@ signal PC_MEM_OUT, NPC_FETCH_OUT, INS_FETCH_OUT, PC_FETCH_OUT, NPC_ABS_EX, NPC_R
 signal PC_DECODE_OUT, A_DECODE_OUT, B_DECODE_OUT, IMM_DECODE_OUT : std_logic_vector(NBIT-1 downto 0);
 signal OP_MEM, OP_WB, ALU_RES_EX, B_EX_OUT, DATA_MEM_OUT, ALU_RES_MEM : std_logic_vector(NBIT-1 downto 0);
 signal ADD_WR_MEM, ADD_WR_WB, ADD_WR_DECODE_OUT, ADD_RS1_DECODE_OUT, ADD_RS2_DECODE_OUT : std_logic_vector(NBIT_ADD-1 downto 0);
-signal ADD_WR_EX_OUT, ADD_RS1_HDU, ADD_RS2_HDU : std_logic_vector(NBIT_ADD-1 downto 0);
+signal ADD_WR_EX_OUT, ADD_WR_MEM_OUT, ADD_RS1_HDU, ADD_RS2_HDU : std_logic_vector(NBIT_ADD-1 downto 0);
 signal sig_HDU_INS_OUT, sig_HDU_PC_OUT, sig_HDU_NPC_OUT : std_logic_vector(NBIT-1 downto 0);
 signal PC_SEL_EX : std_logic_vector(1 downto 0);
 
@@ -282,7 +283,8 @@ begin
 								  DATA_OUT => DATA_MEM_OUT,
 								  ALU_RES_OUT => ALU_RES_MEM,
 								  OP_MEM => OP_MEM,
-								  ADD_WR_OUT => ADD_WR_MEM);
+								  ADD_WR_MEM => ADD_WR_MEM,
+								  ADD_WR_OUT => ADD_WR_MEM_OUT);
 		
 	RF_WE_ff : ff port map( D => RF_WE,
 							CLK => CLK,
@@ -293,7 +295,7 @@ begin
 	WritebackStage : Writeback port map(  WB_MUX_SEL => WB_MUX_SEL,
 										  DATA_IN => DATA_MEM_OUT,
 										  ALU_RES_IN => ALU_RES_MEM,
-										  ADD_WR_IN => ADD_WR_MEM,
+										  ADD_WR_IN => ADD_WR_MEM_OUT,
 										  DATA_OUT => OP_WB,
 										  ADD_WR_OUT => ADD_WR_WB);
 										  

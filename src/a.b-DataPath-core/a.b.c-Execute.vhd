@@ -130,10 +130,10 @@ begin
 		RF_WE_MEM => RF_WE_MEM, RF_WE_WB => RF_WE_WB, FWDA => FWDA, FWDB => FWDB);
 	
 	FW1: mux41 generic map(NBIT => NBIT)
-		port map( A => A_IN, B => (others => '0'), C => OP_WB, D => OP_MEM, S => FWDA, Z => OP1_FW);
+		port map( A => A_IN, B => OP_WB, C => OP_MEM, D => (others => '0'), S => FWDA, Z => OP1_FW);
 	
 	FW2: mux41 generic map(NBIT => NBIT)
-		port map( A => B_IN, B => (others => '0'), C => OP_WB, D => OP_MEM, S => FWDB, Z => OP2_FW);
+		port map( A => B_IN, B => OP_WB, C => OP_MEM, D => (others => '0'), S => FWDB, Z => OP2_FW);
 	
 	muxA : mux21 generic map(NBIT => NBIT)
 		port map(A => OP1_FW, B => PC_IN, S => MUX_A_SEL, Z => sig_OP1);

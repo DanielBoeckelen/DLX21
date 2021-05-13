@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
+--use ieee.numeric_std.all;
 use std.textio.all;
 use ieee.std_logic_textio.all;
 use work.constants.all;
@@ -60,11 +61,11 @@ architecture IRam_Bhe of IRAM is
   
   type RAMtype is array (0 to RAM_DEPTH - 1) of integer;-- std_logic_vector(NBIT-1 downto 0);
 
-  signal IRAM_mem : RAMtype;
+  signal IRAM_mem : RAMtype := (others => 0);
 
 begin  -- IRam_Bhe
 
-  --Iout <= conv_std_logic_vector(IRAM_mem(conv_integer(unsigned(Addr))), I_SIZE);
+  Iout <= conv_std_logic_vector(IRAM_mem(conv_integer(unsigned(Addr))/4), I_SIZE);
   -- purpose: This process is in charge of filling the Instruction RAM with the firmware
   -- type   : combinational
   -- inputs : Rst
@@ -77,7 +78,7 @@ begin  -- IRam_Bhe
     variable tmp_data_u : std_logic_vector(I_SIZE-1 downto 0);
   begin  -- process FILL_MEM_P
     if (Rst = '0') then
-      Iout <= (others => '0');
+      --Iout <= (others => '0');
       file_open(mem_fp, "../mem/first_test.asm.mem", READ_MODE);
       index := 0;
       while (not endfile(mem_fp)) loop
@@ -87,11 +88,11 @@ begin  -- IRam_Bhe
         index := index + 1;
       end loop;
       file_close(mem_fp);
-      for i in index to MEM_size-1 loop
-	  IRAM_mem(i) <=  0;
-      end loop;
-    else
-	Iout <= conv_std_logic_vector(IRAM_mem(conv_integer(unsigned(Addr))), I_SIZE);
+      --for i in index to MEM_size-1 loop
+	  --IRAM_mem(i) <=  0;
+      --end loop;
+    --else
+	--Iout <= conv_std_logic_vector(IRAM_mem(conv_integer(unsigned(Addr))), I_SIZE);
     end if;
   end process FILL_MEM_P;
 

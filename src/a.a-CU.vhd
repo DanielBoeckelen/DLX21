@@ -155,13 +155,13 @@ begin
                         CW2 <= (others => '0');
                         CW3 <= (others => '0');
                         CW4 <= (others => '0');
-			--AluOP_D <= NOP;
-			--AluOP_E <= NOP;
+			AluOP_E <= NOP;
+			ALU_OPC <= NOP;
                        
 		elsif(Clk = '1' and Clk'event) then -- Assigning to the correct stage of the pipeline
 			if(Bubble = '1') then 
 				CW1 <= (others => '0');
-				--AluOP_D <= NOP;
+				AluOP_E <= NOP;
 			else
 				CW1 <= CW;
 				CW2 <= CW1(CW_SIZE-1 - 3 downto 0);
