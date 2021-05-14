@@ -61,14 +61,14 @@ component register_file is
  generic( NBIT_ADD: integer;
 		  NBIT_DATA: integer);
  port ( CLK: 		IN std_logic;
-        RESET: 	    IN std_logic;
+        RST: 	    IN std_logic;
 	 	ENABLE: 	IN std_logic;
 	 	RD1: 		IN std_logic;
 	 	RD2: 		IN std_logic;
 	 	WR: 		IN std_logic;
 	 	ADD_WR: 	IN std_logic_vector(NBIT_ADD-1 downto 0);
-	 	ADD_RD1: 	IN std_logic_vector(NBIT_ADD-1 downto 0);
-	 	ADD_RD2: 	IN std_logic_vector(NBIT_ADD-1 downto 0);
+	 	ADD_RS1: 	IN std_logic_vector(NBIT_ADD-1 downto 0);
+	 	ADD_RS2: 	IN std_logic_vector(NBIT_ADD-1 downto 0);
 	 	DATAIN: 	IN std_logic_vector(NBIT_DATA-1 downto 0);
         OUT1: 		OUT std_logic_vector(NBIT_DATA-1 downto 0);
 	 	OUT2: 		OUT std_logic_vector(NBIT_DATA-1 downto 0));
@@ -126,14 +126,14 @@ begin
 
 	rf :register_file generic map(NBIT_ADD => NBIT_ADD, NBIT_DATA => NBIT)
 		port map(CLK => CLK,    
-		RESET => RST,
+		RST => RST,
 		ENABLE => REG_LATCH_EN,
 		RD1 => RD1,   
 		RD2 => RD2,
 		WR => RF_WE,   
 		ADD_WR => ADD_WR,
-		ADD_RD1 => sig_ADD_RS1,
-		ADD_RD2 => sig_ADD_RS2,
+		ADD_RS1 => sig_ADD_RS1,
+		ADD_RS2 => sig_ADD_RS2,
 		DATAIN => DATA_WR_IN,
 		OUT1 => A_OUT, 
 		OUT2 => B_OUT);

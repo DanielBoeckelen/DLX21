@@ -14,7 +14,7 @@ vcom -93 -work ./work ../src/a.b-DataPath-core/a.b.f-HazardDetection.vhd
 vcom -93 -work ./work ../src/a.b-DataPath-core/a.b.a-Fetch.vhd
 
 ######## DECODE STAGE ########
-vcom -93 -work ./work ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile2.vhd
+vcom -93 -work ./work ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
 vcom -93 -work ./work ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd
 vcom -93 -work ./work ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.c-instruction_decomposition.vhd
 vcom -93 -work ./work ../src/a.b-DataPath-core/a.b.b-Decode.vhd

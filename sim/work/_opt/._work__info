@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim
 T_opt
-VO7gDb6fHGPI=4Q9JSj=HS1
+VJladNalFPPDXV3E;EZVW43
 06 6 4 ./work tb_dlx test 1
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
@@ -254,13 +254,13 @@ DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants ]AL]oonDikT97PD?F>F:F1
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../src/a.b-Datapath.vhd
 F../src/a.b-Datapath.vhd
 l0
 L7
 V`ZiBF8f>SC]X3S6c1FeB03
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Astruct
@@ -290,23 +290,23 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Edecode
-w1620917726
+w1620986998
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants ]AL]oonDikT97PD?F>F:F1
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../src/a.b-DataPath-core/a.b.b-Decode.vhd
 F../src/a.b-DataPath-core/a.b.b-Decode.vhd
 l0
 L7
 VfG5RiHKiU4bDmK69YT0^22
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Astruct
-DE work register_file RcYbid5iJ41LfnUaJJnOg0
+DE work register_file b[a>ma]j1=oVO@M<^W<h33
 DE work regn en2EP>8>G42OXh^ihJgZ?2
 DE work instruction_decomposition C3eKn0KIIdoA6PbEZjVLK3
 DE work instruction_type ]ig^fa37BP_HiMnmL3?h@2
@@ -324,7 +324,7 @@ M2 ieee std_logic_arith
 M1 ieee numeric_std
 l85
 L30
-VaQ;`7HE_6cFZUg8@Ja_Mo3
+V2B[<K8AiV[Q4Ua7kR4X:F1
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
@@ -335,13 +335,13 @@ DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants ]AL]oonDikT97PD?F>F:F1
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../src/a-DLX.vhd
 F../src/a-DLX.vhd
 l0
 L6
 V:hCcG2Zfe0S1eL2IQb@Rh2
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Adlx_rtl
@@ -1016,19 +1016,38 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Eregister_file
-w1618232857
+w1620987269
 DP work constants ]AL]oonDikT97PD?F>F:F1
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-8../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile2.vhd
-F../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile2.vhd
+31
+8../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
+F../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
 l0
 L7
-VRcYbid5iJ41LfnUaJJnOg0
+Vb[a>ma]j1=oVO@M<^W<h33
 OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Abhv
+DP work constants ]AL]oonDikT97PD?F>F:F1
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work register_file b[a>ma]j1=oVO@M<^W<h33
 31
+M5 ieee std_logic_1164
+M4 ieee std_logic_unsigned
+M3 ieee std_logic_arith
+M2 ieee numeric_std
+M1 work constants
+l34
+L24
+Vk?HR46Jze6RZ9aGWhHK:i3
+OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Aa
@@ -1038,18 +1057,21 @@ DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 DE work register_file RcYbid5iJ41LfnUaJJnOg0
+l34
+L24
+V<82SQA;4LS79CXkAbZc3B0
+OE;C;6.2g;35
 31
 M5 ieee std_logic_1164
 M4 ieee std_logic_unsigned
 M3 ieee std_logic_arith
 M2 ieee numeric_std
 M1 work constants
-l34
-L24
-V<82SQA;4LS79CXkAbZc3B0
-OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
+F../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile2.vhd
+w1618232857
+8../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile2.vhd
 Eregn
 w1617104601
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -1141,13 +1163,13 @@ tExplicit 1
 Etb_dlx
 w1620914708
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../tb/TB_DLX.vhd
 F../tb/TB_DLX.vhd
 l0
 L6
 Vi;YIdTjLdU[50lofeHV]`2
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Atest
