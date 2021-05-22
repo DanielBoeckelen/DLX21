@@ -114,7 +114,7 @@ begin
 	
 	sig_NPC_ABS <= OP1_FW; -- Absolute jump (JALR/JR): PC <- regA
 	
-	sig_NPC_REL <= PC_IN + IMM_IN; -- Relative jump (J/JAL/BEQZ/BNEZ): PC <- PC + IMM
+	sig_NPC_REL <= PC_IN + 4 + IMM_IN; -- Relative jump (J/JAL/BEQZ/BNEZ): PC <- PC + IMM
 		
 	Branch_Cond : Branch_Cond_Unit generic map(NBIT => NBIT)
 		port map(A => OP1_FW, ALU_OPC => ALU_OPC, JUMP_TYPE => JUMP_TYPE, PC_SEL => sig_PC_SEL, ZERO => sig_ZERO_FLAG);

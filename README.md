@@ -2,6 +2,18 @@
 
 -----------
 
+Progress as of 22/05/21:
+
+"my_Jump.asm" has been tested and works as intended. It shows correct functionality of the j instruction, allowing to loop correctly, and it also showcases data forwarding.
+It is pretty much identical to "Jump.asm" provided with the course material, but since SEQ is not yet present in our instruction set, we substituted it with SGE.
+
+The control word for the NOP was modified to have REG_LATCH_EN = '1', because otherwise old instructions in their writeback stage would not be able to complete, due to the NOP disabling the RF.
+Instead, when there is a reset, the CW is set to all zeros so that everything is reset.
+
+Next step will be verifying BNEZ/BEQZ/JAL relative jumps (they should work, since the J relative jump computes the address correctly), followed by absolute jumps (JR/JALR).
+
+-----------
+
 Progress as of 14/05/21:
 
 "first_test.asm" has been tested and works as intended. It shows correct functionality of some I-type and R-type instructions, in a way which also exploits data forwarding from both the memory and writeback stages.

@@ -73,7 +73,8 @@ architecture bhv of hardwired_cu is
           --ALU_OUTREG_EN -> pipeline regs between ALU and MEM
           --MEM_EN_IN -> pipeline regs between MEM and WB mux
           
-                                  "000" & "0000000" & "0000" & '0', --"110" & "1011000" & "1010" & '1', -- NOP
+                                  "100" & "0000000" & "0000" & '0', --"110" & "1011000" & "1010" & '1', -- NOP
+								  -- We're trying REG_LATCH_EN = '1' in the NOP because the NOP otherwise disables the RF and doesn't allow for writeback completion of an old instruction
 								  "111" & "0001000" & "1010" & '1', --"111" & "1001000" & "1010" & '1', -- R type CWs
                                   "110" & "0011000" & "1010" & '1', --"110" & "1011000" & "1010" & '1', -- I type CWs
                                                                  
