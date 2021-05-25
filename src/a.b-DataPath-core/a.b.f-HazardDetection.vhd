@@ -22,8 +22,8 @@ architecture arch of HazardDetection is
 begin
 
 	HDU_INS_OUT <= INS_IN;
-	HDU_PC_OUT <= PC_IN;
-	HDU_NPC_OUT <= PC_IN + 4;
+	HDU_PC_OUT <= PC_IN - 4; -- PC_IN;
+	HDU_NPC_OUT <= PC_IN; -- PC_IN + 4;
 	
 	process(RST, ADD_RS1, ADD_RS2, ADD_WR, DRAM_R)
 	begin

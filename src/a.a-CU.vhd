@@ -162,6 +162,7 @@ begin
 		elsif(Clk = '1' and Clk'event) then -- Assigning to the correct stage of the pipeline
 			if(Bubble = '1') then 
 				CW1 <= (others => '0');
+				CW2 <= (others => '0'); -- Attempt to solve the Load-Use Hazard issue related to the CU receiving the instruction one cycle earlier
 				AluOP_E <= NOP;
 			else
 				CW1 <= CW;

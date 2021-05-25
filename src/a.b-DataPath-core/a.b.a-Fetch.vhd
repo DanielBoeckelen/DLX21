@@ -19,7 +19,7 @@ entity Fetch is
 		  PC_OUT       : out std_logic_vector(NBIT-1 downto 0); -- Current PC output, used for hazard detection
 		  ADDR_OUT     : out std_logic_vector(NBIT-1 downto 0); -- To Instruction memory
 		  NPC_OUT      : out std_logic_vector(NBIT-1 downto 0); -- Next program counter
-		  INS_OUT      : out std_logic_vector(NBIT-1 downto 0)); -- Instruction to decode stage and CU
+		  INS_OUT      : out std_logic_vector(NBIT-1 downto 0)); -- Instruction to decode stage
 end Fetch;
 
 architecture struct of Fetch is
@@ -45,7 +45,7 @@ end component;
 
 -- Signal declarations
 signal sig_RST : std_logic;
-signal NPC, sig_PC, sig_NPC, PC_MUX_OUT, sig_INS : std_logic_vector(NBIT-1 downto 0);
+signal sig_PC, sig_NPC, PC_MUX_OUT, sig_INS : std_logic_vector(NBIT-1 downto 0);
 
 begin
 
