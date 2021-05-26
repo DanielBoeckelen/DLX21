@@ -148,7 +148,7 @@ begin
 		port map(DIN => sig_ALU_RES, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => ALU_RES);
 		
 	B_reg : regn generic map(N => NBIT)
-		port map(DIN => B_IN, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => B_OUT);
+		port map(DIN => OP2_FW, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => B_OUT);
 	
 	ADD_WR_reg : regn generic map(N => NBIT_ADD)
 		port map(DIN => ADD_WR_IN, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => ADD_WR_OUT);

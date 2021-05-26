@@ -79,9 +79,9 @@ architecture bhv of hardwired_cu is
                                   "110" & "0011000" & "1010" & '1', --"110" & "1011000" & "1010" & '1', -- I type CWs
                                                                  
                                   "110" & "0011100" & "1011" & '0', --"110" & "1011100" & "1011" & '0', -- LW RD, imm(RS1)
-                                  "110" & "0011000" & "1101" & '0', --"111" & "1011000" & "1111" & '0', -- SW imm(RS1), RD
+                                  "111" & "0011000" & "1101" & '0', --"111" & "1011000" & "1111" & '0', -- SW imm(RS1), RD ------ RD2 = 1 or 0?
 
-                                  --In BEZQ and BNEZ: ALU output reg turned off because the adder
+                                  --In BEQZ and BNEZ: ALU output reg turned off because the adder
                                   --of the EXE stage performs PC+imm26
                                   
                                   "110" & "1011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BEQZ
@@ -161,9 +161,13 @@ begin
                        
 		elsif(Clk = '1' and Clk'event) then -- Assigning to the correct stage of the pipeline
 			if(Bubble = '1') then 
-				CW1 <= (others => '0');
+				--CW1 <= (others => '0');
+				--CW1 <= CW;
 				CW2 <= (others => '0'); -- Attempt to solve the Load-Use Hazard issue related to the CU receiving the instruction one cycle earlier
+				CW3 <= CW2(CW_SIZE-1 - 10 downto 0);
+				CW4 <= CW3(CW_SIZE-1 - 14 downto 0);
 				AluOP_E <= NOP;
+				ALU_OPC <= AluOP_E;
 			else
 				CW1 <= CW;
 				CW2 <= CW1(CW_SIZE-1 - 3 downto 0);
