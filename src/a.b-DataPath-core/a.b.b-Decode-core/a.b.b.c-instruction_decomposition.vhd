@@ -36,6 +36,9 @@ begin
 		elsif (Itype = '1') then
 			ADD_RS1 <= INST_IN(RS1_begin downto RS1_end);
 			ADD_WR <= INST_IN(RDI_begin downto RDI_end);
+			if(INST_IN(OPCODE_begin downto OPCODE_end) = SW_OP) then
+				ADD_RS2 <= INST_IN(RDI_begin downto RDI_end); -- If SW, this allows to use RD as a source register, performing M[imm16 + R[regA]] <= R[regB], and it will also be used for forwarding.
+			end if;
 
 			Func := INST_IN(Func_begin downto Func_end);
 			IMM <= (NBIT-1 downto I_IMM_size => INST_IN(I_IMM_begin)) & INST_IN(I_IMM_begin downto I_IMM_end);

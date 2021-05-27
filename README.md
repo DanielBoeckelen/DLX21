@@ -2,9 +2,19 @@
 
 -----------
 
+Progress as of 27/05/21:
+
+"Branch.asm" has been tested and works as intended. It shows correct functionality of a loop implemented with BNEZ, load and store (LW/SW) and also an example of load/use hazard
+as the pipeline stalls, a bubble is created, and the instruction after the load is re-fetched to allow for the completion of the LW.
+With this, the basic DLX should be working as intended, although not all R-type and I-type instructions have been tested already. If there are issues, they should be related to wrong computations.
+
+Next step will be testing all other basic R-type and I-type instructions, as well as BEQZ and JAL; after this, we move on to the advanced instruction-set.
+
+-----------
+
 Progress as of 22/05/21:
 
-"my_Jump.asm" has been tested and works as intended. It shows correct functionality of the j instruction, allowing to loop correctly, and it also showcases data forwarding.
+"my_Jump.asm" has been tested and works as intended. It shows correct functionality of the J instruction, allowing to loop correctly, and it also showcases data forwarding.
 It is pretty much identical to "Jump.asm" provided with the course material, but since SEQ is not yet present in our instruction set, we substituted it with SGE.
 
 The control word for the NOP was modified to have REG_LATCH_EN = '1', because otherwise old instructions in their writeback stage would not be able to complete, due to the NOP disabling the RF.
