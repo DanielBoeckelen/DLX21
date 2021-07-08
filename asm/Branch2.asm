@@ -3,12 +3,12 @@ addi r1, r0, 100 ; This program is like Branch.asm but using BEQZ and JAL
 xor r2, r2, r2
 
 ciclo:
-beqz r1, next
 lw r3, 0(r2)
 addi r3, r3, 10
 sw 100(r2), r3
 subi r1, r1, 1
 addi r2, r2, 4
+beqz r1, next
 jal ciclo
 
 next:
