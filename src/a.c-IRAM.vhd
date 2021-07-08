@@ -79,7 +79,7 @@ begin  -- IRam_Bhe
   begin  -- process FILL_MEM_P
     if (Rst = '0') then
       --Iout <= (others => '0');
-      file_open(mem_fp, "../mem/Branch.asm.mem", READ_MODE);
+      file_open(mem_fp, "../mem/Branch2.asm.mem", READ_MODE);
       index := 0;
       while (not endfile(mem_fp)) loop
         readline(mem_fp,file_line);
