@@ -104,7 +104,7 @@ begin
 	ADD_RS2_HDU <= sig_ADD_RS2;
 
 	regPC : regn generic map(N => NBIT)
-		port map(DIN => PC_IN, CLK => CLK, EN => REG_LATCH_EN, RST => sig_RST, DOUT => PC_OUT);
+		port map(DIN => PC_IN, CLK => CLK, EN => '1', RST => sig_RST, DOUT => PC_OUT); -- REG_LATCH_EN?
 		
 	--regA : regn generic map(N => NBIT)
 		--port map(DIN => sig_A, CLK => CLK, EN => REG_LATCH_EN, RST => RST, DOUT => A_OUT);

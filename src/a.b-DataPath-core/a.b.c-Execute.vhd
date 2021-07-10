@@ -41,7 +41,8 @@ architecture struct of Execute is
 -- Component declarations
 component Branch_Cond_Unit is
 	generic(NBIT : integer);
-	port( A         : in std_logic_vector(NBIT-1 downto 0);
+	port( RST 	    : in std_logic;
+		  A         : in std_logic_vector(NBIT-1 downto 0);
 		  ALU_OPC   : in aluOp; -- coming from Control Unit
 		  JUMP_TYPE : in std_logic_vector(1 downto 0);
 		  PC_SEL    : out std_logic_vector(1 downto 0);
@@ -117,7 +118,7 @@ begin
 	sig_NPC_REL <= PC_IN + 4 + IMM_IN; -- Relative jump (J/JAL/BEQZ/BNEZ): PC <- PC + IMM
 		
 	Branch_Cond : Branch_Cond_Unit generic map(NBIT => NBIT)
-		port map(A => OP1_FW, ALU_OPC => ALU_OPC, JUMP_TYPE => JUMP_TYPE, PC_SEL => sig_PC_SEL, ZERO => sig_ZERO_FLAG);
+		port map(RST => sig_RST, A => OP1_FW, ALU_OPC => ALU_OPC, JUMP_TYPE => JUMP_TYPE, PC_SEL => sig_PC_SEL, ZERO => sig_ZERO_FLAG);
 		
 	ff0 : ff port map(D => sig_ZERO_FLAG, CLK => CLK, EN => '1', RST => RST, Q => reg_ZERO_FLAG);
 
