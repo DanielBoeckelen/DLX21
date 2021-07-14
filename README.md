@@ -2,6 +2,18 @@
 
 -----------
 
+Progress as of 14/07/21:
+
+"Branch2.asm" has been tested and works as intended. It is very similar to Branch.asm, but uses a loop with BEQZ and JAL. Two issues have been solved:
+- JAL would set "sig_rst" to '0', which would cause BEQZ to be ignored and, as a result, produce a wrong address. This has been fixed by inserting sig_rst also in
+"Branch_Cond_Unit.vhd": in this way, if RST = '0', PC_SEL and ZERO flag are reset.
+- There was a bug at the end of the loop, where the value "4" would be produced by JAL and stored in R0. This has been fixed by changing the write condition in the register file:
+the writeback signal must be '1', and the write address must not be zero.
+
+Next step: verify remaining instructions, with different loops and implementations, before trying to use the synthesizer.
+
+-----------
+
 Progress as of 27/05/21:
 
 "Branch.asm" has been tested and works as intended. It shows correct functionality of a loop implemented with BNEZ, load and store (LW/SW) and also an example of load/use hazard

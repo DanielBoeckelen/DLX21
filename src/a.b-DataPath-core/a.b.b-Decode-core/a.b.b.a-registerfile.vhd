@@ -39,7 +39,7 @@ begin
 			REGISTERS <= (others => (others => '0')); -- The whole array is reset to zero
 		elsif(CLK = '1' and CLK'event) then
 			if(ENABLE = '1') then -- Enable active high, read and write can be simultaneous
-				if(WR = '1') then -- write to register
+				if(WR = '1' and ADD_WR /= std_logic_vector(to_unsigned(0, ADD_WR'length))) then -- write to register, ignore WR if ADD_WR = R0
 					REGISTERS(to_integer(unsigned(ADD_WR))) <= DATAIN;
 				end if;
 
