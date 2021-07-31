@@ -25,13 +25,14 @@ begin
       variable msb : std_logic := '0';
 	
 	begin
-	    
+	   
 	   shf := conv_integer(B);
 	   msb := A(NBIT-1);
-	    
-		if LEFT_RIGHT = '0' then -- Shift right
+
+	   if (shf /= 0) then   
+		if (LEFT_RIGHT = '0') then -- Shift right
 		
-			if LOGIC_ARITH = '0' then -- Arithmetic shift, SRA
+			if (LOGIC_ARITH = '0') then -- Arithmetic shift, SRA
 				--RES <= to_StdLogicVector((to_bitvector(A)) sra (conv_integer(B)));
 
                            RES(NBIT-1-shf downto 0) <= A(NBIT-1 downto shf);
@@ -58,7 +59,9 @@ begin
                            RES(shf downto 0) <= (others => '0');
 
                            shf_state <= Logic_Arith_Left;
-				
 		end if;
+	  else
+		RES <= A;
+	  end if;
 	end process;
 end bhv;

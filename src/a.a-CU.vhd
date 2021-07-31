@@ -198,6 +198,7 @@ begin
                                         when XOR_Func => CW <= CW_MEM(1);      
  					when others => CW <= CW_MEM(0); -- NOP
 				end case;
+			when NOP_OP  => CW <= CW_MEM(0);
 			when LW_OP   => CW <= CW_MEM(3);
 			when SW_OP   => CW <= CW_MEM(4);
 			when ADDI_OP => CW <= CW_MEM(2);
@@ -238,6 +239,7 @@ begin
 					when XOR_Func => AluOP_D <= XORS;      
  					when others   => AluOP_D <= NOP; -- NOP
 				end case;
+			when NOP_OP  => AluOP_D <= NOP;
 			when LW_OP   => AluOP_D <= ADDS;
 			when SW_OP   => AluOP_D <= ADDS;
 			when ADDI_OP => AluOP_D <= ADDS;

@@ -63,7 +63,7 @@ package instruction_set is
 
 	-- Instruction OPCODEs
 
-	-- ! under which type does the NOP fall?
+	-- NOP
 	constant NOP_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(21, OPCODE_size)); --x"15"
 
 	-- R-Type (ADD, AND, OR, SGE, SLE, SLL, SNE, SRL, SUB, XOR)
