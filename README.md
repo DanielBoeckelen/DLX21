@@ -2,6 +2,16 @@
 
 -----------
 
+Progress as of 31/07/21:
+
+"basic_test.asm" has been tested and works as intended. It tests all arithmetic instructions that hadn't been tested yet. The NOP has always been working properly, but it is now usable
+as an independent instruction (this is required by the instruction set), whereas before it was only used to idle the ALU and to stall the pipeline.
+An issue has been fixed with the shifter, which would cause a wrong value when shifting by zero.
+
+Next step: running the synthesis to avoid inferred latches.
+
+-----------
+
 Progress as of 14/07/21:
 
 "Branch2.asm" has been tested and works as intended. It is very similar to Branch.asm, but uses a loop with BEQZ and JAL. Two issues have been solved:
