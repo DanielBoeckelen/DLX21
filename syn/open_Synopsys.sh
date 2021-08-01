@@ -1,0 +1,2 @@
+setsynopsys
+design_vision
