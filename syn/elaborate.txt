@@ -1,205 +1,232 @@
+Loading db file '/software/synopsys/syn_current_64.11/libraries/syn/gtech.db'
+Loading db file '/software/synopsys/syn_current_64.11/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
 Running PRESTO HDLC
 Presto compilation completed successfully.
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
-Warning: Overwriting design file '/home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX.db'. (DDB-24)
 Elaborated 1 design.
 Current design is now 'DLX'.
+Information: Building the design 'Datapath'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'hardwired_cu' instantiated from design 'DLX' with
+	the parameters "NBIT=32". (HDL-193)
+Warning:  ../src/a.a-CU.vhd:65: The initial value for signal 'CW_MEM' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:105: The initial value for signal 'CW1' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:106: The initial value for signal 'CW2' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:107: The initial value for signal 'CW3' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:108: The initial value for signal 'CW4' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+
+Statistics for case statements in always block at line 184 in file
+	'../src/a.a-CU.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           186            |    auto/auto     |
+|           188            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 225 in file
+	'../src/a.a-CU.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           227            |    auto/auto     |
+|           229            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine hardwired_cu_NBIT32 line 152 in file
+		'../src/a.a-CU.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     ALU_OPC_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       CW1_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       CW2_reg       | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       CW3_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       CW4_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     AluOP_E_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
 Information: Building the design 'IRAM' instantiated from design 'DLX' with
 	the parameters "RAM_DEPTH=1024,I_SIZE=32". (HDL-193)
 Warning: Cannot find the design 'IRAM' in the library 'WORK'. (LBR-1)
 Information: Building the design 'DRAM' instantiated from design 'DLX' with
 	the parameters "RAM_DEPTH=1024,D_SIZE=32". (HDL-193)
 Warning: Cannot find the design 'DRAM' in the library 'WORK'. (LBR-1)
+Information: Building the design 'Fetch'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Decode'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Execute'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ff'. (HDL-193)
+
+Inferred memory devices in process
+	in routine ff line 14 in file
+		'../src/04-ff.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Memory'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Writeback'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'HazardDetection'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux21' instantiated from design 'Fetch' with
+	the parameters "NBIT=32". (HDL-193)
+Warning:  ../src/02-mux21.vhd:17: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 15 in file
+	'../src/02-mux21.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            17            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'regn' instantiated from design 'Fetch' with
+	the parameters "N=32". (HDL-193)
+
+Inferred memory devices in process
+	in routine regn_N32 line 15 in file
+		'../src/01-regn.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      DOUT_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'instruction_type'. (HDL-193)
+
+Statistics for case statements in always block at line 21 in file
+	'../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            28            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'instruction_decomposition'. (HDL-193)
+Warning:  ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.c-instruction_decomposition.vhd:22: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
+Presto compilation completed successfully.
+Information: Building the design 'regn' instantiated from design 'Decode' with
+	the parameters "N=5". (HDL-193)
+
+Inferred memory devices in process
+	in routine regn_N5 line 15 in file
+		'../src/01-regn.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      DOUT_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'register_file' instantiated from design 'Decode' with
+	the parameters "NBIT_ADD=5,NBIT_DATA=32". (HDL-193)
+
+Inferred memory devices in process
+	in routine register_file_NBIT_ADD5_NBIT_DATA32 line 36 in file
+		'../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      OUT2_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
+|      OUT1_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Branch_Cond_Unit' instantiated from design 'Execute' with
+	the parameters "NBIT=32". (HDL-193)
+Warning:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.b-Branch_Cond_Unit.vhd:26: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 20 in file
+	'../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.b-Branch_Cond_Unit.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            26            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'regn' instantiated from design 'Execute' with
+	the parameters "N=2". (HDL-193)
+
+Inferred memory devices in process
+	in routine regn_N2 line 15 in file
+		'../src/01-regn.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      DOUT_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FWD_Unit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux41' instantiated from design 'Execute' with
+	the parameters "NBIT=32". (HDL-193)
+Warning:  ../src/03-mux41.vhd:19: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 17 in file
+	'../src/03-mux41.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            19            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'ALU' instantiated from design 'Execute' with
+	the parameters "NBIT=32". (HDL-193)
+
+Statistics for case statements in always block at line 85 in file
+	'../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            87            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'comparator' instantiated from design 'ALU_NBIT32' with
+	the parameters "NBIT=32". (HDL-193)
+Warning:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.a-comparator.vhd:16: The initial value for signal 'comp_state' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+
+Statistics for case statements in always block at line 19 in file
+	'../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.a-comparator.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            21            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
 Information: Building the design 'shifter' instantiated from design 'ALU_NBIT32' with
 	the parameters "NBIT=32". (HDL-193)
-Warning:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd:19: The initial value for signal 'shf_state' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd:22: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
-Warning:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd:22: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
-Error:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd:38: Constant value required. (ELAB-922)
+Error:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd:22: Constant value required. (ELAB-922)
 *** Presto compilation terminated with 1 errors. ***
-Warning: Design 'DLX' has '108' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Building the design 'P4Adder' instantiated from design 'ALU_NBIT32' with
+	the parameters "NBIT=32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'carry_generator' instantiated from design 'P4Adder_NBIT32' with
+	the parameters "NBIT=32,NBIT_PER_BLOCK=4". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'SUM_GENERATOR' instantiated from design 'P4Adder_NBIT32' with
+	the parameters "NBIT_PER_BLOCK=4,NBLOCKS=8". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'PG_net'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Gblock'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'PGblock'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'carry_select_basic' instantiated from design 'SUM_GENERATOR_NBIT_PER_BLOCK4_NBLOCKS8' with
+	the parameters "N=4". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'RCA' instantiated from design 'carry_select_basic_N4' with
+	the parameters "N=4". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FA'. (HDL-193)
+Presto compilation completed successfully.
+Warning: Design 'DLX' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
 1

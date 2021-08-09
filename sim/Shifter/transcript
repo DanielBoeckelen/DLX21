@@ -8,7 +8,7 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-do compile.do
+do simulate.do
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
@@ -21,32 +21,38 @@ do compile.do
 # -- Loading package constants
 # -- Compiling entity shifter
 # -- Compiling architecture bhv of shifter
+# ** Error: ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd(40): (vcom-1136) Unknown identifier "shf".
+# ** Error: ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd(40): Bad expression in left bound of range expression.
+# ** Error: ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd(40): Type error in range expression.
+# ** Error: ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd(61): VHDL Compiler exiting
+# ** Error: /software/mentor/modelsim_6.2g/linux/vcom failed.
+# Error in macro ././compile.do line 2
+# /software/mentor/modelsim_6.2g/linux/vcom failed.
+#     while executing
+# "vcom -93 -work ./work ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd"
+do simulate.do
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package constants
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
 # -- Loading package std_logic_arith
-# -- Loading package numeric_std
 # -- Loading package std_logic_unsigned
 # -- Loading package constants
-# -- Compiling entity tb_shifter
-# -- Compiling architecture test of tb_shifter
-# ** Warning: [4] ../../tb/TB_a.b.c.a.b-shifter.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(64): No feasible entries for subprogram "apply_stimuli".
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(65): No feasible entries for subprogram "apply_stimuli".
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(66): No feasible entries for subprogram "apply_stimuli".
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(67): No feasible entries for subprogram "apply_stimuli".
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(70): (vcom-1136) Unknown identifier "f003_8830".
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(71): (vcom-1136) Unknown identifier "f003_8830".
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(72): (vcom-1136) Unknown identifier "f003_8830".
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(73): (vcom-1136) Unknown identifier "f003_8830".
-# ** Warning: [2] ../../tb/TB_a.b.c.a.b-shifter.vhd(77): (vcom-1090) Possible infinite loop: Process contains no WAIT statement.
-# ** Error: ../../tb/TB_a.b.c.a.b-shifter.vhd(81): VHDL Compiler exiting
+# -- Compiling entity shifter
+# -- Compiling architecture bhv of shifter
+# ** Error: ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd(40): (vcom-1136) Unknown identifier "shf".
+# ** Error: ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd(40): Bad expression in left bound of range expression.
+# ** Error: ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd(40): Type error in range expression.
+# ** Error: ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd(61): VHDL Compiler exiting
 # ** Error: /software/mentor/modelsim_6.2g/linux/vcom failed.
-# Error in macro ./compile.do line 3
+# Error in macro ././compile.do line 2
 # /software/mentor/modelsim_6.2g/linux/vcom failed.
 #     while executing
-# "vcom -93 -work ./work ../../tb/TB_a.b.c.a.b-shifter.vhd"
-do compile.do
+# "vcom -93 -work ./work ../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd"
+do simulate.do
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
@@ -79,9 +85,6 @@ do compile.do
 # Loading work.constants
 # Loading work.tb_shifter(test)#1
 # Loading work.shifter(bhv)#1
-do un.do
-# Cannot open macro file: un.do
-do run.do
 # vsim -t 100ps -novopt work.tb_shifter(test) 
 # Loading /software/mentor/modelsim_6.2g/linux/../std.standard
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
@@ -94,23 +97,6 @@ do run.do
 # Loading work.tb_shifter(test)
 # Refreshing ./work.shifter(bhv)
 # Loading work.shifter(bhv)
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_shifter/dut_shifter
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_shifter/dut_shifter
-vsim -t 100ps -novopt work.tb_shifter(test)
-# vsim -t 100ps -novopt work.tb_shifter(test) 
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
-# Loading work.constants
-# Loading work.tb_shifter(test)
-# Loading work.shifter(bhv)
-add wave *
-write format wave -window .main_pane.mdi.interior.cs.vm.paneset.cli_1.wf.clip.cs.pw.wf /home/ms21.21/Desktop/GR21_DLX/sim/Shifter/wave.do
-run 200ns
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_shifter/dut_shifter
 # ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.

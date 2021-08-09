@@ -203,276 +203,19 @@ source compile_DLX.tcl
 # -- Loading package instruction_set
 # -- Compiling entity alu
 # -- Compiling architecture struct of alu
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package constants
-# -- Loading package std_logic_arith
-# -- Loading package instruction_set
-# -- Compiling entity branch_cond_unit
-# -- Compiling architecture bhv of branch_cond_unit
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package std_logic_unsigned
-# -- Loading package constants
-# -- Compiling entity fwd_unit
-# -- Compiling architecture bhv of fwd_unit
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package std_logic_unsigned
-# -- Loading package numeric_std
-# -- Loading package constants
-# -- Loading package instruction_set
-# -- Compiling entity execute
-# -- Compiling architecture struct of execute
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package constants
-# -- Loading package std_logic_arith
-# -- Loading package numeric_std
-# -- Loading package instruction_set
-# -- Compiling entity memory
-# -- Compiling architecture struct of memory
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package constants
-# -- Loading package std_logic_arith
-# -- Loading package numeric_std
-# -- Loading package instruction_set
-# -- Compiling entity writeback
-# -- Compiling architecture struct of writeback
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package std_logic_unsigned
-# -- Loading package constants
-# -- Loading package numeric_std
-# -- Loading package instruction_set
-# -- Compiling entity hardwired_cu
-# -- Compiling architecture bhv of hardwired_cu
-# ** Warning: ../src/a.a-CU.vhd(187): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(189): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(190): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(191): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(192): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(193): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(194): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(195): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(196): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(197): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(198): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(201): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(202): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(203): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(204): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(205): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(206): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(207): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(208): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(209): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(210): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(211): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(212): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(213): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(214): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(215): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(216): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(217): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(218): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(219): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(228): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(230): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(231): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(232): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(233): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(234): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(235): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(236): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(237): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(238): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(239): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(242): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(243): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(244): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(245): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(246): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(247): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(248): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(249): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(250): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(251): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(252): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(253): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(254): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(255): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(256): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(257): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(258): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(259): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(260): Case choice must be a locally static expression.
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package constants
-# -- Loading package std_logic_arith
-# -- Loading package numeric_std
-# -- Loading package instruction_set
-# -- Compiling entity datapath
-# -- Compiling architecture struct of datapath
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package constants
-# -- Loading package std_logic_arith
-# -- Loading package numeric_std
-# -- Loading package instruction_set
-# -- Compiling entity dlx
-# -- Compiling architecture dlx_rtl of dlx
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package textio
-# -- Loading package std_logic_textio
-# -- Loading package constants
-# -- Loading package numeric_std
-# -- Loading package instruction_set
-# -- Compiling entity iram
-# -- Compiling architecture iram_bhe of iram
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package textio
-# -- Loading package std_logic_textio
-# -- Loading package constants
-# -- Compiling entity dram
-# -- Compiling architecture dram_bhe of dram
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity tb_dlx
-# -- Compiling architecture test of tb_dlx
-# -- Compiling configuration cfg_tb
-# -- Loading entity tb_dlx
-# -- Loading architecture test of tb_dlx
-# -- Loading package constants
-# -- Loading package std_logic_arith
-# -- Loading package numeric_std
-# -- Loading package instruction_set
-# -- Loading entity dlx
-# vsim work.tb_DLX 
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading work.tb_dlx(test)#1
-# Loading work.constants
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
-# Loading work.instruction_set
-# Loading work.dlx(dlx_rtl)#1
-# Loading work.datapath(struct)#1
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
-# Loading work.fetch(struct)#1
-# Loading work.mux21(bhv)#1
-# Loading work.regn(bhv)#1
-# Loading work.decode(struct)#1
-# Loading work.instruction_type(bhv)
-# Loading work.instruction_decomposition(bhv)
-# Loading work.regn(bhv)#2
-# Loading work.register_file(bhv)#1
-# Loading work.execute(struct)#1
-# Loading work.branch_cond_unit(bhv)#1
-# Loading work.ff(bhv)
-# Loading work.regn(bhv)#3
-# Loading work.fwd_unit(bhv)
-# Loading work.mux41(bhv)#1
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_signed(body)
-# Loading work.alu(struct)#1
-# Loading work.comparator(bhv)#1
-# Loading work.shifter(bhv)#1
-# Loading work.p4adder(struct)#1
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.math_real(body)
-# Loading work.func_external(body)
-# Loading work.carry_generator(struct)#1
-# Loading work.pg_net(bhv)
-# Loading work.gblock(bhv)
-# Loading work.pgblock(bhv)
-# Loading work.sum_generator(structural)#1
-# Loading work.carry_select_basic(struct)#1
-# Loading work.rca(structural)#1
-# Loading work.fa(behavioral)
-# Loading work.memory(struct)
-# Loading work.writeback(struct)
-# Loading work.hazarddetection(arch)
-# Loading work.hardwired_cu(bhv)#1
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
-# Loading work.iram(iram_bhe)#1
-# Loading work.dram(dram_bhe)#1
-add wave sim:/tb_dlx/u1/dp/decodestage/rf/registers
-run 2 us
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/hdu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/hdu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/shift
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/shift
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/fetchstage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/fetchstage
-# ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/iram_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
-# ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/iram_i
-# ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 11 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
-# ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 11 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
-quit -sim
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(102): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(126): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(147): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(163): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(179): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(194): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(210): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(235): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(253): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(347): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(363): Aggregate expression cannot be scalar type std.standard.integer.
+# ** Error: ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd(387): VHDL Compiler exiting
+# /software/mentor/modelsim_6.2g/linux/vcom failed.
 source compile_DLX.tcl
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
@@ -884,7 +627,7 @@ source compile_DLX.tcl
 # Loading work.iram(iram_bhe)#1
 # Loading work.dram(dram_bhe)#1
 add wave sim:/tb_dlx/u1/dp/decodestage/rf/registers
-run 2 us
+run 1 us
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
@@ -938,3 +681,4 @@ run 2 us
 # ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
 #    Time: 11 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
 quit -sim
+quit

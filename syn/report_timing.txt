@@ -1,4 +1,4 @@
-Warning: Design 'DLX' has '108' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'DLX' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : timing
@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : DLX
 Version: F-2011.09-SP3
-Date   : Sun Aug  1 11:19:16 2021
+Date   : Mon Aug  9 18:02:34 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -15,9 +15,9 @@ Date   : Sun Aug  1 11:19:16 2021
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: DP/DecodeStage/rf/REGISTERS_reg[1][23]
+  Startpoint: DP/FetchStage/PC/DOUT_reg[23]
               (rising edge-triggered flip-flop clocked by MY_CLK)
-  Endpoint: DP/DecodeStage/rf/REGISTERS_reg[1][23]
+  Endpoint: DP/FetchStage/PC/DOUT_reg[31]
             (rising edge-triggered flip-flop clocked by MY_CLK)
   Path Group: MY_CLK
   Path Type: max
@@ -30,22 +30,45 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock MY_CLK (rise edge)                                0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  DP/DecodeStage/rf/REGISTERS_reg[1][23]/CK (DFFR_X1)     0.00 #     0.00 r
-  DP/DecodeStage/rf/REGISTERS_reg[1][23]/Q (DFFR_X1)      0.08       0.08 f
-  DP/DecodeStage/rf/U1545/Z (MUX2_X1)                     0.06       0.15 f
-  DP/DecodeStage/rf/REGISTERS_reg[1][23]/D (DFFR_X1)      0.01       0.16 f
-  data arrival time                                                  0.16
+  DP/FetchStage/PC/DOUT_reg[23]/CK (DFFR_X1)              0.00 #     0.00 r
+  DP/FetchStage/PC/DOUT_reg[23]/Q (DFFR_X1)               0.10       0.10 r
+  DP/FetchStage/PC/DOUT[23] (regn_N32_0)                  0.00       0.10 r
+  DP/FetchStage/add_54/A[23] (Fetch_DW01_add_3)           0.00       0.10 r
+  DP/FetchStage/add_54/U69/ZN (AND3_X1)                   0.05       0.16 r
+  DP/FetchStage/add_54/U70/ZN (AND2_X1)                   0.04       0.20 r
+  DP/FetchStage/add_54/U75/ZN (AND2_X1)                   0.04       0.24 r
+  DP/FetchStage/add_54/U143/ZN (NAND3_X1)                 0.03       0.27 f
+  DP/FetchStage/add_54/U50/ZN (NOR3_X1)                   0.07       0.34 r
+  DP/FetchStage/add_54/U40/Z (XOR2_X1)                    0.04       0.38 f
+  DP/FetchStage/add_54/SUM[31] (Fetch_DW01_add_3)         0.00       0.38 f
+  DP/FetchStage/NPC_OUT[31] (Fetch)                       0.00       0.38 f
+  DP/MemoryStage/NPC_IN[31] (Memory)                      0.00       0.38 f
+  DP/MemoryStage/PCsel/A[31] (mux41_NBIT32_2)             0.00       0.38 f
+  DP/MemoryStage/PCsel/U133/ZN (AOI22_X1)                 0.05       0.42 r
+  DP/MemoryStage/PCsel/U135/ZN (NAND2_X1)                 0.03       0.45 f
+  DP/MemoryStage/PCsel/Z[31] (mux41_NBIT32_2)             0.00       0.45 f
+  DP/MemoryStage/PC_OUT[31] (Memory)                      0.00       0.45 f
+  DP/FetchStage/PC_EXT[31] (Fetch)                        0.00       0.45 f
+  DP/FetchStage/NPC_or_NPC_HDU/A[31] (mux21_NBIT32_0)     0.00       0.45 f
+  DP/FetchStage/NPC_or_NPC_HDU/U48/ZN (AOI22_X1)          0.05       0.50 r
+  DP/FetchStage/NPC_or_NPC_HDU/U49/ZN (INV_X1)            0.02       0.52 f
+  DP/FetchStage/NPC_or_NPC_HDU/Z[31] (mux21_NBIT32_0)     0.00       0.52 f
+  DP/FetchStage/PC/DIN[31] (regn_N32_0)                   0.00       0.52 f
+  DP/FetchStage/PC/U84/ZN (NAND2_X1)                      0.03       0.54 r
+  DP/FetchStage/PC/U85/ZN (OAI21_X1)                      0.03       0.57 f
+  DP/FetchStage/PC/DOUT_reg[31]/D (DFFR_X1)               0.01       0.58 f
+  data arrival time                                                  0.58
 
   clock MY_CLK (rise edge)                                0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  DP/DecodeStage/rf/REGISTERS_reg[1][23]/CK (DFFR_X1)     0.00       0.00 r
+  DP/FetchStage/PC/DOUT_reg[31]/CK (DFFR_X1)              0.00       0.00 r
   library setup time                                     -0.04      -0.04
   data required time                                                -0.04
   --------------------------------------------------------------------------
   data required time                                                -0.04
-  data arrival time                                                 -0.16
+  data arrival time                                                 -0.58
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.20
+  slack (VIOLATED)                                                  -0.62
 
 
 1

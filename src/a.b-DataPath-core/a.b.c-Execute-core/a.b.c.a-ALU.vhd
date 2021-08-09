@@ -92,6 +92,17 @@ begin
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '0';
 
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								LOGIC_RES <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+								
+								
+
 			--when ADDUS =>
                                -- ADD_SUB <= '0';
 				--				B <= OP2;
@@ -105,6 +116,15 @@ begin
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '0';
 
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								LOGIC_RES <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+
 			--when SUBUS =>
                         --        ADD_SUB <= '1'; -- SUB is treated as a two's complement sum: A + B' + 1
 			--					B <= not(OP2);
@@ -115,16 +135,49 @@ begin
                                 LOGIC_RES <= OP1 and OP2;
                                 select_type_sig <= "01"; --logic_res
                                 select_zero_sig <= '0';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+								ADD_SUB <= '0';
                 
 			when ORS  =>
                                 LOGIC_RES <= OP1 or OP2;
                                 select_type_sig <= "01"; --logic_res
                                 select_zero_sig <= '0';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+								ADD_SUB <= '0';
                 
 			when XORS =>
                                 LOGIC_RES <= OP1 xor OP2;
                                 select_type_sig <= "01"; --logic_res
                                 select_zero_sig <= '0';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+								ADD_SUB <= '0';
                 
 			when SLLS =>
                                 LOGIC_ARITH <= '1';
@@ -133,6 +186,14 @@ begin
 								B_SHF <= OP2;
                                 select_type_sig <= "10"; --shift_res
                                 select_zero_sig <= '0';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								OPSel <= 0;
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
                 
 			when SRLS =>
                                 LOGIC_ARITH <= '1';
@@ -140,6 +201,16 @@ begin
 								A_SHF <= OP1;
 								B_SHF <= OP2;
                                 select_type_sig <= "10"; --shift_res
+								select_zero_sig <= '0';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								OPSel <= 0;
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
+								
 
 			--when SRAS => 
                         --        LOGIC_ARITH <= '0';
@@ -152,12 +223,36 @@ begin
 								--B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '1';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
                 
 			when BNEZS =>
                                 --ADD_SUB <= '0';
 								--B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '1';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
                 
 			when SGES =>
                                 OPSel <= 3;
@@ -165,6 +260,17 @@ begin
 								B_CMP <= OP2;
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';  --select_zero_sig = 0 means signed operation
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
 			
 			--when SGEUS =>
                           --      OPSel <= 3;
@@ -196,6 +302,17 @@ begin
 								B_CMP <= OP2;
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
                 
 			when NEQS =>
                                 OPSel <= 1;
@@ -204,13 +321,49 @@ begin
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';
 
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
+
 			when NOP =>
                                 select_type_sig <= "00";
                                 select_zero_sig <= '1';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
                 
 			when others =>
+								
                                 select_type_sig <= "00";
                                 select_zero_sig <= '1';     
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_SHF <= (others => '0');
+								B_SHF <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								LOGIC_ARITH <= '0';
+								LEFT_RIGHT <= '0';
+								OPSel <= 0;
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
+
 		end case;
 	end process ALU_Proc;
 

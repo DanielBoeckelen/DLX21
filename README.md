@@ -2,6 +2,13 @@
 
 -----------
 
+Progress as of 09/08/21:
+
+Problems with inferred latches in synthesis have been solved. Next steps: make sure that the change just mentioned did not cause errors in the programs already tested. Also,
+there is still one Synthesis error to be solved at line 22 of shifter.vhd: for some reason, it asks for a constant in the process sensitivity list.
+
+-----------
+
 Progress as of 31/07/21:
 
 "basic_test.asm" has been tested and works as intended. It tests all arithmetic instructions that hadn't been tested yet. The NOP has always been working properly, but it is now usable
