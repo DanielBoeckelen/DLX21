@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/ms21.21/Desktop/GR21_DLX/sim/Shifter
 T_opt
-VUfUAO2D>_e]5d0LjX?2PP3
+V_RmFOz[o`I:YNh:b^I4IG2
 06 10 4 ./work tb_shifter test 1
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
@@ -23,35 +23,32 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Eshifter
-w1628514955
+w1628587064
 DP work constants ]AL]oonDikT97PD?F>F:F1
-DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
-DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 31
 d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/Shifter
 8../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd
 F../../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd
 l0
-L7
-V:C:K3n;lnSm_@aMI[]8[e0
+L8
+V1Cgii`^:XoGBQNGja3P_:1
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Abhv
 DP work constants ]AL]oonDikT97PD?F>F:F1
-DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
-DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work shifter :C:K3n;lnSm_@aMI[]8[e0
+DE work shifter 1Cgii`^:XoGBQNGja3P_:1
 31
-M4 ieee std_logic_1164
-M3 ieee std_logic_arith
-M2 ieee std_logic_unsigned
+M3 ieee std_logic_1164
+M2 ieee numeric_std
 M1 work constants
-l21
-L17
-V9WQXAW5[@ZINJ@8N79:lK2
+l20
+L18
+V`db6m<ncE?AzN3K[:mlG90
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
@@ -73,7 +70,7 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Atest
-DE work shifter :C:K3n;lnSm_@aMI[]8[e0
+DE work shifter 1Cgii`^:XoGBQNGja3P_:1
 DP work constants ]AL]oonDikT97PD?F>F:F1
 DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3

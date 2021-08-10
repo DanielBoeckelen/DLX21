@@ -1,4 +1,4 @@
-Warning: Design 'DLX' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'DLX' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : timing
@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : DLX
 Version: F-2011.09-SP3
-Date   : Mon Aug  9 18:02:34 2021
+Date   : Tue Aug 10 11:25:52 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.

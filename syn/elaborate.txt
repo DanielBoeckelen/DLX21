@@ -203,8 +203,7 @@ Statistics for case statements in always block at line 19 in file
 Presto compilation completed successfully.
 Information: Building the design 'shifter' instantiated from design 'ALU_NBIT32' with
 	the parameters "NBIT=32". (HDL-193)
-Error:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd:22: Constant value required. (ELAB-922)
-*** Presto compilation terminated with 1 errors. ***
+Presto compilation completed successfully.
 Information: Building the design 'P4Adder' instantiated from design 'ALU_NBIT32' with
 	the parameters "NBIT=32". (HDL-193)
 Presto compilation completed successfully.
@@ -228,5 +227,5 @@ Information: Building the design 'RCA' instantiated from design 'carry_select_ba
 Presto compilation completed successfully.
 Information: Building the design 'FA'. (HDL-193)
 Presto compilation completed successfully.
-Warning: Design 'DLX' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'DLX' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
 1

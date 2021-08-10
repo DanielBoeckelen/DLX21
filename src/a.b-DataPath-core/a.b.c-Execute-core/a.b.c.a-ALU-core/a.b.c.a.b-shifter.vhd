@@ -1,7 +1,8 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.std_logic_arith.all;
-use IEEE.std_logic_unsigned.all;
+--use IEEE.std_logic_arith.all;
+--use IEEE.std_logic_unsigned.all;
+use IEEE.numeric_std.all;
 use work.constants.all;
 
 entity shifter is
@@ -15,44 +16,31 @@ entity shifter is
 end shifter;
 
 architecture bhv of shifter is
-    
---signal shf_state : shifter_OP := NOP;
 
 begin
 	SHIFT: process (A, B, LOGIC_ARITH, LEFT_RIGHT) is
 	
 	begin
 	   
-	   if (conv_integer(B) /= 0) then   
+	   if (to_integer(unsigned(B)) /= 0) then   
 		if (LEFT_RIGHT = '0') then -- Shift right
 		
 			if (LOGIC_ARITH = '0') then -- Arithmetic shift, SRA
-				--RES <= to_StdLogicVector((to_bitvector(A)) sra (conv_integer(B)));
 
-                           RES(NBIT-1-conv_integer(B) downto 0) <= A(NBIT-1 downto conv_integer(B));
-                           RES(NBIT-1 downto NBIT-conv_integer(B)) <= (others => A(NBIT-1));
-
-                           --shf_state <= Arith_Right; 
+                          RES <= std_logic_vector(shift_right(signed(A), to_integer(unsigned(B))));
 				
 			else -- Logic shift, SRL
-				--RES <= to_StdLogicVector((to_bitvector(A)) srl (conv_integer(B)));
 
-                           RES(NBIT-1-conv_integer(B) downto 0) <= A(NBIT-1 downto conv_integer(B));
-                           RES(NBIT-1 downto NBIT-conv_integer(B)) <= (others => '0');
-
-                           --shf_state <= Logic_Right;
+                           RES <= std_logic_vector(shift_right(unsigned(A), to_integer(unsigned(B))));
 				
 			end if;
 							
 		else -- Shift left
 		
 			 -- Logic shift, SLL
-				--RES <= to_StdLogicVector((to_bitvector(A)) sll (conv_integer(B)));
+    
+                          RES <= std_logic_vector(shift_left(unsigned(A), to_integer(unsigned(B))));
 
-                           RES(NBIT-1 downto conv_integer(B)) <= A(NBIT-1-conv_integer(B) downto 0);
-                           RES(conv_integer(B) downto 0) <= (others => '0');
-
-                           --shf_state <= Logic_Arith_Left;
 		end if;
 	  else
 		RES <= A;

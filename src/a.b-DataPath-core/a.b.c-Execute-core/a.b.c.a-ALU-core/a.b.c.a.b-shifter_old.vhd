@@ -1,8 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
---use IEEE.std_logic_arith.all;
---use IEEE.std_logic_unsigned.all;
-use IEEE.numeric_std.all;
+use IEEE.std_logic_arith.all;
+use IEEE.std_logic_unsigned.all;
 use work.constants.all;
 
 entity shifter is
@@ -27,11 +26,13 @@ begin
 		
 			if (LOGIC_ARITH = '0') then -- Arithmetic shift, SRA
 
-                          RES <= std_logic_vector(shift_right(signed(A), to_integer(unsigned(B))));
+                           RES(NBIT-1-conv_integer(B) downto 0) <= A(NBIT-1 downto conv_integer(B));
+                           RES(NBIT-1 downto NBIT-conv_integer(B)) <= (others => A(NBIT-1));
 				
 			else -- Logic shift, SRL
 
-                           RES <= std_logic_vector(shift_right(unsigned(A), to_integer(unsigned(B))));
+                           RES(NBIT-1-conv_integer(B) downto 0) <= A(NBIT-1 downto conv_integer(B));
+                           RES(NBIT-1 downto NBIT-conv_integer(B)) <= (others => '0');
 				
 			end if;
 							
@@ -39,7 +40,8 @@ begin
 		
 			 -- Logic shift, SLL
     
-                          RES <= std_logic_vector(shift_left(unsigned(A), to_integer(unsigned(B))));
+                           RES(NBIT-1 downto conv_integer(B)) <= A(NBIT-1-conv_integer(B) downto 0);
+                           RES(conv_integer(B) downto 0) <= (others => '0');
 
 		end if;
 	  else
