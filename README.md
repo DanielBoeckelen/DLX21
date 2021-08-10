@@ -6,6 +6,12 @@ The Synthesis error of the shifter (about the constants) has been solved.
 
 Error: extra positional option '' (CMD-012), are still not be corrected (from surfing the web, we know that this error could rise when there is a space in a file name), but we don't find any file with blanck spaces.
 
+The extended error info (for CMD-012) says:
+
+can't unset "project99" : no such variable
+    while executing
+"unset project99"
+
 -----------
 
 Progress as of 09/08/21:
