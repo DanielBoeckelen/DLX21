@@ -1,5 +1,11 @@
 # DLX21
 
+Progress as of 10/08/21:
+
+The Synthesis error of the shifter (about the constants) has been solved.
+
+Error: extra positional option '' (CMD-012), are still not be corrected (from surfing the web, we know that this error could rise when there is a space in a file name), but we don't find any file with blanck spaces.
+
 -----------
 
 Progress as of 09/08/21:
