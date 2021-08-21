@@ -58,7 +58,7 @@ create_clock -name "MY_CLK" -period 0 Clk
 #set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] CLK]
 #set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
 ### OR
-set_max_delay 2 -from [all_inputs] to [all_outputs]
+#set_max_delay 2 -from [all_inputs] -to [all_outputs]
 
 # Set a load to the output
 #set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]

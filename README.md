@@ -2,6 +2,14 @@
 
 -----------
 
+Progress as of 21/08/21:
+
+Solved final synthesis problems for the basic version. Next step: routing with Innovus. After this we could consider the basic version as working, although it would still need
+some adjustments like comments etc...
+We will then start working on the PRO instruction set.
+
+-----------
+
 Progress as of 09/08/21:
 
 Problems with inferred latches in synthesis have been solved. Next steps: make sure that the change just mentioned did not cause errors in the programs already tested. Also,

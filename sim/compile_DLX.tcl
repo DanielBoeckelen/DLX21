@@ -46,7 +46,8 @@ vcom -93 -work ./work ../src/a.b-DataPath-core/a.b.e-Writeback.vhd
 vcom -93 -work ./work ../src/a.a-CU.vhd
 vcom -93 -work ./work ../src/a.b-Datapath.vhd
 vcom -93 -work ./work ../src/a-DLX.vhd
-#vlog -work ./work ../netlist/RISCV_lite_post_syn.v
+#vcom -93 -work ./work ../syn/DLX_postsyn.vhdl
+#vlog -work ./work ../syn/DLX_postsyn.v
 #vlog -work ./work ../innovus/RISCV_lite_postroute.v
 
 ######## TESTBENCH ########
@@ -54,4 +55,5 @@ vcom -93 -work ./work ../src/a.c-IRAM.vhd
 vcom -93 -work ./work ../src/a.d-DRAM.vhd
 vcom -93 -work ./work ../tb/TB_DLX.vhd
 vsim work.tb_DLX
-#vsim -L /software/dk/nangate45/verilog/msim6.2g work.tb_RISCV_lite
+#vcom -93 -work ./work ../tb/TB_DLX_postsyn.vhd
+#vsim -L /software/dk/nangate45/verilog/msim6.2g work.tb_DLX
