@@ -52,7 +52,7 @@ analyze -format vhdl -library WORK ../src/a-DLX.vhd
 elaborate DLX -arch dlx_rtl -library WORK > ./elaborate.txt
 
 # Clock definition, first with 0 period and then iterate to find fmax, and uncertainty/delays
-create_clock -name "MY_CLK" -period 0 Clk
+create_clock -name "MY_CLK" -period 0.63 Clk
 #set_dont_touch_network MY_CLK
 #set_clock_uncertainty 0.07 [get_clocks MY_CLK]
 #set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] CLK]
