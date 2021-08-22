@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version F-2011.09-SP3 for amd64 -- Jan 26, 2012
-#@ # Date:   Sat Aug 21 18:57:11 2021
+#@ # Date:   Sat Aug 21 20:28:51 2021
 #@ # Run by: ms21.21@localhost.localdomain
 #@ 
 
@@ -4848,3 +4848,9 @@ uplevel #0 source /home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX_syn.tcl
 #@ write -hierarchy -format verilog -output DLX_postsyn.v
 #@ # -- End source /home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX_syn.tcl
 
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../netlist/DLX.sdf
+write_sdf ../netlist/DLX.sdf
+write_sdc ../netlist/DLX.sdc
+quit

@@ -70,4 +70,9 @@ report_timing > ./report_timing.txt
 report_area > ./report_area.txt
 write -hierarchy -format ddc -output DLX_postsyn.ddc
 write -hierarchy -format vhdl -output DLX_postsyn.vhdl
-write -hierarchy -format verilog -output DLX_postsyn.v
+write -hierarchy -format verilog -output ../netlist/DLX_postsyn.v
+
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../netlist/DLX.sdf
+write_sdc ../netlist/DLX.sdc

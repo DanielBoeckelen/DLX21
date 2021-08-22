@@ -1,0 +1,35 @@
+Gate area 0.7980 um^2
+Level 0 Module DLX                                      Gates=     20147 Cells=    8187 Area=   16077.3 um^2
+Level 1 Module DP                                       Gates=19906      Cells=8074     Area=   15885.5 um^2
+Level 2 Module DP/FetchStage                            Gates=1273       Cells=589      Area=    1016.1 um^2
+Level 3 Module DP/FetchStage/PC                         Gates=299        Cells=95       Area=     238.9 um^2
+Level 3 Module DP/FetchStage/PC_reg                     Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/FetchStage/IR                         Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/FetchStage/add_54                     Gates=160        Cells=113      Area=     127.7 um^2
+Level 2 Module DP/DecodeStage                           Gates=12937      Cells=4204     Area=   10323.7 um^2
+Level 3 Module DP/DecodeStage/regPC                     Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/DecodeStage/regIMM                    Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/DecodeStage/rf                        Gates=12112      Cells=3870     Area=    9665.6 um^2
+Level 2 Module DP/ExecuteStage                          Gates=4657       Cells=2793     Area=    3716.6 um^2
+Level 3 Module DP/ExecuteStage/FW1                      Gates=147        Cells=103      Area=     117.6 um^2
+Level 3 Module DP/ExecuteStage/FW2                      Gates=147        Cells=103      Area=     117.6 um^2
+Level 3 Module DP/ExecuteStage/muxB                     Gates=147        Cells=103      Area=     117.6 um^2
+Level 3 Module DP/ExecuteStage/alu0                     Gates=2542       Cells=1848     Area=    2028.5 um^2
+Level 4 Module DP/ExecuteStage/alu0/Comp                Gates=223        Cells=215      Area=     178.5 um^2
+Level 5 Module DP/ExecuteStage/alu0/Comp/r57            Gates=211        Cells=205      Area=     168.9 um^2
+Level 4 Module DP/ExecuteStage/alu0/Shift               Gates=1000       Cells=649      Area=     798.5 um^2
+Level 4 Module DP/ExecuteStage/alu0/Add_Sub_unit        Gates=700        Cells=492      Area=     558.6 um^2
+Level 5 Module DP/ExecuteStage/alu0/Add_Sub_unit/Carrygen0 Gates=215        Cells=165      Area=     171.8 um^2
+Level 5 Module DP/ExecuteStage/alu0/Add_Sub_unit/Sumgen0 Gates=484        Cells=327      Area=     386.8 um^2
+Level 4 Module DP/ExecuteStage/alu0/Res_mux             Gates=147        Cells=103      Area=     117.6 um^2
+Level 3 Module DP/ExecuteStage/alureg                   Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/ExecuteStage/B_reg                    Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/ExecuteStage/NPC_ABS_reg              Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/ExecuteStage/NPC_REL_reg              Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/ExecuteStage/add_0_root_add_0_root_add_118_2 Gates=168        Cells=33       Area=     134.6 um^2
+Level 2 Module DP/MemoryStage                           Gates=774        Cells=319      Area=     617.9 um^2
+Level 3 Module DP/MemoryStage/LMD                       Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/MemoryStage/reg1                      Gates=288        Cells=96       Area=     229.8 um^2
+Level 3 Module DP/MemoryStage/PCsel                     Gates=153        Cells=112      Area=     122.4 um^2
+Level 2 Module DP/HDU                                   Gates=123        Cells=74       Area=      98.7 um^2
+Level 1 Module CU                                       Gates=138        Cells=74       Area=     110.1 um^2

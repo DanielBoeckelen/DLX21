@@ -4,7 +4,7 @@ Warning: Design 'DLX' has '2' unresolved references. For more detailed informati
 Report : area
 Design : DLX
 Version: F-2011.09-SP3
-Date   : Sat Aug 21 18:58:23 2021
+Date   : Sat Aug 21 20:30:03 2021
 ****************************************
 
 Library(s) Used:
