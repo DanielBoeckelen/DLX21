@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 
 package instruction_set is
 
-	-- DLX Basic Instruction Subset
+	-- DLX Instruction Subset
 	-- All instructions have a fixed 32-bit length
 	
 	----------- Instruction Types -------------------------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ package instruction_set is
 		-- XOR
 		constant XOR_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(38, Func_size)); --x"26"
 		
-		--------------advanced instrcutions of R type
+		-------------- Advanced R-Type instructions
 		
 		-- ADDU
 		constant ADDU_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(33, Func_size)); --x"21"
@@ -110,7 +110,7 @@ package instruction_set is
 		-- SUBU
 		constant SUBU_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(35, Func_size)); --x"23"
 		-- MULT
-		constant MULT_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(14, Func_size)); --x"0e"   --Attention : the func_code is copied as it's using fp register
+		constant MULT_Func : std_logic_vector(Func_size-1 downto 0) := std_logic_vector(to_unsigned(14, Func_size)); --x"0e"
 
 
 	-- I-Type (LW, SW, ADDI, ANDI, BEQZ, BNEZ, ORI, SGEI, SLEI, SLLI, SNEI, SRLI, SUBI, XORI)
@@ -144,7 +144,7 @@ package instruction_set is
 		-- XORI
 		constant XORI_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(14, OPCODE_size)); --x"0e"
 
-		----------- advanced instrcutions of I type
+		----------- Advanced I-Type instructions
 		-- JR
         constant JR_OP : std_logic_vector(OPCODE_size-1 downto 0) := std_logic_vector(to_unsigned(18, OPCODE_size)); --x"12"
         -- JALR
