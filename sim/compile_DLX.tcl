@@ -48,7 +48,7 @@ vcom -93 -work ./work ../src/a.b-Datapath.vhd
 vcom -93 -work ./work ../src/a-DLX.vhd
 #vcom -93 -work ./work ../syn/DLX_postsyn.vhdl
 #vlog -work ./work ../syn/DLX_postsyn.v
-#vlog -work ./work ../innovus/RISCV_lite_postroute.v
+#vlog -work ./work ../innovus/DLX_postroute.v
 
 ######## TESTBENCH ########
 vcom -93 -work ./work ../src/a.c-IRAM.vhd
