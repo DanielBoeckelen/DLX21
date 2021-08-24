@@ -1,5 +1,6 @@
 # DLX21
 
+<<<<<<< HEAD
 -----------
 
 Progress as of 21/08/21:
@@ -9,6 +10,17 @@ some adjustments like comments etc...
 We will then start working on the PRO instruction set.
 
 -----------
+=======
+------------
+
+Progress as of 21/08/21:
+
+Solved final synthesis problems for the basic version. Next step: routing with Innovus. After this we could consider the basic version as working, although it would still need
+some adjustments like comments etc...
+We will then start working on the PRO instruction set.
+
+------------
+>>>>>>> 244d6e6ab016c7e4675fb6845fb3915e55884fc2
 
 Progress as of 10/08/21:
 
