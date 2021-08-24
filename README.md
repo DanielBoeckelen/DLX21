@@ -1,5 +1,15 @@
 # DLX21
 
+------------
+
+Progress as of 21/08/21:
+
+Solved final synthesis problems for the basic version. Next step: routing with Innovus. After this we could consider the basic version as working, although it would still need
+some adjustments like comments etc...
+We will then start working on the PRO instruction set.
+
+------------
+
 Progress as of 10/08/21:
 
 The Synthesis error of the shifter (about the constants) has been solved.

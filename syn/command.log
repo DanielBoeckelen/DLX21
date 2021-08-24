@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version F-2011.09-SP3 for amd64 -- Jan 26, 2012
-#@ # Date:   Tue Aug 10 11:24:23 2021
+#@ # Date:   Sat Aug 21 11:11:15 2021
 #@ # Run by: ms21.21@localhost.localdomain
 #@ 
 
@@ -4772,7 +4772,7 @@ source /home/ms21.21/Desktop/GR21_DLX/DLX21/syn/.synopsys_dc.setup
 #@ # -- End source /home/ms21.21/Desktop/GR21_DLX/DLX21/syn/.synopsys_dc.setup
 
 gui_start
-uplevel #0 source /home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX_syn.tcl
+source DLX_syn.tcl
 #@ analyze -format vhdl -library WORK ../src/constants.vhd
 #@ analyze -format vhdl -library WORK ../src/001-instruction_set.vhd
 #@ #analyze -format vhdl -library WORK ../src/ALU_OPs.vhd
@@ -4833,7 +4833,7 @@ uplevel #0 source /home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX_syn.tcl
 #@ #set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] CLK]
 #@ #set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
 #@ ### OR
-#@ set_max_delay 2 -from [all_inputs] to [all_outputs]
+#@ #set_max_delay 2 -from [all_inputs] -to [all_outputs]
 #@ 
 #@ # Set a load to the output
 #@ #set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
@@ -4846,7 +4846,5 @@ uplevel #0 source /home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX_syn.tcl
 #@ write -hierarchy -format ddc -output DLX_postsyn.ddc
 #@ write -hierarchy -format vhdl -output DLX_postsyn.vhdl
 #@ write -hierarchy -format verilog -output DLX_postsyn.v
-#@ # -- End source /home/ms21.21/Desktop/GR21_DLX/DLX21/syn/DLX_syn.tcl
+#@ # -- End source DLX_syn.tcl
 
-error_info
-error_info

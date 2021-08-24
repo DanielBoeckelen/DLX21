@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : DLX
 Version: F-2011.09-SP3
-Date   : Tue Aug 10 11:25:52 2021
+Date   : Sat Aug 21 11:12:55 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.

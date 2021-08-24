@@ -1,0 +1,27 @@
+8. P4_adder (TOP ENTITY)
+
+	- carry_generator
+	- sum generator 
+
+7. carry_generator
+
+	- PGblock
+	- Gblock
+	- PG_net
+
+6. sum_generator
+
+	- carry_select_basic
+
+5. carry_select_basic 
+	
+	- RCA
+
+1. PG_net
+
+2. PGblock
+
+3. Gblock
+
+4. RCA
+	-FA
