@@ -36,13 +36,15 @@ architecture dlx_rtl of DLX is
     RAM_DEPTH : integer := MEM_size;
     D_SIZE : integer := NBIT);
   port (
-    En       : in std_logic;
-    Rst      : in std_logic;
-    ADDR_IN  : in std_logic_vector(D_SIZE-1 downto 0);
-	DATA_IN  : in std_logic_vector(D_SIZE-1 downto 0);
-	DRAM_W   : in std_logic;
-	DRAM_R   : in std_logic;
-	DATA_OUT : out std_logic_vector(D_SIZE-1 downto 0)
+    En         : in std_logic;
+    Rst        : in std_logic;
+    ADDR_IN    : in std_logic_vector(D_SIZE-1 downto 0);
+	DATA_IN    : in std_logic_vector(D_SIZE-1 downto 0);
+	LOAD_TYPE  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+	STORE_TYPE : in std_logic; -- '0' SW, '1' SB
+	DRAM_W     : in std_logic;
+	DRAM_R     : in std_logic;
+	DATA_OUT   : out std_logic_vector(D_SIZE-1 downto 0)
     );
   end component;
 
@@ -124,7 +126,8 @@ architecture dlx_rtl of DLX is
   ----------------------------------------------------------------
   
   signal REG_LATCH_EN, RD1, RD2, MUX_A_SEL, ALU_OUTREG_EN, DRAM_R_IN, MEM_EN_IN, DRAM_W_IN, RF_WE, DRAM_EN_IN, WB_MUX_SEL, Bubble, DRAM_EN_OUT, DRAM_R_OUT, DRAM_W_OUT : std_logic;
-  signal MUX_B_SEL, JUMP_TYPE : std_logic_vector(1 downto 0);
+  signal MUX_B_SEL, JUMP_TYPE, LOAD_TYPE : std_logic_vector(1 downto 0);
+  signal STORE_TYPE : std_logic;
   signal ALU_OPC : aluOp;
   signal INST, IRAM_ADDR_OUT, INS_IN, DRAM_ADDR_OUT, DATA_IN, DATA_OUT : std_logic_vector(NBIT-1 downto 0);
 
@@ -225,6 +228,8 @@ architecture dlx_rtl of DLX is
 			Rst => Rst,
 			ADDR_IN => DRAM_ADDR_OUT,
 			DATA_IN => DATA_OUT,
+			LOAD_TYPE => LOAD_TYPE,
+			STORE_TYPE => STORE_TYPE,
 			DRAM_W => DRAM_W_OUT,
 			DRAM_R => DRAM_R_OUT,
 			DATA_OUT => DATA_IN);

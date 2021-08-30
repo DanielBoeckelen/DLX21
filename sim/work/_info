@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim
 T_opt
-V>dPCW@=`n=BmYTcQH2cgm1
+VcJ3HQARXI=h5UXAReY`>G0
 06 6 4 ./work tb_dlx test 1
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
@@ -680,7 +680,7 @@ F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
 Edlx
-w1620914805
+w1630341313
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
@@ -702,9 +702,9 @@ DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants iWVNN7=MSNGe1>9a2iXg93
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 DE work dlx :hCcG2Zfe0S1eL2IQb@Rh2
-l132
+l135
 L16
-VHJc`LkajX[8TheAa`XFgS3
+V3LOg`8I4M^6Dj]zkga<EF2
 OE;C;6.2g;35
 31
 M5 ieee std_logic_1164
@@ -731,7 +731,7 @@ F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
 Edram
-w1620393995
+w1630341040
 DP work constants iWVNN7=MSNGe1>9a2iXg93
 DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP std textio K]Z^fghZ6B=BjnK5NomDT3
@@ -740,8 +740,8 @@ DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 8../src/a.d-DRAM.vhd
 F../src/a.d-DRAM.vhd
 l0
-L12
-VfPW8ob42oU=cH;m`ffL6R1
+L10
+VmPY2RN>G0o2NTRTh@;S>i0
 OE;C;6.2g;35
 31
 o-93 -work ./work
@@ -752,10 +752,10 @@ DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP std textio K]Z^fghZ6B=BjnK5NomDT3
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work dram fPW8ob42oU=cH;m`ffL6R1
-l68
+DE work dram mPY2RN>G0o2NTRTh@;S>i0
+l33
 L27
-VQl@9g`::93>29eFGPD8bY1
+Vi6Z=JV7TB[0o`H^_mQT_L1
 OE;C;6.2g;35
 31
 M5 ieee std_logic_1164

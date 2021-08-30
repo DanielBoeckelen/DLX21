@@ -299,8 +299,129 @@ source compile_DLX.tcl
 # ** Warning: ../src/a.a-CU.vhd(228): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(229): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(230): Case choice must be a locally static expression.
-# ** Error: ../src/a.a-CU.vhd(230): near ";": syntax error
-# /software/mentor/modelsim_6.2g/linux/vcom failed.
+# ** Warning: ../src/a.a-CU.vhd(231): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(232): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(233): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(234): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(235): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(236): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(237): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(238): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(239): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(240): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(241): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(242): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(251): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(253): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(254): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(255): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(256): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(257): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(258): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(259): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(260): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(261): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(262): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(263): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(264): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(265): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(266): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(267): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(268): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(269): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(270): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(271): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(272): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(275): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(276): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(277): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(278): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(279): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(280): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(281): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(282): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(283): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(284): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(285): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(286): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(287): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(288): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(289): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(290): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(291): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(292): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(293): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(294): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(295): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(296): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(297): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(298): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(299): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(300): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(301): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(302): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(303): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(304): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(305): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(306): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(307): Case choice must be a locally static expression.
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity datapath
+# -- Compiling architecture struct of datapath
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity dlx
+# -- Compiling architecture dlx_rtl of dlx
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Loading package constants
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity iram
+# -- Compiling architecture iram_bhe of iram
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Loading package constants
+# -- Compiling entity dram
+# -- Compiling architecture dram_bhe of dram
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dlx
+# -- Compiling architecture test of tb_dlx
+# -- Compiling configuration cfg_tb
+# -- Loading entity tb_dlx
+# -- Loading architecture test of tb_dlx
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Loading entity dlx
+# vsim work.tb_DLX 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Error: ../src/a-DLX.vhd(230): (vopt-1130) Formal port "load_type" declared in entity "dram" is not in the component declaration being instantiated.
+# ** Error: ../src/a-DLX.vhd(230): (vopt-1130) Formal port "store_type" declared in entity "dram" is not in the component declaration being instantiated.
+# ** Error: ../src/a.d-DRAM.vhd(27): Vopt Compiler exiting
+# Error loading design
 source compile_DLX.tcl
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
