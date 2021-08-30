@@ -73,28 +73,28 @@ architecture bhv of hardwired_cu is
           --ALU_OUTREG_EN -> pipeline regs between ALU and MEM
           --MEM_EN_IN -> pipeline regs between MEM and WB mux
           
-                                  "100" & "0000000" & "0000" & '0', --"110" & "1011000" & "1010" & '1', -- NOP
-								  -- We're trying REG_LATCH_EN = '1' in the NOP because the NOP otherwise disables the RF and doesn't allow for writeback completion of an old instruction
-								  "111" & "0001000" & "1010" & '1', --"111" & "1001000" & "1010" & '1', -- R type CWs
-                                  "110" & "0011000" & "1010" & '1', --"110" & "1011000" & "1010" & '1', -- I type CWs
+                                  "100" & "0000000" & "0000" & '0', -- NOP
+								  -- We're using REG_LATCH_EN = '1' in the NOP because the NOP otherwise disables the RF and doesn't allow for writeback completion of an old instruction
+								  "111" & "0001000" & "1010" & '1', -- R type CWs
+                                  "110" & "0011000" & "1010" & '1', -- I type CWs
                                                                  
-                                  "110" & "0011100" & "1011" & '0', --"110" & "1011100" & "1011" & '0', -- LW RD, imm(RS1)
-                                  "111" & "0011000" & "1101" & '0', --"111" & "1011000" & "1111" & '0', -- SW imm(RS1), RD ------ RD2 = 1 or 0?
+                                  "110" & "0011100" & "1011" & '0', -- LW RD, imm(RS1); LB, LBU, LHU
+                                  "111" & "0011000" & "1101" & '0', -- SW imm(RS1), SB
 
-                                  --In BEQZ and BNEZ: ALU output reg turned off because the adder
-                                  --of the EXE stage performs PC+imm26
+                                  -- In BEQZ and BNEZ: ALU output reg is turned off because the adder
+                                  -- of the EXE stage performs PC+imm26
                                   
-                                  "110" & "1011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BEQZ
-                                  "110" & "1011001" & "0000" & '0', --"110" & "0011001" & "0000" & '0', -- BNEZ
+                                  "110" & "1011001" & "0000" & '0', -- BEQZ
+                                  "110" & "1011001" & "0000" & '0', -- BNEZ
 
-                                  --In JAL the ALU will perform PC+4 while in
-                                  --parallel the adder in EXE stage performs PC+imm26
+                                  -- In JAL the ALU will perform PC+4 while in
+                                  -- parallel the adder in EXE stage performs PC+imm26
 
-                                  "100" & "1011010" & "0000" & '0', --"100" & "0010010" & "0000" & '0', -- J label
-                                  "100" & "1101010" & "1010" & '1', --"101" & "0101010" & "0010" & '1', -- JAL label
+                                  "100" & "1011010" & "0000" & '0', -- J label
+                                  "100" & "1101010" & "1010" & '1', -- JAL label
 
-                                  "110" & "1100011" & "0000" & '0', --"110" & "1100011" & "0000" & '0',  -- JR register
-                                  "110" & "1101011" & "1010" & '1' --"110" & "0101011" & "0110" & '1' -- JALR register
+                                  "110" & "1100011" & "0000" & '0', -- JR register
+                                  "110" & "1101011" & "1010" & '1'  -- JALR register
                                  ); 
         
 	signal IR_opcode : std_logic_vector(OPCODE_size-1 downto 0);  -- OpCode part of IR
@@ -108,7 +108,7 @@ architecture bhv of hardwired_cu is
         signal CW4 : std_logic_vector(CW_SIZE-1 - 14 downto 0) := (others => '0'); --4th,5th
         
 
-    --AluOp
+    -- AluOp
       signal AluOP_D: aluop;
       signal AluOP_E: aluop;
       
@@ -118,34 +118,33 @@ begin
 	-- Internal signals for OPCODE and FUNC
 	IR_opcode <= INS_IN(OPCODE_begin downto OPCODE_end);
   	IR_func <= INS_IN (Func_begin downto Func_end);
-	-- CW <= CW_MEM(conv_integer(IR_opcode));
 
-	-- Control signals assignments
+	-- Control signal assignments
         
 	-- Decode
 	REG_LATCH_EN <= CW1(14);
-        RD1 <= CW1(13);	
+    RD1 <= CW1(13);	
 	RD2 <= CW1(12);
         
 	-- Execute
-        MUX_A_SEL <= CW2(11);    
+    MUX_A_SEL <= CW2(11);    
 	MUX_B_SEL(1) <= CW2(10);
-        MUX_B_SEL(0) <= CW2(9);
+    MUX_B_SEL(0) <= CW2(9);
        
 	ALU_OUTREG_EN <= CW2(8);  
 	DRAM_R_IN <= CW2(7);
 
-        JUMP_TYPE(1) <= CW2(6);
-        JUMP_TYPE(0) <= CW2(5);
+    JUMP_TYPE(1) <= CW2(6);
+    JUMP_TYPE(0) <= CW2(5);
 
 	-- Memory
-	 MEM_EN_IN <= CW3(4);     
-	 DRAM_W_IN <= CW3(3);            
-         RF_WE <= CW3(2);
-         DRAM_EN_IN <= CW3(1); 
+	MEM_EN_IN <= CW3(4);     
+	DRAM_W_IN <= CW3(3);            
+	RF_WE <= CW3(2);
+	DRAM_EN_IN <= CW3(1); 
 
-        --Write Back
-        WB_MUX_SEL <= CW4(0);
+    -- Write Back
+    WB_MUX_SEL <= CW4(0);
     
 
 	-- Pipelining process
@@ -187,15 +186,25 @@ begin
 			when RType_OP => -- analyze each RTYPE function
 				case (IR_func) is
 					when ADD_Func => CW <= CW_MEM(1);
-                                        when AND_Func => CW <= CW_MEM(1);
+                    when AND_Func => CW <= CW_MEM(1);
 					when OR_Func  => CW <= CW_MEM(1);
-                                        when SGE_Func => CW <= CW_MEM(1);
-                                        when SLE_Func => CW <= CW_MEM(1);
-                                        when SLL_Func => CW <= CW_MEM(1);
-                                        when SNE_Func => CW <= CW_MEM(1);
-                                        when SRL_Func => CW <= CW_MEM(1);
-                                        when SUB_Func => CW <= CW_MEM(1);
-                                        when XOR_Func => CW <= CW_MEM(1);      
+                    when SGE_Func => CW <= CW_MEM(1);
+                    when SLE_Func => CW <= CW_MEM(1);
+                    when SLL_Func => CW <= CW_MEM(1);
+                    when SNE_Func => CW <= CW_MEM(1);
+                    when SRL_Func => CW <= CW_MEM(1);
+                    when SUB_Func => CW <= CW_MEM(1);
+                    when XOR_Func => CW <= CW_MEM(1);
+					when ADDU_Func => CW <= CW_MEM(1);  
+					when SEQ_Func => CW <= CW_MEM(1);
+					when SGEU_Func => CW <= CW_MEM(1);
+					when SGT_Func => CW <= CW_MEM(1);
+					when SGTU_Func => CW <= CW_MEM(1);
+					when SLT_Func => CW <= CW_MEM(1);
+					when SLTU_Func => CW <= CW_MEM(1);
+					when SRA_Func => CW <= CW_MEM(1);
+					when SUBU_Func => CW <= CW_MEM(1);
+					when MULT_Func => CW <= CW_MEM(1);    
  					when others => CW <= CW_MEM(0); -- NOP
 				end case;
 			when NOP_OP  => CW <= CW_MEM(0);
@@ -213,22 +222,36 @@ begin
 			when SRLI_OP => CW <= CW_MEM(2);
 			when SUBI_OP => CW <= CW_MEM(2);
 			when XORI_OP => CW <= CW_MEM(2);
-                        when J_OP => CW <= CW_MEM(7);
-                        when JAL_OP => CW <= CW_MEM(8);
-                        when JR_OP   => CW <= CW_MEM(9);
-                        when JALR_OP => CW <= CW_MEM(10);
+			when ADDUI_OP => CW <= CW_MEM(2);
+			when LB_OP => CW <= CW_MEM(3); -- new func?
+			when LBU_OP => CW <= CW_MEM(3); -- new func?
+			when LHI_OP => CW <= CW_MEM(2);
+			when LHU_OP => CW <= CW_MEM(3); -- new func?
+			when SB_OP => CW <= CW_MEM(4); -- new func?
+			when SEQI_OP => CW <= CW_MEM(2);
+			when SGEUI_OP => CW <= CW_MEM(2);
+			when SGTI_OP => CW <= CW_MEM(2);
+			when SGTUI_OP => CW <= CW_MEM(2);
+			when SLTI_OP => CW <= CW_MEM(2);
+			when SLTUI_OP => CW <= CW_MEM(2);
+			when SRAI_OP => CW <= CW_MEM(2);
+			when SUBUI_OP => CW <= CW_MEM(2);
+            when J_OP => CW <= CW_MEM(7);
+            when JAL_OP => CW <= CW_MEM(8);
+            when JR_OP   => CW <= CW_MEM(9);
+            when JALR_OP => CW <= CW_MEM(10);
 			when others => CW <= CW_MEM(0); -- NOP
 	 	end case;
 	end process CW_GEN;
 
-        -- Generation of the ALU control signals
+    -- Generation of the ALU control signals
    	ALUOPC_GEN : process (IR_opcode, IR_func)
    	begin
 		case (IR_opcode) is
 			when RType_OP => -- analyze each RTYPE function
 				case (IR_func) is
-                                        when ADD_Func => AluOP_D <= ADDS;
-                                        when AND_Func => AluOP_D <= ANDS;
+                    when ADD_Func => AluOP_D <= ADDS;
+                    when AND_Func => AluOP_D <= ANDS;
 					when OR_Func  => AluOP_D <= ORS;
 					when SGE_Func => AluOP_D <= SGES;
 					when SLE_Func => AluOP_D <= SLES;
@@ -236,7 +259,17 @@ begin
 					when SNE_Func => AluOP_D <= NEQS;
 					when SRL_Func => AluOP_D <= SRLS;
 					when SUB_Func => AluOP_D <= SUBS;
-					when XOR_Func => AluOP_D <= XORS;      
+					when XOR_Func => AluOP_D <= XORS;
+					when ADDU_Func => AluOP_D <= ADDUS;  
+					when SEQ_Func => AluOP_D <= SEQS;
+					when SGEU_Func => AluOP_D <= SGEUS;
+					when SGT_Func => AluOP_D <= SGTS;
+					when SGTU_Func => AluOP_D <= SGTUS;
+					when SLT_Func => AluOP_D <= SLTS;
+					when SLTU_Func => AluOP_D <= SLTUS;
+					when SRA_Func => AluOP_D <= SRAS;
+					when SUBU_Func => AluOP_D <= SUBUS;
+					when MULT_Func => AluOP_D <= MULTS;          
  					when others   => AluOP_D <= NOP; -- NOP
 				end case;
 			when NOP_OP  => AluOP_D <= NOP;
@@ -254,10 +287,24 @@ begin
 			when SRLI_OP => AluOP_D <= SRLS;
 			when SUBI_OP => AluOP_D <= SUBS;
 			when XORI_OP => AluOP_D <= XORS;
+			when ADDUI_OP => AluOP_D <= ADDUS;
+			when LB_OP => AluOP_D <= ADDS; -- new func?
+			when LBU_OP => AluOP_D <= ADDS; -- new func?
+			when LHI_OP => AluOP_D <= LHIS;
+			when LHU_OP => AluOP_D <= ADDS; -- new func?
+			when SB_OP => AluOP_D <= ADDS; -- new func?
+			when SEQI_OP => AluOP_D <= SEQS;
+			when SGEUI_OP => AluOP_D <= SGEUS;
+			when SGTI_OP => AluOP_D <= SGTS;
+			when SGTUI_OP => AluOP_D <= SGTUS;
+			when SLTI_OP => AluOP_D <= SLTS;
+			when SLTUI_OP => AluOP_D <= SLTUS;
+			when SRAI_OP => AluOP_D <= SRAS;
+			when SUBUI_OP => AluOP_D <= SUBUS; 
 			when J_OP    => AluOP_D <= NOP;
 			when JAL_OP  => AluOP_D <= ADDS;
-                        when JR_OP   => AluOP_D <= NOP;
-                        when JALR_OP => AluOP_D <= ADDS;
+            when JR_OP   => AluOP_D <= NOP;
+            when JALR_OP => AluOP_D <= ADDS;
 			when others  => AluOP_D <= NOP; -- NOP
 	 	end case;
 	end process ALUOPC_GEN;

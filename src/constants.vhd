@@ -15,7 +15,7 @@ package constants is
 	--constant path_DRAM : string := "../asm/DRAM.data"; 
 
 	type aluOp is (
-		NOP, ADDS, ADDUS, SUBS, SUBUS, MULTS, ANDS, ORS, XORS, SLLS, SRLS, SRAS, BEQZS, BNEZS, SGES, SGEUS, SGTS, SGTUS, SLES, SLTS, SLTUS, SEQS, NEQS -- LB, LBU, LHI, LHU, SB
+		NOP, ADDS, ADDUS, SUBS, SUBUS, MULTS, ANDS, ORS, XORS, SLLS, SRLS, SRAS, BEQZS, BNEZS, SGES, SGEUS, SGTS, SGTUS, SLES, SLTS, SLTUS, SEQS, NEQS, LHIS -- LB, LBU, LHU, SB
 	);
 
     type shifter_OP is (

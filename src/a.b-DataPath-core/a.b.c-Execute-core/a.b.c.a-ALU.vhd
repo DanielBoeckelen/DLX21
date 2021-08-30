@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_signed.all;
 use IEEE.numeric_std.all;
+use IEEE.std_logic_arith.all;
 use work.constants.all;
 use work.instruction_set.all;
 
@@ -184,6 +185,22 @@ begin
 								LEFT_RIGHT <= '1';
 								A_SHF <= OP1;
 								B_SHF <= OP2;
+                                select_type_sig <= "10"; --shift_res
+                                select_zero_sig <= '0';
+
+								A_CMP <= (others => '0'); -- to avoid inferred latches
+								B_CMP <= (others => '0');
+								A_ADD <= (others => '0');
+								B_ADD <= (others => '0');
+								OPSel <= 0;
+								ADD_SUB <= '0';
+								LOGIC_RES <= (others => '0');
+
+			when LHIS =>
+								LOGIC_ARITH <= '1';
+								LEFT_RIGHT <= '1';
+								A_SHF <= OP2;
+								B_SHF <= conv_std_logic_vector(16, NBIT);
                                 select_type_sig <= "10"; --shift_res
                                 select_zero_sig <= '0';
 

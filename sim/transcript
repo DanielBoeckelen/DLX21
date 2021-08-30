@@ -257,7 +257,8 @@ source compile_DLX.tcl
 # -- Loading package instruction_set
 # -- Compiling entity hardwired_cu
 # -- Compiling architecture bhv of hardwired_cu
-# ** Warning: ../src/a.a-CU.vhd(187): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(186): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(188): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(189): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(190): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(191): Case choice must be a locally static expression.
@@ -268,6 +269,8 @@ source compile_DLX.tcl
 # ** Warning: ../src/a.a-CU.vhd(196): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(197): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(198): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(199): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(200): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(201): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(202): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(203): Case choice must be a locally static expression.
@@ -275,8 +278,6 @@ source compile_DLX.tcl
 # ** Warning: ../src/a.a-CU.vhd(205): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(206): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(207): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(208): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(209): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(210): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(211): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(212): Case choice must be a locally static expression.
@@ -287,7 +288,309 @@ source compile_DLX.tcl
 # ** Warning: ../src/a.a-CU.vhd(217): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(218): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(219): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(220): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(221): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(222): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(223): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(224): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(225): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(226): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(227): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(228): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(229): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(230): Case choice must be a locally static expression.
+# ** Error: ../src/a.a-CU.vhd(230): near ";": syntax error
+# /software/mentor/modelsim_6.2g/linux/vcom failed.
+source compile_DLX.tcl
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package constants
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Compiling package instruction_set
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity regn
+# -- Compiling architecture bhv of regn
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package func_external
+# -- Compiling package body func_external
+# -- Loading package func_external
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Compiling entity mux21
+# -- Compiling architecture bhv of mux21
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Compiling entity mux41
+# -- Compiling architecture bhv of mux41
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity ff
+# -- Compiling architecture bhv of ff
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity hazarddetection
+# -- Compiling architecture arch of hazarddetection
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity fetch
+# -- Compiling architecture struct of fetch
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package numeric_std
+# -- Loading package constants
+# -- Compiling entity register_file
+# -- Compiling architecture bhv of register_file
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity instruction_type
+# -- Compiling architecture bhv of instruction_type
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(29): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(31): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(32): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(33): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(34): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(35): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(36): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(37): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(38): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(39): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(40): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(41): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(42): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(43): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(44): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(46): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd(47): Case choice must be a locally static expression.
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity instruction_decomposition
+# -- Compiling architecture bhv of instruction_decomposition
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity decode
+# -- Compiling architecture struct of decode
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package math_real
+# -- Loading package func_external
+# -- Loading package constants
+# -- Compiling entity carry_generator
+# -- Compiling architecture struct of carry_generator
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity sum_generator
+# -- Compiling architecture structural of sum_generator
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity carry_select_basic
+# -- Compiling architecture struct of carry_select_basic
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity pg_net
+# -- Compiling architecture bhv of pg_net
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity pgblock
+# -- Compiling architecture bhv of pgblock
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity gblock
+# -- Compiling architecture bhv of gblock
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity rca
+# -- Compiling architecture structural of rca
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity fa
+# -- Compiling architecture behavioral of fa
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package constants
+# -- Compiling entity comparator
+# -- Compiling architecture bhv of comparator
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package constants
+# -- Compiling entity shifter
+# -- Compiling architecture bhv of shifter
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Compiling entity p4adder
+# -- Compiling architecture struct of p4adder
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Loading package constants
+# -- Loading package instruction_set
+# -- Compiling entity alu
+# -- Compiling architecture struct of alu
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package instruction_set
+# -- Compiling entity branch_cond_unit
+# -- Compiling architecture bhv of branch_cond_unit
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity fwd_unit
+# -- Compiling architecture bhv of fwd_unit
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package numeric_std
+# -- Loading package constants
+# -- Loading package instruction_set
+# -- Compiling entity execute
+# -- Compiling architecture struct of execute
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity memory
+# -- Compiling architecture struct of memory
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package constants
+# -- Loading package std_logic_arith
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity writeback
+# -- Compiling architecture struct of writeback
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Loading package numeric_std
+# -- Loading package instruction_set
+# -- Compiling entity hardwired_cu
+# -- Compiling architecture bhv of hardwired_cu
+# ** Warning: ../src/a.a-CU.vhd(186): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(188): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(189): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(190): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(191): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(192): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(193): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(194): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(195): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(196): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(197): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(198): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(199): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(200): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(201): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(202): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(203): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(204): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(205): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(206): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(207): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(210): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(211): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(212): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(213): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(214): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(215): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(216): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(217): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(218): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(219): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(220): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(221): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(222): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(223): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(224): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(225): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(226): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(227): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(228): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(229): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(230): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(231): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(232): Case choice must be a locally static expression.
@@ -298,17 +601,10 @@ source compile_DLX.tcl
 # ** Warning: ../src/a.a-CU.vhd(237): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(238): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(239): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(240): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(241): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(242): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(243): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(244): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(245): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(246): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(247): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(248): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(249): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(250): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(251): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(252): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(253): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(254): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(255): Case choice must be a locally static expression.
@@ -317,6 +613,51 @@ source compile_DLX.tcl
 # ** Warning: ../src/a.a-CU.vhd(258): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(259): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(260): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(261): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(262): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(263): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(264): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(265): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(266): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(267): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(268): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(269): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(270): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(271): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(272): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(275): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(276): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(277): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(278): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(279): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(280): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(281): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(282): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(283): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(284): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(285): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(286): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(287): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(288): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(289): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(290): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(291): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(292): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(293): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(294): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(295): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(296): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(297): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(298): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(299): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(300): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(301): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(302): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(303): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(304): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(305): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(306): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(307): Case choice must be a locally static expression.
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
@@ -417,57 +758,4 @@ source compile_DLX.tcl
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
 # Loading work.iram(iram_bhe)#1
 # Loading work.dram(dram_bhe)#1
-add wave sim:/tb_dlx/clock
-add wave sim:/tb_dlx/reset
-run 2 us
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/hdu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/hdu
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/shift
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/fetchstage
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/fetchstage
-# ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/iram_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
-# ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/iram_i
-# ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 11 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
-# ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 11 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
 quit -sim
