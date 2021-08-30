@@ -92,7 +92,7 @@ begin  -- IRam_Bhe
 	  --IRAM_mem(i) <=  0;
       --end loop;
     --else
-	--Iout <= conv_std_logic_vector(IRAM_mem(conv_integer(unsigned(Addr))), I_SIZE);
+	--Iout <= conv_std_logic_vector(IRAM_mem(conv_integer(unsigned(Addr))/4), I_SIZE);
     end if;
   end process FILL_MEM_P;
 
