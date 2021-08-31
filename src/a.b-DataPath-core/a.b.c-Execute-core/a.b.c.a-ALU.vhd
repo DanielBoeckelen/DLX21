@@ -278,9 +278,7 @@ begin
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';  --select_zero_sig = 0 means signed operation
 
-								A_CMP <= (others => '0'); -- to avoid inferred latches
-								B_CMP <= (others => '0');
-								A_SHF <= (others => '0');
+								A_SHF <= (others => '0'); -- to avoid inferred latches
 								B_SHF <= (others => '0');
 								A_ADD <= (others => '0');
 								B_ADD <= (others => '0');
@@ -320,9 +318,7 @@ begin
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';
 
-								A_CMP <= (others => '0'); -- to avoid inferred latches
-								B_CMP <= (others => '0');
-								A_SHF <= (others => '0');
+								A_SHF <= (others => '0'); -- to avoid inferred latches
 								B_SHF <= (others => '0');
 								A_ADD <= (others => '0');
 								B_ADD <= (others => '0');
@@ -338,9 +334,7 @@ begin
                                 select_type_sig <= "11"; --comp_res
                                 select_zero_sig <= '0';
 
-								A_CMP <= (others => '0'); -- to avoid inferred latches
-								B_CMP <= (others => '0');
-								A_SHF <= (others => '0');
+								A_SHF <= (others => '0'); -- to avoid inferred latches
 								B_SHF <= (others => '0');
 								A_ADD <= (others => '0');
 								B_ADD <= (others => '0');
@@ -395,10 +389,10 @@ begin
 	Add_Sub_unit : P4Adder generic map(NBIT => NBIT)
 		port map(A => A_ADD, B => B_ADD, Cin => ADD_SUB, S => ADD_SUB_RES, Cout => Cout);
 
-        Res_mux : mux41 generic map (NBIT => NBIT)
-                port map(A => ADD_SUB_RES, B => LOGIC_RES, C => SHIFT_RES, D => COMP_RES, S => select_type_sig, Z => sig_intraMux);
+    Res_mux : mux41 generic map (NBIT => NBIT)
+            port map(A => ADD_SUB_RES, B => LOGIC_RES, C => SHIFT_RES, D => COMP_RES, S => select_type_sig, Z => sig_intraMux);
 
-        Zeros_mux : mux21 generic map (NBIT => NBIT)
-                port map(A => sig_intraMux, B => (others => '0'), S => select_zero_sig, Z => ALU_RES);
+    Zeros_mux : mux21 generic map (NBIT => NBIT)
+            port map(A => sig_intraMux, B => (others => '0'), S => select_zero_sig, Z => ALU_RES);
 	
 end struct;

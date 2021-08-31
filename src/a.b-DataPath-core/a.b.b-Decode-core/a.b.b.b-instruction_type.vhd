@@ -42,7 +42,23 @@ begin
 			when SRLI_OP  =>  Itype <= '1';
 			when SUBI_OP  =>  Itype <= '1';
 			when XORI_OP  =>  Itype <= '1';
-			
+			when JR_OP => Itype <= '1';
+			when JALR_OP => Itype <= '1';
+			when ADDUI_OP => Itype <= '1';
+			when LB_OP => Itype <= '1';
+			when LBU_OP => Itype <= '1';
+			when LHI_OP => Itype <= '1';
+			when LHU_OP => Itype <= '1';
+			when SB_OP => Itype <= '1';
+			when SEQI_OP => Itype <= '1';
+			when SGEUI_OP => Itype <= '1';
+			when SGTI_OP => Itype <= '1';
+			when SGTUI_OP => Itype <= '1';
+			when SLTI_OP => Itype <= '1';
+			when SLTUI_OP => Itype <= '1';
+			when SRAI_OP => Itype <= '1';
+			when SUBUI_OP => Itype <= '1';
+
 			when J_OP => Jtype <= '1';
 			when JAL_OP =>  Jtype <= '1';
 

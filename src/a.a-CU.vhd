@@ -223,11 +223,11 @@ begin
 			when SUBI_OP => CW <= CW_MEM(2);
 			when XORI_OP => CW <= CW_MEM(2);
 			when ADDUI_OP => CW <= CW_MEM(2);
-			when LB_OP => CW <= CW_MEM(3); -- new func?
-			when LBU_OP => CW <= CW_MEM(3); -- new func?
+			when LB_OP => CW <= CW_MEM(3);
+			when LBU_OP => CW <= CW_MEM(3);
 			when LHI_OP => CW <= CW_MEM(2);
-			when LHU_OP => CW <= CW_MEM(3); -- new func?
-			when SB_OP => CW <= CW_MEM(4); -- new func?
+			when LHU_OP => CW <= CW_MEM(3);
+			when SB_OP => CW <= CW_MEM(4);
 			when SEQI_OP => CW <= CW_MEM(2);
 			when SGEUI_OP => CW <= CW_MEM(2);
 			when SGTI_OP => CW <= CW_MEM(2);
@@ -288,11 +288,11 @@ begin
 			when SUBI_OP => AluOP_D <= SUBS;
 			when XORI_OP => AluOP_D <= XORS;
 			when ADDUI_OP => AluOP_D <= ADDUS;
-			when LB_OP => AluOP_D <= ADDS; -- new func?
-			when LBU_OP => AluOP_D <= ADDS; -- new func?
+			when LB_OP => AluOP_D <= ADDS;
+			when LBU_OP => AluOP_D <= ADDS;
 			when LHI_OP => AluOP_D <= LHIS;
-			when LHU_OP => AluOP_D <= ADDS; -- new func?
-			when SB_OP => AluOP_D <= ADDS; -- new func?
+			when LHU_OP => AluOP_D <= ADDS;
+			when SB_OP => AluOP_D <= ADDS;
 			when SEQI_OP => AluOP_D <= SEQS;
 			when SGEUI_OP => AluOP_D <= SGEUS;
 			when SGTI_OP => AluOP_D <= SGTS;

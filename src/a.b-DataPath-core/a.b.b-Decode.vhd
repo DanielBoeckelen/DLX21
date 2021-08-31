@@ -24,7 +24,9 @@ entity Decode is
 		  ADD_RS2_HDU  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS2 address for Hazard Detection
 		  ADD_WR_OUT   : out std_logic_vector(NBIT_ADD-1 downto 0); -- ADD_WR output, will be used for writeback
 		  ADD_RS1_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS1 address for forwarding
-		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RS2 address for forwarding   
+		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS2 address for forwarding
+		  LOAD_TYPE    : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE   : out std_logic); -- '0' SW, '1' SB   
 end Decode;
 
 architecture struct of Decode is
@@ -39,6 +41,14 @@ component regn is
 		  DOUT : out std_logic_vector(N-1 downto 0));
 end component;
 
+component ff is
+	port( D   : in std_logic;
+		  CLK : in std_logic;
+		  EN  : in std_logic;
+		  RST : in std_logic;
+		  Q   : out std_logic);
+end component;
+
 component instruction_type is
 	port( INST_IN : in std_logic_vector(NBIT-1 downto 0); -- Instruction from IR
 		  Rtype   : out std_logic;
@@ -47,14 +57,16 @@ component instruction_type is
 end component;
 
 component instruction_decomposition is
-	port( INST_IN : in std_logic_vector(NBIT-1 downto 0); -- Instruction from IR
-		  Rtype   : in std_logic;
-		  Itype   : in std_logic;
-		  Jtype   : in std_logic;
-		  ADD_RS1 : out std_logic_vector(NBIT_ADD-1 downto 0); -- sent to regfile
-		  ADD_RS2 : out std_logic_vector(NBIT_ADD-1 downto 0); -- sent to regfile
-		  ADD_WR  : out std_logic_vector(NBIT_ADD-1 downto 0); -- sent to intermediate reg in ID stage, to be used in writeback
-		  IMM     : out std_logic_vector(NBIT-1 downto 0)); -- sent to intermediate reg in ID stage
+	port( INST_IN    : in std_logic_vector(NBIT-1 downto 0); -- Instruction from IR
+		  Rtype      : in std_logic;
+		  Itype      : in std_logic;
+		  Jtype      : in std_logic;
+		  ADD_RS1    : out std_logic_vector(NBIT_ADD-1 downto 0); -- sent to regfile
+		  ADD_RS2    : out std_logic_vector(NBIT_ADD-1 downto 0); -- sent to regfile
+		  ADD_WR     : out std_logic_vector(NBIT_ADD-1 downto 0); -- sent to intermediate reg in ID stage, to be used in writeback
+		  IMM        : out std_logic_vector(NBIT-1 downto 0); -- sent to intermediate reg in ID stage
+		  LOAD_TYPE  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU; to DRAM
+		  STORE_TYPE : out std_logic); -- '0' SW, '1' SB; to DRAM
 end component;
 
 component register_file is
@@ -80,6 +92,8 @@ end component;
 signal sig_Rtype, sig_Itype, sig_Jtype, sig_RST:  std_logic;
 signal sig_ADD_RS1, sig_ADD_RS2, sig_ADD_WR : std_logic_vector(NBIT_ADD-1 downto 0);		
 signal sig_IMM : std_logic_vector(NBIT-1 downto 0);
+signal sig_LOAD_TYPE : std_logic_vector(1 downto 0);
+signal sig_STORE_TYPE : std_logic;
 --signal sig_A, sig_B : std_logic_vector(NBIT-1 downto 0);
 
 begin
@@ -98,7 +112,9 @@ begin
 							ADD_RS1 => sig_ADD_RS1,
 							ADD_RS2 => sig_ADD_RS2,
 							ADD_WR => sig_ADD_WR,
-							IMM => sig_IMM);
+							IMM => sig_IMM,
+							LOAD_TYPE => sig_LOAD_TYPE,
+							STORE_TYPE => sig_STORE_TYPE);
 							
 	ADD_RS1_HDU <= sig_ADD_RS1;
 	ADD_RS2_HDU <= sig_ADD_RS2;
@@ -137,5 +153,14 @@ begin
 		DATAIN => DATA_WR_IN,
 		OUT1 => A_OUT, 
 		OUT2 => B_OUT);
+
+	regLOAD : regn generic map(N => 2)
+		port map(DIN => sig_LOAD_TYPE, CLK => CLK, EN => REG_LATCH_EN, RST => sig_RST, DOUT => LOAD_TYPE);
+	
+	STORE_ff : ff port map( D => sig_STORE_TYPE,
+							CLK => CLK,
+							EN => '1',
+							RST => sig_RST,
+							Q => STORE_TYPE);
 		
 end struct;

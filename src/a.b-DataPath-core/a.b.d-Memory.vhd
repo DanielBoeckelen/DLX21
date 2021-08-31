@@ -19,6 +19,8 @@ entity Memory is
 		  B_IN          : in std_logic_vector(NBIT-1 downto 0); -- Data for store, from EX stage
 		  ADD_WR_IN     : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address for WB, from EX stage
 		  DRAM_DATA_IN  : in std_logic_vector(NBIT-1 downto 0); -- Load data from DRAM
+		  LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+	      STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
 		  PC_OUT        : out std_logic_vector(NBIT-1 downto 0); -- PC value, to fetch stage
 		  DRAM_EN_OUT   : out std_logic; -- control signals to DRAM
 		  DRAM_R_OUT    : out std_logic; -- control signals to DRAM
@@ -29,7 +31,9 @@ entity Memory is
 		  ALU_RES_OUT   : out std_logic_vector(NBIT-1 downto 0); -- Data computed in ALU, to WB stage
 		  OP_MEM        : out std_logic_vector(NBIT-1 downto 0); -- Operand sent back to EX stage for forwarding
 		  ADD_WR_MEM    : out std_logic_vector(NBIT_ADD-1 downto 0); -- Write Address sent back to EX stage for forwarding
-		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0)); -- Address for WB
+		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0); -- Address for WB
+		  LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB 
 end Memory;
 
 architecture struct of Memory is
@@ -63,6 +67,8 @@ begin
 	DRAM_EN_OUT <= DRAM_EN_IN; -- control signals sent to DRAM
 	DRAM_R_OUT <= DRAM_R_IN;
 	DRAM_W_OUT <= DRAM_W_IN;
+	LOAD_TYPE_OUT <= LOAD_TYPE_IN;
+	STORE_TYPE_OUT <= STORE_TYPE_IN;
 	
 	LMD: regn generic map(N => NBIT)
 		port map(DIN => DRAM_DATA_IN, CLK => CLK, EN => MEM_EN_IN, RST => RST, DOUT => DATA_OUT);

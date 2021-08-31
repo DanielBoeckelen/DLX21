@@ -38,7 +38,9 @@ entity Datapath is
 		  DRAM_EN_OUT   : out std_logic; -- DRAM enable
 		  DRAM_R_OUT    : out std_logic; -- sent to DRAM
 		  DRAM_W_OUT    : out std_logic; -- sent to DRAM
-		  Bubble_out    : out std_logic); -- Bubble signal for pipeline stall, sent to CU to generate a NOP
+		  Bubble_out    : out std_logic; -- Bubble signal for pipeline stall, sent to CU to generate a NOP
+	      LOAD_TYPE     : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU; to DRAM
+		  STORE_TYPE    : out std_logic); -- '0' SW, '1' SB; to DRAM
 end Datapath;
 
 architecture struct of Datapath is
@@ -90,7 +92,9 @@ component Decode is
 		  ADD_RS2_HDU  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS2 address for Hazard Detection
 		  ADD_WR_OUT   : out std_logic_vector(NBIT_ADD-1 downto 0); -- ADD_WR output, will be used for writeback
 		  ADD_RS1_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS1 address for forwarding
-		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RS2 address for forwarding  
+		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS2 address for forwarding
+		  LOAD_TYPE    : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE   : out std_logic); -- '0' SW, '1' SB    
 end component;
 
 component Execute is
@@ -114,13 +118,17 @@ component Execute is
 		  RF_WE_WB      : in std_logic; -- RF Write signal for instruction currently in WB stage
 		  OP_MEM		: in std_logic_vector(NBIT-1 downto 0); -- Operand in MEM stage
 		  OP_WB		    : in std_logic_vector(NBIT-1 downto 0); -- Operand in WB stage
+		  LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+	      STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
 		  PC_SEL        : out std_logic_vector(1 downto 0); -- PC MUX Selection signal, to MEM stage
 		  ZERO_FLAG     : out std_logic; -- Used for Flush in Fetch and Decode
 		  NPC_ABS       : out std_logic_vector(NBIT-1 downto 0); -- Absolute NPC (for JALR/JR)
 		  NPC_REL       : out std_logic_vector(NBIT-1 downto 0); -- Relative NPC (for J/JAL/BEQZ/BNEZ)
 		  ALU_RES       : out std_logic_vector(NBIT-1 downto 0); -- ALUREG output, to MEM stage
 		  B_OUT         : out std_logic_vector(NBIT-1 downto 0);
-		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RF address for writeback, to MEM stage
+		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0); -- RF address for writeback, to MEM stage
+		  LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB 
 end component;
 
 component Memory is
@@ -138,8 +146,10 @@ component Memory is
 		  B_IN          : in std_logic_vector(NBIT-1 downto 0); -- Data for store, from EX stage
 		  ADD_WR_IN     : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address for WB, from EX stage
 		  DRAM_DATA_IN  : in std_logic_vector(NBIT-1 downto 0); -- Load data from DRAM
+		  LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+	      STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
 		  PC_OUT        : out std_logic_vector(NBIT-1 downto 0); -- PC value, to fetch stage
-		  DRAM_EN_OUT    : out std_logic; -- control signals to DRAM
+		  DRAM_EN_OUT   : out std_logic; -- control signals to DRAM
 		  DRAM_R_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_W_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- ALU output sent to DRAM
@@ -148,7 +158,9 @@ component Memory is
 		  ALU_RES_OUT   : out std_logic_vector(NBIT-1 downto 0); -- Data computed in ALU, to WB stage
 		  OP_MEM        : out std_logic_vector(NBIT-1 downto 0); -- Operand sent back to EX stage for forwarding
 		  ADD_WR_MEM    : out std_logic_vector(NBIT_ADD-1 downto 0); -- Write Address sent back to EX stage for forwarding
-		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0)); -- Address for WB
+		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0); -- Address for WB
+		  LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB
 end component;
 
 component Writeback is
@@ -183,6 +195,8 @@ signal ADD_WR_MEM, ADD_WR_WB, ADD_WR_DECODE_OUT, ADD_RS1_DECODE_OUT, ADD_RS2_DEC
 signal ADD_WR_EX_OUT, ADD_WR_MEM_OUT, ADD_RS1_HDU, ADD_RS2_HDU : std_logic_vector(NBIT_ADD-1 downto 0);
 signal sig_HDU_INS_OUT, sig_HDU_PC_OUT, sig_HDU_NPC_OUT : std_logic_vector(NBIT-1 downto 0);
 signal PC_SEL_EX : std_logic_vector(1 downto 0);
+signal LOAD_TYPE_DECODE_OUT, LOAD_TYPE_EX_OUT : std_logic_vector(1 downto 0);
+signal STORE_TYPE_DECODE_OUT, STORE_TYPE_EX_OUT : std_logic;
 
 begin
 
@@ -224,7 +238,9 @@ begin
 								  ADD_RS2_HDU => ADD_RS2_HDU,
 								  ADD_WR_OUT => ADD_WR_DECODE_OUT,
 								  ADD_RS1_OUT => ADD_RS1_DECODE_OUT,
-								  ADD_RS2_OUT => ADD_RS2_DECODE_OUT);
+								  ADD_RS2_OUT => ADD_RS2_DECODE_OUT,
+								  LOAD_TYPE => LOAD_TYPE_DECODE_OUT,
+								  STORE_TYPE => STORE_TYPE_DECODE_OUT);
 								  
 	ExecuteStage : Execute port map(  CLK => CLK, 
 									  RST => RST,
@@ -246,13 +262,17 @@ begin
 									  RF_WE_WB => RF_WE_WB,
 									  OP_MEM => OP_MEM,
 									  OP_WB	=> OP_WB,
+									  LOAD_TYPE_IN => LOAD_TYPE_DECODE_OUT,
+									  STORE_TYPE_IN => STORE_TYPE_DECODE_OUT,
 									  PC_SEL => PC_SEL_EX,
 									  ZERO_FLAG => ZERO_FLAG_EX,
 									  NPC_ABS => NPC_ABS_EX,
 									  NPC_REL => NPC_REL_EX,
 									  ALU_RES => ALU_RES_EX,
 									  B_OUT => B_EX_OUT,
-									  ADD_WR_OUT => ADD_WR_EX_OUT);
+									  ADD_WR_OUT => ADD_WR_EX_OUT,
+									  LOAD_TYPE_OUT => LOAD_TYPE_EX_OUT,									  
+									  STORE_TYPE_OUT => STORE_TYPE_EX_OUT);
 		
 	DRAM_R_ff : ff port map( D => DRAM_R_IN,
 							CLK => CLK,
@@ -274,6 +294,8 @@ begin
 								  B_IN => B_EX_OUT,
 								  ADD_WR_IN => ADD_WR_EX_OUT,
 								  DRAM_DATA_IN => DATA_IN,
+								  LOAD_TYPE_IN => LOAD_TYPE_EX_OUT,
+								  STORE_TYPE_IN => STORE_TYPE_EX_OUT,
 								  PC_OUT => PC_MEM_OUT,
 								  DRAM_EN_OUT => DRAM_EN_OUT,
 								  DRAM_R_OUT => DRAM_R_OUT,
@@ -284,7 +306,9 @@ begin
 								  ALU_RES_OUT => ALU_RES_MEM,
 								  OP_MEM => OP_MEM,
 								  ADD_WR_MEM => ADD_WR_MEM,
-								  ADD_WR_OUT => ADD_WR_MEM_OUT);
+								  ADD_WR_OUT => ADD_WR_MEM_OUT,
+								  LOAD_TYPE_OUT => LOAD_TYPE,
+								  STORE_TYPE_OUT => STORE_TYPE);
 		
 	RF_WE_ff : ff port map( D => RF_WE,
 							CLK => CLK,

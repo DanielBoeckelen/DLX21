@@ -82,7 +82,9 @@ architecture dlx_rtl of DLX is
 		  DRAM_EN_OUT   : out std_logic; -- DRAM enable
 		  DRAM_R_OUT    : out std_logic; -- sent to DRAM
 		  DRAM_W_OUT    : out std_logic; -- sent to DRAM
-		  Bubble_out    : out std_logic); -- Bubble signal for pipeline stall, sent to CU to generate a NOP
+		  Bubble_out    : out std_logic; -- Bubble signal for pipeline stall, sent to CU to generate a NOP
+	      LOAD_TYPE     : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE    : out std_logic); -- '0' SW, '1' SB
   end component;
   
   -- Control Unit
@@ -191,7 +193,9 @@ architecture dlx_rtl of DLX is
 						  DRAM_EN_OUT => DRAM_EN_OUT,
 						  DRAM_R_OUT => DRAM_R_OUT,
 						  DRAM_W_OUT => DRAM_W_OUT,
-						  Bubble_out => Bubble);
+						  Bubble_out => Bubble,
+						  LOAD_TYPE => LOAD_TYPE,
+						  STORE_TYPE => STORE_TYPE);
 
 	-- Control Unit instantiation
     CU: hardwired_cu generic map(NBIT => NBIT)
