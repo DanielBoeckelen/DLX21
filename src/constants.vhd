@@ -10,12 +10,9 @@ package constants is
     constant CW_SIZE : integer := 15; -- For CU
     constant MICROCODE_MEM_SIZE : integer := 11; -- For CU
 	constant MEM_size : integer := 1024; -- Memories 1024x32 bit wide = 4kB, both data and instruction (before it was 1024)
-	-- File paths for the Instruction and Data memories
-	--constant path_IRAM : string := "../asm/IRAM.text";
-	--constant path_DRAM : string := "../asm/DRAM.data"; 
 
 	type aluOp is (
-		NOP, ADDS, ADDUS, SUBS, SUBUS, MULTS, ANDS, ORS, XORS, SLLS, SRLS, SRAS, BEQZS, BNEZS, SGES, SGEUS, SGTS, SGTUS, SLES, SLTS, SLTUS, SEQS, NEQS, LHIS -- LB, LBU, LHU, SB
+		NOP, ADDS, ADDUS, SUBS, SUBUS, MULTS, ANDS, ORS, XORS, SLLS, SRLS, SRAS, BEQZS, BNEZS, SGES, SGEUS, SGTS, SGTUS, SLES, SLTS, SLTUS, SEQS, NEQS, LHIS
 	);
 
     type shifter_OP is (

@@ -3,13 +3,13 @@ m255
 cModel Technology
 d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim
 T_opt
-Vozih:bhV4jSV`Q=BIUS=72
+VY[JFmiP]XBBE]SLm5dl9N0
 06 6 4 ./work tb_dlx test 1
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
 OE;O;6.2g;35
 Ealu
-w1630425180
+w1630491696
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants iWVNN7=MSNGe1>9a2iXg93
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
@@ -20,7 +20,7 @@ DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd
 l0
 L9
-VJOff@cV<CKCcmkH:_Fznc0
+VRDBa0G6joDeYV]3FO01m@0
 OE;C;6.2g;35
 31
 o-93 -work ./work
@@ -28,6 +28,7 @@ tExplicit 1
 Astruct
 DE work mux21 UCb2Dai]MLRWTnSoI=:jl1
 DE work mux41 XiKO5klJfXz>Si?_SYC<:2
+DE work boothmul JiVD7W1S`cZ:34o_mn^BX3
 DE work p4adder 5DdJJND`f[da1h:obzL2O0
 DE work shifter 1Cgii`^:XoGBQNGja3P_:1
 DE work comparator BkhO=ja?[55F`9na8O<Fl2
@@ -37,7 +38,7 @@ DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP ieee std_logic_signed <9<Kcl:S52:oW`F]FQhb20
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work alu JOff@cV<CKCcmkH:_Fznc0
+DE work alu RDBa0G6joDeYV]3FO01m@0
 31
 M6 ieee std_logic_1164
 M5 ieee std_logic_signed
@@ -45,9 +46,9 @@ M4 ieee std_logic_arith
 M3 ieee numeric_std
 M2 work constants
 M1 work instruction_set
-l84
+l94
 L17
-V2LEd@0KzOGG7PIMCSmlb<0
+VQfQazAl3WV5:@fA?LBk7f3
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
@@ -75,6 +76,73 @@ OE;C;6.2g;35
 31
 M2 ieee std_logic_1164
 M1 work conv_pack_dlx
+o-93 -work ./work
+tExplicit 1
+Ebooth_encoder
+w1630490148
+DP work constants iWVNN7=MSNGe1>9a2iXg93
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.b-booth_enc.vhd
+F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.b-booth_enc.vhd
+l0
+L6
+VZ19ISXo4Wc7?WeF;JcDUK1
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Astructural
+DP work constants iWVNN7=MSNGe1>9a2iXg93
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work booth_encoder Z19ISXo4Wc7?WeF;JcDUK1
+31
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work constants
+l16
+L12
+V`_aYF]?FmM]bl2H7JQdTX1
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Eboothmul
+w1630490864
+DP work constants iWVNN7=MSNGe1>9a2iXg93
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_signed <9<Kcl:S52:oW`F]FQhb20
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier.vhd
+F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier.vhd
+l0
+L7
+VJiVD7W1S`cZ:34o_mn^BX3
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Amixed
+DE work rca_bhv a@R>oLm[^kFk4eKJ`dglN1
+DE work mux5to1 hL=l[o69o?;ob[m>E1Ge01
+DE work booth_encoder Z19ISXo4Wc7?WeF;JcDUK1
+DP work constants iWVNN7=MSNGe1>9a2iXg93
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_signed <9<Kcl:S52:oW`F]FQhb20
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work boothmul JiVD7W1S`cZ:34o_mn^BX3
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 ieee std_logic_signed
+M2 ieee std_logic_arith
+M1 work constants
+l47
+L13
+Vblf86`a<F[0?k4C_NlQHl3
+OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Ebranch_cond_unit
@@ -808,7 +876,7 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Astruct
-DE work alu JOff@cV<CKCcmkH:_Fznc0
+DE work alu RDBa0G6joDeYV]3FO01m@0
 DE work mux21 UCb2Dai]MLRWTnSoI=:jl1
 DE work mux41 XiKO5klJfXz>Si?_SYC<:2
 DE work fwd_unit GDcL<]>1IYi]>3R[R>B>n1
@@ -3369,7 +3437,7 @@ F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
 Eiram
-w1630426344
+w1630426700
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants iWVNN7=MSNGe1>9a2iXg93
@@ -3405,7 +3473,7 @@ M2 work instruction_set
 M1 ieee numeric_std
 l66
 L24
-V8mFn9FeM>JD_PlZRjLY9z2
+VZQhzjZjhE0WFcV9IJ^W^M1
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
@@ -3798,6 +3866,32 @@ OE;C;6.2g;35
 31
 M2 ieee std_logic_1164
 M1 work conv_pack_dlx
+o-93 -work ./work
+tExplicit 1
+Emux5to1
+w1630490135
+DP work constants iWVNN7=MSNGe1>9a2iXg93
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.a-mux5to1.vhd
+F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.a-mux5to1.vhd
+l0
+L5
+VhL=l[o69o?;ob[m>E1Ge01
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Abhv
+DP work constants iWVNN7=MSNGe1>9a2iXg93
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work mux5to1 hL=l[o69o?;ob[m>E1Ge01
+31
+M2 ieee std_logic_1164
+M1 work constants
+l13
+L12
+VnIbBY7LkF>cEH^jT=1c<I1
+OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 Ep4adder
@@ -5438,6 +5532,38 @@ M1 work constants
 l28
 L15
 VE:ZCdD92DmTHYGNGBMjZn0
+OE;C;6.2g;35
+o-93 -work ./work
+tExplicit 1
+Erca_bhv
+w1630490153
+DP work constants iWVNN7=MSNGe1>9a2iXg93
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.c-rca_bhv.vhd
+F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.c-rca_bhv.vhd
+l0
+L6
+Va@R>oLm[^kFk4eKJ`dglN1
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Abehavioral
+DP work constants iWVNN7=MSNGe1>9a2iXg93
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work rca_bhv a@R>oLm[^kFk4eKJ`dglN1
+31
+M4 ieee std_logic_1164
+M3 ieee std_logic_unsigned
+M2 ieee std_logic_arith
+M1 work constants
+l20
+L15
+VGEB[72CXb`1CAFJAH?^^Z2
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1

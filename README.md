@@ -2,6 +2,13 @@
 
 -----------
 
+Progress as of 01/09/21:
+
+Implemented all necessary additions for the PRO instruction set: new DRAM and its signals, new ALU_OPs, Booth Multiplier. Old programs still work fine, but ALL new
+instructions are yet to be tested.
+
+-----------
+
 Progress as of 21/08/21:
 
 Solved final synthesis problems for the basic version; completed Innovus Place&Route. After this we could consider the basic version as working, although it would still need

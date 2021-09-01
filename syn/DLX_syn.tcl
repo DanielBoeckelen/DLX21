@@ -28,9 +28,13 @@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.f-Gblock.vhd
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.g-rca.vhd
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.h-fa.vhd
+analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.a-mux5to1.vhd
+analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.b-booth_enc.vhd
+analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.c-rca_bhv.vhd
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.a-comparator.vhd
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder.vhd
+analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier.vhd
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.b-Branch_Cond_Unit.vhd
 analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.c-FWD_Unit.vhd
