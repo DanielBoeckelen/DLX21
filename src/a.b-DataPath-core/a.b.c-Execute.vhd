@@ -27,17 +27,17 @@ entity Execute is
 		  RF_WE_WB      : in std_logic; -- RF Write signal for instruction currently in WB stage
 		  OP_MEM		: in std_logic_vector(NBIT-1 downto 0); -- Operand in MEM stage
 		  OP_WB		    : in std_logic_vector(NBIT-1 downto 0); -- Operand in WB stage
-		  LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
-	      STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
+		  --LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+	      --STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
 		  PC_SEL        : out std_logic_vector(1 downto 0); -- PC MUX Selection signal, to MEM stage
 		  ZERO_FLAG     : out std_logic; -- Used for Flush in Fetch and Decode
 		  NPC_ABS       : out std_logic_vector(NBIT-1 downto 0); -- Absolute NPC (for JALR/JR)
 		  NPC_REL       : out std_logic_vector(NBIT-1 downto 0); -- Relative NPC (for J/JAL/BEQZ/BNEZ)
 		  ALU_RES       : out std_logic_vector(NBIT-1 downto 0); -- ALUREG output, to MEM stage
 		  B_OUT         : out std_logic_vector(NBIT-1 downto 0);
-		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0); -- RF address for writeback, to MEM stage
-		  LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
-		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB 
+		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RF address for writeback, to MEM stage
+		  --LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  --STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB 
 end Execute;
 
 architecture struct of Execute is
@@ -135,10 +135,10 @@ begin
 		RF_WE_MEM => RF_WE_MEM, RF_WE_WB => RF_WE_WB, FWDA => FWDA, FWDB => FWDB);
 	
 	FW1: mux41 generic map(NBIT => NBIT)
-		port map( A => A_IN, B => OP_WB, C => OP_MEM, D => (others => '0'), S => FWDA, Z => OP1_FW);
+		port map( A => A_IN, B => OP_WB, C => OP_MEM, D => A_IN, S => FWDA, Z => OP1_FW); -- D => (others => '0')
 	
 	FW2: mux41 generic map(NBIT => NBIT)
-		port map( A => B_IN, B => OP_WB, C => OP_MEM, D => (others => '0'), S => FWDB, Z => OP2_FW);
+		port map( A => B_IN, B => OP_WB, C => OP_MEM, D => B_IN, S => FWDB, Z => OP2_FW); -- D => (others => '0')
 	
 	muxA : mux21 generic map(NBIT => NBIT)
 		port map(A => OP1_FW, B => PC_IN, S => MUX_A_SEL, Z => sig_OP1);
@@ -156,7 +156,7 @@ begin
 		port map(DIN => OP2_FW, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => B_OUT);
 	
 	ADD_WR_reg : regn generic map(N => NBIT_ADD)
-		port map(DIN => ADD_WR_IN, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => ADD_WR_OUT);
+		port map(DIN => ADD_WR_IN, CLK => CLK, EN => '1', RST => RST, DOUT => ADD_WR_OUT); -- ALU_OUTREG_EN
 		
 	NPC_ABS_reg : regn generic map(N => NBIT)
 		port map(DIN => sig_NPC_ABS, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => NPC_ABS);
@@ -164,13 +164,13 @@ begin
 	NPC_REL_reg : regn generic map(N => NBIT)
 		port map(DIN => sig_NPC_REL, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => NPC_REL);
 
-	LOAD_reg : regn generic map(N => 2)
-		port map(DIN => LOAD_TYPE_IN, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => LOAD_TYPE_OUT);
+	--LOAD_reg : regn generic map(N => 2)
+		--port map(DIN => LOAD_TYPE_IN, CLK => CLK, EN => ALU_OUTREG_EN, RST => RST, DOUT => LOAD_TYPE_OUT);
 
-	STORE_ff : ff port map( D => STORE_TYPE_IN,
-							CLK => CLK,
-							EN => ALU_OUTREG_EN,
-							RST => RST,
-							Q => STORE_TYPE_OUT);
+	--STORE_ff : ff port map( D => STORE_TYPE_IN,
+							--CLK => CLK,
+							--EN => ALU_OUTREG_EN,
+							--RST => RST,
+							--Q => STORE_TYPE_OUT);
 
 end struct;

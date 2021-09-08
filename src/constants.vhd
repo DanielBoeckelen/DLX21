@@ -7,8 +7,8 @@ package constants is
     constant NBIT_DATA: integer := 32;
 	constant NBIT_PER_BLOCK: integer := 4; -- For P4 adder
    	constant NBLOCKS : integer := 8; -- For P4 adder
-    constant CW_SIZE : integer := 15; -- For CU
-    constant MICROCODE_MEM_SIZE : integer := 11; -- For CU
+    constant CW_SIZE : integer := 14; -- For CU
+    constant MICROCODE_MEM_SIZE : integer := 15; -- For CU
 	constant MEM_size : integer := 1024; -- Memories 1024x32 bit wide = 4kB, both data and instruction (before it was 1024)
 
 	type aluOp is (

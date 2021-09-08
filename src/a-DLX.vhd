@@ -36,7 +36,7 @@ architecture dlx_rtl of DLX is
     RAM_DEPTH : integer := MEM_size;
     D_SIZE : integer := NBIT);
   port (
-    En         : in std_logic;
+    Clk        : in std_logic;
     Rst        : in std_logic;
     ADDR_IN    : in std_logic_vector(D_SIZE-1 downto 0);
 	DATA_IN    : in std_logic_vector(D_SIZE-1 downto 0);
@@ -57,9 +57,9 @@ architecture dlx_rtl of DLX is
 		  --IR_LATCH_EN  : in std_logic;
 		  --NPC_LATCH_EN : in std_logic;
 		  -- Decode CU signals
-		  REG_LATCH_EN : in std_logic; -- Enables the register file and the pipeline registers
-		  RD1		   : in std_logic; -- Enables the read port 1 of the register file
-		  RD2		   : in std_logic; -- Enables the read port 2 of the register file
+		  --REG_LATCH_EN : in std_logic; -- Enables the register file and the pipeline registers
+		  --RD1		   : in std_logic; -- Enables the read port 1 of the register file
+		  --RD2		   : in std_logic; -- Enables the read port 2 of the register file
 		  -- Execute CU signals
 		  MUX_A_SEL     : in std_logic; -- Mux Selection for Operand A or NPC
 		  MUX_B_SEL     : in std_logic_vector(1 downto 0); -- Mux Selection for Operand B, IMM or "4" (used for JAL/JALR when RD <- PC + 4)
@@ -71,7 +71,8 @@ architecture dlx_rtl of DLX is
 		  MEM_EN_IN     : in std_logic; -- Register enable signal
 		  DRAM_W_IN     : in std_logic; -- DRAM write enable
 		  RF_WE		    : in std_logic; -- RF write enable, sent at this stage for forwarding check
-		  DRAM_EN_IN    : in std_logic; -- DRAM enable
+		  LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
 		  -- Writeback CU signals
 		  WB_MUX_SEL : in std_logic; -- Control signal for WB mux
 		  --
@@ -79,12 +80,11 @@ architecture dlx_rtl of DLX is
 		  IRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- from Fetch stage to IRAM
 		  DRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- from MEM stage to DRAM
 		  DATA_OUT      : out std_logic_vector(NBIT-1 downto 0); -- from MEM stage to DRAM
-		  DRAM_EN_OUT   : out std_logic; -- DRAM enable
 		  DRAM_R_OUT    : out std_logic; -- sent to DRAM
 		  DRAM_W_OUT    : out std_logic; -- sent to DRAM
 		  Bubble_out    : out std_logic; -- Bubble signal for pipeline stall, sent to CU to generate a NOP
-	      LOAD_TYPE     : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
-		  STORE_TYPE    : out std_logic); -- '0' SW, '1' SB
+	      LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB
   end component;
   
   -- Control Unit
@@ -92,9 +92,9 @@ architecture dlx_rtl of DLX is
     generic(NBIT : integer);
 	port (
             -- decode cu signals
-			REG_LATCH_EN : out std_logic; -- Enables the register file and the pipeline registers
-            RD1		     : out std_logic; -- Enables the read port 1 of the register file
-			RD2		     : out std_logic; -- Enables the read port 2 of the register file
+			--REG_LATCH_EN : out std_logic; -- Enables the register file and the pipeline registers
+            --RD1		     : out std_logic; -- Enables the read port 1 of the register file
+			--RD2		     : out std_logic; -- Enables the read port 2 of the register file
              
             -- execute cu signals
             MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
@@ -108,7 +108,8 @@ architecture dlx_rtl of DLX is
             MEM_EN_IN     : out std_logic; -- Register enable signal
 			DRAM_W_IN     : out std_logic; -- DRAM write enable
             RF_WE    	  : out std_logic; -- RF write enable, sent at this stage for forwarding check
-            DRAM_EN_IN    : out std_logic; -- DRAM enable
+			LOAD_TYPE_IN  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		    STORE_TYPE_IN : out std_logic; -- '0' SW, '1' SB
 
             -- writeback CU signals
         
@@ -127,9 +128,9 @@ architecture dlx_rtl of DLX is
   -- Signals Declaration
   ----------------------------------------------------------------
   
-  signal REG_LATCH_EN, RD1, RD2, MUX_A_SEL, ALU_OUTREG_EN, DRAM_R_IN, MEM_EN_IN, DRAM_W_IN, RF_WE, DRAM_EN_IN, WB_MUX_SEL, Bubble, DRAM_EN_OUT, DRAM_R_OUT, DRAM_W_OUT : std_logic;
-  signal MUX_B_SEL, JUMP_TYPE, LOAD_TYPE : std_logic_vector(1 downto 0);
-  signal STORE_TYPE : std_logic;
+  signal REG_LATCH_EN, RD1, RD2, MUX_A_SEL, ALU_OUTREG_EN, DRAM_R_IN, MEM_EN_IN, DRAM_W_IN, RF_WE, WB_MUX_SEL, Bubble, DRAM_R_OUT, DRAM_W_OUT : std_logic;
+  signal MUX_B_SEL, JUMP_TYPE, LOAD_TYPE_IN, LOAD_TYPE_OUT : std_logic_vector(1 downto 0);
+  signal STORE_TYPE_IN, STORE_TYPE_OUT : std_logic;
   signal ALU_OPC : aluOp;
   signal INST, IRAM_ADDR_OUT, INS_IN, DRAM_ADDR_OUT, DATA_IN, DATA_OUT : std_logic_vector(NBIT-1 downto 0);
 
@@ -172,9 +173,9 @@ architecture dlx_rtl of DLX is
 						  RST => Rst,
 						  INS_IN => INS_IN,
 						  DATA_IN => DATA_IN,
-						  REG_LATCH_EN => REG_LATCH_EN,
-						  RD1 => RD1,
-						  RD2 => RD2,
+						  --REG_LATCH_EN => REG_LATCH_EN,
+						  --RD1 => RD1,
+						  --RD2 => RD2,
 						  MUX_A_SEL => MUX_A_SEL,
 						  MUX_B_SEL => MUX_B_SEL,
 						  ALU_OPC => ALU_OPC,
@@ -184,24 +185,24 @@ architecture dlx_rtl of DLX is
 						  MEM_EN_IN => MEM_EN_IN,
 						  DRAM_W_IN => DRAM_W_IN,
 						  RF_WE => RF_WE,
-						  DRAM_EN_IN => DRAM_EN_IN,
+						  LOAD_TYPE_IN => LOAD_TYPE_IN,
+					      STORE_TYPE_IN => STORE_TYPE_IN,
 						  WB_MUX_SEL => WB_MUX_SEL,
 						  INS_OUT => INST,
 						  IRAM_ADDR_OUT => IRAM_ADDR_OUT,
 						  DRAM_ADDR_OUT => DRAM_ADDR_OUT,
 						  DATA_OUT => DATA_OUT,
-						  DRAM_EN_OUT => DRAM_EN_OUT,
 						  DRAM_R_OUT => DRAM_R_OUT,
 						  DRAM_W_OUT => DRAM_W_OUT,
 						  Bubble_out => Bubble,
-						  LOAD_TYPE => LOAD_TYPE,
-						  STORE_TYPE => STORE_TYPE);
+						  LOAD_TYPE_OUT => LOAD_TYPE_OUT,
+						  STORE_TYPE_OUT => STORE_TYPE_OUT);
 
 	-- Control Unit instantiation
     CU: hardwired_cu generic map(NBIT => NBIT)
-		port map(   REG_LATCH_EN => REG_LATCH_EN,
-					RD1 => RD1,
-					RD2 => RD2,
+		port map(   --REG_LATCH_EN => REG_LATCH_EN,
+					--RD1 => RD1,
+					--RD2 => RD2,
 					MUX_A_SEL => MUX_A_SEL,
 					MUX_B_SEL => MUX_B_SEL,
 					ALU_OPC => ALU_OPC,
@@ -211,9 +212,10 @@ architecture dlx_rtl of DLX is
 					MEM_EN_IN => MEM_EN_IN,
 					DRAM_W_IN => DRAM_W_IN,
 					RF_WE => RF_WE,
-					DRAM_EN_IN => DRAM_EN_IN,
+					LOAD_TYPE_IN => LOAD_TYPE_IN,
+					STORE_TYPE_IN => STORE_TYPE_IN,
 					WB_MUX_SEL => WB_MUX_SEL,
-					INS_IN => INS_IN, -- INST, Note: using INS_IN synchronizes the CU with the decode stage, but it will cause a bad timing with the bubble signal
+					INS_IN => INST, -- INST, Note: using INS_IN synchronizes the CU with the decode stage, but it will cause a bad timing with the bubble signal
 					Bubble => Bubble,
 					Clk => Clk,
 					Rst => Rst);
@@ -228,12 +230,12 @@ architecture dlx_rtl of DLX is
 	-- Data Ram Instantiation
 	DRAM_I: DRAM generic map(RAM_DEPTH => MEM_size, D_SIZE => NBIT)
 		port map (
-			En => DRAM_EN_OUT,
+			Clk => Clk,
 			Rst => Rst,
 			ADDR_IN => DRAM_ADDR_OUT,
 			DATA_IN => DATA_OUT,
-			LOAD_TYPE => LOAD_TYPE,
-			STORE_TYPE => STORE_TYPE,
+			LOAD_TYPE => LOAD_TYPE_OUT,
+			STORE_TYPE => STORE_TYPE_OUT,
 			DRAM_W => DRAM_W_OUT,
 			DRAM_R => DRAM_R_OUT,
 			DATA_OUT => DATA_IN);

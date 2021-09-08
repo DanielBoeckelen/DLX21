@@ -13,9 +13,9 @@ entity Datapath is
 		  --IR_LATCH_EN  : in std_logic;
 		  --NPC_LATCH_EN : in std_logic;
 		  -- Decode CU signals
-		  REG_LATCH_EN : in std_logic; -- Enables the register file and the pipeline registers
-		  RD1		   : in std_logic; -- Enables the read port 1 of the register file
-		  RD2		   : in std_logic; -- Enables the read port 2 of the register file
+		  --REG_LATCH_EN : in std_logic; -- Enables the register file and the pipeline registers
+		  --RD1		   : in std_logic; -- Enables the read port 1 of the register file
+		  --RD2		   : in std_logic; -- Enables the read port 2 of the register file
 		  -- Execute CU signals
 		  MUX_A_SEL     : in std_logic; -- Mux Selection for Operand A or NPC
 		  MUX_B_SEL     : in std_logic_vector(1 downto 0); -- Mux Selection for Operand B, IMM or "4" (used for JAL/JALR when RD <- PC + 4)
@@ -27,7 +27,8 @@ entity Datapath is
 		  MEM_EN_IN     : in std_logic; -- Register enable signal
 		  DRAM_W_IN     : in std_logic; -- DRAM write enable
 		  RF_WE		    : in std_logic; -- RF write enable, sent at this stage for forwarding check
-		  DRAM_EN_IN    : in std_logic; -- DRAM enable
+		  LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
 		  -- Writeback CU signals
 		  WB_MUX_SEL : in std_logic; -- Control signal for WB mux
 		  --
@@ -35,12 +36,11 @@ entity Datapath is
 		  IRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- from Fetch stage to IRAM
 		  DRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- from MEM stage to DRAM
 		  DATA_OUT      : out std_logic_vector(NBIT-1 downto 0); -- from MEM stage to DRAM
-		  DRAM_EN_OUT   : out std_logic; -- DRAM enable
 		  DRAM_R_OUT    : out std_logic; -- sent to DRAM
 		  DRAM_W_OUT    : out std_logic; -- sent to DRAM
 		  Bubble_out    : out std_logic; -- Bubble signal for pipeline stall, sent to CU to generate a NOP
-	      LOAD_TYPE     : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU; to DRAM
-		  STORE_TYPE    : out std_logic); -- '0' SW, '1' SB; to DRAM
+	      LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB
 end Datapath;
 
 architecture struct of Datapath is
@@ -75,9 +75,10 @@ end component;
 component Decode is
 	port( CLK          : in std_logic; 
 		  RST          : in std_logic;
-		  REG_LATCH_EN : in std_logic; -- Enables the register file and the pipeline registers
-		  RD1		   : in std_logic; -- Enables the read port 1 of the register file
-		  RD2		   : in std_logic; -- Enables the read port 2 of the register file
+		  Bubble       : in std_logic;
+		  --REG_LATCH_EN : in std_logic; -- Enables the register file and the pipeline registers
+		  --RD1		   : in std_logic; -- Enables the read port 1 of the register file
+		  --RD2		   : in std_logic; -- Enables the read port 2 of the register file
 		  RF_WE		   : in std_logic; -- Enables the write port of the register file
 		  ZERO_FLAG    : in std_logic; -- Zero Flag coming from Execute stage, used as flush if branch taken
 		  PC_IN        : in std_logic_vector(NBIT-1 downto 0); -- PC coming from the Fetch stage
@@ -92,9 +93,9 @@ component Decode is
 		  ADD_RS2_HDU  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS2 address for Hazard Detection
 		  ADD_WR_OUT   : out std_logic_vector(NBIT_ADD-1 downto 0); -- ADD_WR output, will be used for writeback
 		  ADD_RS1_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS1 address for forwarding
-		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS2 address for forwarding
-		  LOAD_TYPE    : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
-		  STORE_TYPE   : out std_logic); -- '0' SW, '1' SB    
+		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RS2 address for forwarding
+		  --LOAD_TYPE    : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  --STORE_TYPE   : out std_logic); -- '0' SW, '1' SB    
 end component;
 
 component Execute is
@@ -118,17 +119,17 @@ component Execute is
 		  RF_WE_WB      : in std_logic; -- RF Write signal for instruction currently in WB stage
 		  OP_MEM		: in std_logic_vector(NBIT-1 downto 0); -- Operand in MEM stage
 		  OP_WB		    : in std_logic_vector(NBIT-1 downto 0); -- Operand in WB stage
-		  LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
-	      STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
+		  --LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+	      --STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
 		  PC_SEL        : out std_logic_vector(1 downto 0); -- PC MUX Selection signal, to MEM stage
 		  ZERO_FLAG     : out std_logic; -- Used for Flush in Fetch and Decode
 		  NPC_ABS       : out std_logic_vector(NBIT-1 downto 0); -- Absolute NPC (for JALR/JR)
 		  NPC_REL       : out std_logic_vector(NBIT-1 downto 0); -- Relative NPC (for J/JAL/BEQZ/BNEZ)
 		  ALU_RES       : out std_logic_vector(NBIT-1 downto 0); -- ALUREG output, to MEM stage
 		  B_OUT         : out std_logic_vector(NBIT-1 downto 0);
-		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0); -- RF address for writeback, to MEM stage
-		  LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
-		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB 
+		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RF address for writeback, to MEM stage
+		  --LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
+		  --STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB 
 end component;
 
 component Memory is
@@ -137,7 +138,6 @@ component Memory is
 		  MEM_EN_IN     : in std_logic; -- coming from Control Unit
 		  DRAM_R_IN     : in std_logic; -- coming from Control Unit
 		  DRAM_W_IN     : in std_logic; -- coming from Control Unit
-		  DRAM_EN_IN    : in std_logic; -- DRAM enable
 		  PC_SEL        : in std_logic_vector(1 downto 0); -- PC MUX Selection, from EX stage
 		  NPC_IN        : in std_logic_vector(NBIT-1 downto 0); -- NPC, from Fetch stage
 		  NPC_ABS       : in std_logic_vector(NBIT-1 downto 0); -- Absolute NPC (for JALR/JR)
@@ -149,7 +149,6 @@ component Memory is
 		  LOAD_TYPE_IN  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
 	      STORE_TYPE_IN : in std_logic; -- '0' SW, '1' SB
 		  PC_OUT        : out std_logic_vector(NBIT-1 downto 0); -- PC value, to fetch stage
-		  DRAM_EN_OUT   : out std_logic; -- control signals to DRAM
 		  DRAM_R_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_W_OUT    : out std_logic; -- control signals to DRAM
 		  DRAM_ADDR_OUT : out std_logic_vector(NBIT-1 downto 0); -- ALU output sent to DRAM
@@ -159,8 +158,8 @@ component Memory is
 		  OP_MEM        : out std_logic_vector(NBIT-1 downto 0); -- Operand sent back to EX stage for forwarding
 		  ADD_WR_MEM    : out std_logic_vector(NBIT_ADD-1 downto 0); -- Write Address sent back to EX stage for forwarding
 		  ADD_WR_OUT    : out std_logic_vector(NBIT_ADD-1 downto 0); -- Address for WB
-		  LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
-		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB
+		  LOAD_TYPE_OUT  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU; to DRAM
+		  STORE_TYPE_OUT : out std_logic); -- '0' SW, '1' SB; to DRAM
 end component;
 
 component Writeback is
@@ -173,7 +172,7 @@ component Writeback is
 end component;
 
 component HazardDetection is
-	port( RST         : in std_logic;
+	port(     RST         : in std_logic;
 		  ADD_RS1     : in std_logic_vector(NBIT_ADD-1 downto 0); -- Source register 1 of the decoded instruction
 		  ADD_RS2     : in std_logic_vector(NBIT_ADD-1 downto 0); -- Source register 2 of the decoded instruction
 		  ADD_WR      : in std_logic_vector(NBIT_ADD-1 downto 0); -- Destination register of the previous instruction (coming into the Execute stage)
@@ -195,8 +194,8 @@ signal ADD_WR_MEM, ADD_WR_WB, ADD_WR_DECODE_OUT, ADD_RS1_DECODE_OUT, ADD_RS2_DEC
 signal ADD_WR_EX_OUT, ADD_WR_MEM_OUT, ADD_RS1_HDU, ADD_RS2_HDU : std_logic_vector(NBIT_ADD-1 downto 0);
 signal sig_HDU_INS_OUT, sig_HDU_PC_OUT, sig_HDU_NPC_OUT : std_logic_vector(NBIT-1 downto 0);
 signal PC_SEL_EX : std_logic_vector(1 downto 0);
-signal LOAD_TYPE_DECODE_OUT, LOAD_TYPE_EX_OUT : std_logic_vector(1 downto 0);
-signal STORE_TYPE_DECODE_OUT, STORE_TYPE_EX_OUT : std_logic;
+--signal LOAD_TYPE_DECODE_OUT, LOAD_TYPE_EX_OUT : std_logic_vector(1 downto 0);
+--signal STORE_TYPE_DECODE_OUT, STORE_TYPE_EX_OUT : std_logic;
 
 begin
 
@@ -221,9 +220,10 @@ begin
 								
 	DecodeStage : Decode port map(CLK => CLK, 
 								  RST => RST,
-								  REG_LATCH_EN => REG_LATCH_EN,
-								  RD1 => RD1,
-								  RD2 => RD2,
+								  Bubble => sig_Bubble,
+								  --REG_LATCH_EN => REG_LATCH_EN,
+								  --RD1 => RD1,
+								  --RD2 => RD2,
 								  RF_WE => RF_WE_WB,
 								  ZERO_FLAG => ZERO_FLAG_EX,
 								  PC_IN => PC_FETCH_OUT,
@@ -238,9 +238,9 @@ begin
 								  ADD_RS2_HDU => ADD_RS2_HDU,
 								  ADD_WR_OUT => ADD_WR_DECODE_OUT,
 								  ADD_RS1_OUT => ADD_RS1_DECODE_OUT,
-								  ADD_RS2_OUT => ADD_RS2_DECODE_OUT,
-								  LOAD_TYPE => LOAD_TYPE_DECODE_OUT,
-								  STORE_TYPE => STORE_TYPE_DECODE_OUT);
+								  ADD_RS2_OUT => ADD_RS2_DECODE_OUT);
+								  --LOAD_TYPE => LOAD_TYPE_DECODE_OUT,
+								  --STORE_TYPE => STORE_TYPE_DECODE_OUT);
 								  
 	ExecuteStage : Execute port map(  CLK => CLK, 
 									  RST => RST,
@@ -262,17 +262,17 @@ begin
 									  RF_WE_WB => RF_WE_WB,
 									  OP_MEM => OP_MEM,
 									  OP_WB	=> OP_WB,
-									  LOAD_TYPE_IN => LOAD_TYPE_DECODE_OUT,
-									  STORE_TYPE_IN => STORE_TYPE_DECODE_OUT,
+									  --LOAD_TYPE_IN => LOAD_TYPE_DECODE_OUT,
+									  --STORE_TYPE_IN => STORE_TYPE_DECODE_OUT,
 									  PC_SEL => PC_SEL_EX,
 									  ZERO_FLAG => ZERO_FLAG_EX,
 									  NPC_ABS => NPC_ABS_EX,
 									  NPC_REL => NPC_REL_EX,
 									  ALU_RES => ALU_RES_EX,
 									  B_OUT => B_EX_OUT,
-									  ADD_WR_OUT => ADD_WR_EX_OUT,
-									  LOAD_TYPE_OUT => LOAD_TYPE_EX_OUT,									  
-									  STORE_TYPE_OUT => STORE_TYPE_EX_OUT);
+									  ADD_WR_OUT => ADD_WR_EX_OUT);
+									  --LOAD_TYPE_OUT => LOAD_TYPE_EX_OUT,									  
+									  --STORE_TYPE_OUT => STORE_TYPE_EX_OUT);
 		
 	DRAM_R_ff : ff port map( D => DRAM_R_IN,
 							CLK => CLK,
@@ -285,7 +285,6 @@ begin
 								  MEM_EN_IN => MEM_EN_IN,
 								  DRAM_R_IN => DRAM_R_MEM,
 								  DRAM_W_IN => DRAM_W_IN,
-								  DRAM_EN_IN => DRAM_EN_IN,
 								  PC_SEL => PC_SEL_EX,
 								  NPC_IN => NPC_FETCH_OUT,
 								  NPC_ABS => NPC_ABS_EX,
@@ -294,10 +293,9 @@ begin
 								  B_IN => B_EX_OUT,
 								  ADD_WR_IN => ADD_WR_EX_OUT,
 								  DRAM_DATA_IN => DATA_IN,
-								  LOAD_TYPE_IN => LOAD_TYPE_EX_OUT,
-								  STORE_TYPE_IN => STORE_TYPE_EX_OUT,
+								  LOAD_TYPE_IN => LOAD_TYPE_IN,
+								  STORE_TYPE_IN => STORE_TYPE_IN,
 								  PC_OUT => PC_MEM_OUT,
-								  DRAM_EN_OUT => DRAM_EN_OUT,
 								  DRAM_R_OUT => DRAM_R_OUT,
 								  DRAM_W_OUT => DRAM_W_OUT,
 								  DRAM_ADDR_OUT => DRAM_ADDR_OUT,
@@ -307,8 +305,8 @@ begin
 								  OP_MEM => OP_MEM,
 								  ADD_WR_MEM => ADD_WR_MEM,
 								  ADD_WR_OUT => ADD_WR_MEM_OUT,
-								  LOAD_TYPE_OUT => LOAD_TYPE,
-								  STORE_TYPE_OUT => STORE_TYPE);
+								  LOAD_TYPE_OUT => LOAD_TYPE_OUT,
+								  STORE_TYPE_OUT => STORE_TYPE_OUT);
 		
 	RF_WE_ff : ff port map( D => RF_WE,
 							CLK => CLK,

@@ -44,7 +44,7 @@ begin
 				end if;
 
 				if(RD1 = '1') then -- read from register, port 1
-					if (WR = '1') and (ADD_WR = ADD_RS1) then
+					if (WR = '1' and ADD_WR /= std_logic_vector(to_unsigned(0, ADD_WR'length))) and (ADD_WR = ADD_RS1) then
 						OUT1 <= DATAIN; --if the data to be written is needed as a source for the current instruction,
 								-- it is directly provided to the output of the register file
 					else
@@ -53,7 +53,7 @@ begin
 				end if;
 
 				if(RD2 = '1') then -- read from register, port 2
-					if (WR = '1') and (ADD_WR = ADD_RS2) then
+					if (WR = '1' and ADD_WR /= std_logic_vector(to_unsigned(0, ADD_WR'length))) and (ADD_WR = ADD_RS2) then
 						OUT2 <= DATAIN;--if the data to be written is needed as a source for the current instruction,
 								-- it is directly provided to the output of the register file
 					else

@@ -16,26 +16,48 @@ entity HazardDetection is
 		  HDU_INS_OUT : out std_logic_vector(NBIT-1 downto 0); -- Current instruction
 		  HDU_PC_OUT  : out std_logic_vector(NBIT-1 downto 0); -- PC of current instruction
 		  HDU_NPC_OUT : out std_logic_vector(NBIT-1 downto 0)); -- NPC
+        
 end HazardDetection;
 
 architecture arch of HazardDetection is
+
+signal Bubble_det: std_logic := '0';
+
 begin
 
 	HDU_INS_OUT <= INS_IN;
-	HDU_PC_OUT <= PC_IN - 4; -- PC_IN;
-	HDU_NPC_OUT <= PC_IN; -- PC_IN + 4;
+	--HDU_PC_OUT <= PC_IN - 4; -- PC_IN;
+	--HDU_NPC_OUT <= PC_IN; -- PC_IN + 4;
+	HDU_PC_OUT <= PC_IN; -- PC_IN;
+	HDU_NPC_OUT <= PC_IN + 4; -- PC_IN + 4;
 	
 	process(RST, ADD_RS1, ADD_RS2, ADD_WR, DRAM_R)
 	begin
 		Bubble <= '0';
+                
 		if(RST = '0') then
-			Bubble <= '0';
-		elsif(DRAM_R ='1') then -- if previous instruction was a load
+		   Bubble <= '0';
+                   --Bubble_det <= '0';
+                        
+		--elsif(DRAM_R = '1' or Bubble_det = '1') then -- if previous instruction was a
+                                                             -- load, stall 2 times
+		elsif(DRAM_R = '1') then
+                  
 			if(ADD_WR = ADD_RS1 or ADD_WR = ADD_RS2) then -- If one of the source register is the destination of the previous load, we need to stall and wait for the load to complete
-				Bubble <= '1';
+				Bubble <= '1';		
 			else
 				Bubble <= '0';
 			end if;
+
+                        --Bubble_det <= Bubble_det xor '1';
+
+
+                       --if (Bubble_det = '0') then
+                         -- Bubble_det <= '1';
+                      -- else
+                          --Bubble_det <= '0';
+		      -- end if;
+                        
 		end if;
 	end process;
 end arch;

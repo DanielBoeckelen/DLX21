@@ -2,6 +2,12 @@
 
 -----------
 
+Progress as of 08/09/21:
+
+Every program and feature seems to work as intended. Next steps: general cleanup + adding comments, synthesis, floorplanning, report.
+
+-----------
+
 Progress as of 01/09/21:
 
 Implemented all necessary additions for the PRO instruction set: new DRAM and its signals, new ALU_OPs, Booth Multiplier. Old programs still work fine, but ALL new

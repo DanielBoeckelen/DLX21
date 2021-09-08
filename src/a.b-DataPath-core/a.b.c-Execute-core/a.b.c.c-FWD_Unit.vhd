@@ -17,6 +17,7 @@ entity FWD_Unit is
 end FWD_Unit;
 
 architecture bhv of FWD_Unit is
+
 begin
 	process(RST, ADD_RS1, ADD_RS2, ADD_WR_MEM, ADD_WR_WB, RF_WE_MEM, RF_WE_WB)
 	begin
@@ -24,8 +25,8 @@ begin
 		FWDB <= "11";
 
 		if (RST = '0') then
-		FWDA <= (others => '0');
-		FWDB <= (others => '0');
+			FWDA <= (others => '0');
+			FWDB <= (others => '0');
 		else
 			if(ADD_RS1 = ADD_WR_MEM) then
 				if(RF_WE_MEM = '1' and ADD_WR_MEM /=  "00000") then

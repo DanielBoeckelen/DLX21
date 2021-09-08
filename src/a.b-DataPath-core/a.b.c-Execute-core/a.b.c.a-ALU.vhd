@@ -537,6 +537,7 @@ begin
 								LEFT_RIGHT <= '0';
 								ADD_SUB <= '0';
 								LOGIC_RES <= (others => '0');
+							  	OPSel <= 0;
 								select_type_sig <= "00";
 
 			when NOP =>
