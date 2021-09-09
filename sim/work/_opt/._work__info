@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim
 T_opt
-VfGC:M9k0c5K5E88=n_LAF2
+Vhm2>VNm0dizj9[k9^UzgR3
 06 6 4 ./work tb_dlx test 1
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
@@ -775,13 +775,13 @@ DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../src/a-DLX.vhd
 F../src/a-DLX.vhd
 l0
 L6
 V:hCcG2Zfe0S1eL2IQb@Rh2
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Adlx_rtl
@@ -3436,7 +3436,7 @@ F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
 Eiram
-w1631120636
+w1631171859
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -3444,13 +3444,13 @@ DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP std textio K]Z^fghZ6B=BjnK5NomDT3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../src/a.c-IRAM.vhd
 F../src/a.c-IRAM.vhd
 l0
 L13
 V0@dAP7IJ7RoY3HLLWKk5U1
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Airam_bhe
@@ -6625,13 +6625,13 @@ tExplicit 1
 Etb_dlx
 w1630837999
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../tb/TB_DLX.vhd
 F../tb/TB_DLX.vhd
 l0
 L6
 Vi;YIdTjLdU[50lofeHV]`2
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Atest
