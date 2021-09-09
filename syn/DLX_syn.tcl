@@ -68,11 +68,12 @@ compile
 report_resources > ./report_resources.txt
 report_timing > ./report_timing.txt
 report_area > ./report_area.txt
+report_power > ./report_power.txt
+
 write -hierarchy -format ddc -output DLX_postsyn.ddc
 write -hierarchy -format vhdl -output DLX_postsyn.vhdl
-write -hierarchy -format verilog -output ../netlist/DLX_postsyn.v
 
-ungroup -all -flatten
 change_names -hierarchy -rules verilog
+write -f verilog -hierarchy -output ../netlist/DLX_postsyn.v
 write_sdf ../netlist/DLX.sdf
 write_sdc ../netlist/DLX.sdc
