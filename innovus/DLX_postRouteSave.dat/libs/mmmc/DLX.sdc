@@ -1,1 +1,0 @@
-/home/ms21.21/Desktop/GR21_DLX/DLX21/innovus/DLX.sdc

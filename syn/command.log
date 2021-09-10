@@ -1,6 +1,10 @@
 #@ # 
 #@ # Running dc_shell Version F-2011.09-SP3 for amd64 -- Jan 26, 2012
+<<<<<<< HEAD
 #@ # Date:   Wed Sep  8 19:09:28 2021
+=======
+#@ # Date:   Thu Sep  9 10:34:51 2021
+>>>>>>> main
 #@ # Run by: ms21.21@localhost.localdomain
 #@ 
 
@@ -4847,12 +4851,20 @@ source DLX_syn.tcl
 #@ report_resources > ./report_resources.txt
 #@ report_timing > ./report_timing.txt
 #@ report_area > ./report_area.txt
+#@ report_power > ./report_power.txt
+#@ 
 #@ write -hierarchy -format ddc -output DLX_postsyn.ddc
 #@ write -hierarchy -format vhdl -output DLX_postsyn.vhdl
+<<<<<<< HEAD
 #@ write -hierarchy -format verilog -output ../netlist/DLX_postsyn.v
 #@ 
 #@ ungroup -all -flatten
 #@ change_names -hierarchy -rules verilog
+=======
+#@ 
+#@ change_names -hierarchy -rules verilog
+#@ write -f verilog -hierarchy -output ../netlist/DLX_postsyn.v
+>>>>>>> main
 #@ write_sdf ../netlist/DLX.sdf
 #@ write_sdc ../netlist/DLX.sdc
 #@ # -- End source DLX_syn.tcl
