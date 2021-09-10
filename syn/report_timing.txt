@@ -7,11 +7,7 @@ Report : timing
         -max_paths 1
 Design : DLX
 Version: F-2011.09-SP3
-<<<<<<< HEAD
-Date   : Wed Sep  8 19:13:25 2021
-=======
 Date   : Thu Sep  9 10:36:16 2021
->>>>>>> main
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -19,9 +15,9 @@ Date   : Thu Sep  9 10:36:16 2021
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: DP/FetchStage/IR/DOUT_reg[26]
+  Startpoint: DP/FetchStage/PC/DOUT_reg[10]
               (rising edge-triggered flip-flop clocked by MY_CLK)
-  Endpoint: DP/DecodeStage/rf/OUT2_reg[19]
+  Endpoint: DP/FetchStage/PC/DOUT_reg[22]
             (rising edge-triggered flip-flop clocked by MY_CLK)
   Path Group: MY_CLK
   Path Type: max
@@ -34,52 +30,43 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock MY_CLK (rise edge)                                0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  DP/FetchStage/IR/DOUT_reg[26]/CK (DFFR_X1)              0.00 #     0.00 r
-  DP/FetchStage/IR/DOUT_reg[26]/Q (DFFR_X1)               0.12       0.12 r
-  DP/FetchStage/IR/DOUT[26] (regn_N32_8)                  0.00       0.12 r
-  DP/FetchStage/INS_OUT[26] (Fetch)                       0.00       0.12 r
-  DP/DecodeStage/INS_IN[26] (Decode)                      0.00       0.12 r
-  DP/DecodeStage/ins_type/INST_IN[26] (instruction_type)
-                                                          0.00       0.12 r
-  DP/DecodeStage/ins_type/U3/Z (BUF_X1)                   0.04       0.16 r
-  DP/DecodeStage/ins_type/U21/ZN (NAND3_X1)               0.03       0.19 f
-  DP/DecodeStage/ins_type/U22/ZN (OAI211_X1)              0.04       0.23 r
-  DP/DecodeStage/ins_type/U29/ZN (OAI221_X1)              0.04       0.27 f
-  DP/DecodeStage/ins_type/U30/ZN (NAND3_X1)               0.04       0.31 r
-  DP/DecodeStage/ins_type/Itype (instruction_type)        0.00       0.31 r
-  DP/DecodeStage/ins_dec/Itype (instruction_decomposition)
-                                                          0.00       0.31 r
-  DP/DecodeStage/ins_dec/U42/ZN (INV_X1)                  0.03       0.33 f
-  DP/DecodeStage/ins_dec/U13/ZN (AND2_X2)                 0.05       0.38 f
-  DP/DecodeStage/ins_dec/U33/ZN (NOR3_X1)                 0.05       0.43 r
-  DP/DecodeStage/ins_dec/ADD_RS2[3] (instruction_decomposition)
-                                                          0.00       0.43 r
-  DP/DecodeStage/U18/Z (CLKBUF_X3)                        0.06       0.49 r
-  DP/DecodeStage/rf/ADD_RS2[3] (register_file_NBIT_ADD5_NBIT_DATA32)
-                                                          0.00       0.49 r
-  DP/DecodeStage/rf/U268/ZN (INV_X1)                      0.03       0.52 f
-  DP/DecodeStage/rf/U712/ZN (AND3_X1)                     0.05       0.57 f
-  DP/DecodeStage/rf/U517/ZN (AND2_X2)                     0.05       0.62 f
-  DP/DecodeStage/rf/U516/Z (BUF_X1)                       0.05       0.67 f
-  DP/DecodeStage/rf/U2071/ZN (AOI22_X1)                   0.06       0.74 r
-  DP/DecodeStage/rf/U2072/ZN (OAI221_X1)                  0.05       0.78 f
-  DP/DecodeStage/rf/U2078/ZN (NOR4_X1)                    0.06       0.85 r
-  DP/DecodeStage/rf/U2079/ZN (OAI222_X1)                  0.06       0.90 f
-  DP/DecodeStage/rf/U349/ZN (NOR2_X1)                     0.04       0.95 r
-  DP/DecodeStage/rf/U2086/ZN (NAND4_X1)                   0.04       0.98 f
-  DP/DecodeStage/rf/OUT2_reg[19]/D (DFF_X1)               0.01       0.99 f
-  data arrival time                                                  0.99
+  DP/FetchStage/PC/DOUT_reg[10]/CK (DFFR_X1)              0.00 #     0.00 r
+  DP/FetchStage/PC/DOUT_reg[10]/QN (DFFR_X1)              0.06       0.06 f
+  DP/FetchStage/PC/U3/ZN (INV_X1)                         0.05       0.11 r
+  DP/FetchStage/PC/DOUT[10] (regn_N32_0)                  0.00       0.11 r
+  DP/FetchStage/add_54/A[10] (Fetch_DW01_add_1)           0.00       0.11 r
+  DP/FetchStage/add_54/U20/ZN (NAND4_X1)                  0.06       0.17 f
+  DP/FetchStage/add_54/U46/ZN (NOR2_X1)                   0.05       0.21 r
+  DP/FetchStage/add_54/U16/ZN (AND3_X2)                   0.07       0.28 r
+  DP/FetchStage/add_54/U53/ZN (AND2_X1)                   0.05       0.34 r
+  DP/FetchStage/add_54/U84/Z (XOR2_X1)                    0.03       0.37 f
+  DP/FetchStage/add_54/SUM[22] (Fetch_DW01_add_1)         0.00       0.37 f
+  DP/FetchStage/NPC_OUT[22] (Fetch)                       0.00       0.37 f
+  DP/MemoryStage/NPC_IN[22] (Memory)                      0.00       0.37 f
+  DP/MemoryStage/PCsel/A[22] (mux41_NBIT32_2)             0.00       0.37 f
+  DP/MemoryStage/PCsel/U98/ZN (AOI22_X1)                  0.05       0.42 r
+  DP/MemoryStage/PCsel/U100/ZN (NAND2_X1)                 0.03       0.45 f
+  DP/MemoryStage/PCsel/Z[22] (mux41_NBIT32_2)             0.00       0.45 f
+  DP/MemoryStage/PC_OUT[22] (Memory)                      0.00       0.45 f
+  DP/FetchStage/PC_EXT[22] (Fetch)                        0.00       0.45 f
+  DP/FetchStage/NPC_or_NPC_HDU/A[22] (mux21_NBIT32_0)     0.00       0.45 f
+  DP/FetchStage/NPC_or_NPC_HDU/U54/Z (MUX2_X1)            0.06       0.51 f
+  DP/FetchStage/NPC_or_NPC_HDU/Z[22] (mux21_NBIT32_0)     0.00       0.51 f
+  DP/FetchStage/PC/DIN[22] (regn_N32_0)                   0.00       0.51 f
+  DP/FetchStage/PC/U64/Z (MUX2_X1)                        0.07       0.58 f
+  DP/FetchStage/PC/DOUT_reg[22]/D (DFFR_X1)               0.01       0.59 f
+  data arrival time                                                  0.59
 
   clock MY_CLK (rise edge)                                0.63       0.63
   clock network delay (ideal)                             0.00       0.63
-  DP/DecodeStage/rf/OUT2_reg[19]/CK (DFF_X1)              0.00       0.63 r
+  DP/FetchStage/PC/DOUT_reg[22]/CK (DFFR_X1)              0.00       0.63 r
   library setup time                                     -0.04       0.59
   data required time                                                 0.59
   --------------------------------------------------------------------------
   data required time                                                 0.59
-  data arrival time                                                 -0.99
+  data arrival time                                                 -0.59
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.41
+  slack (MET)                                                        0.00
 
 
 1

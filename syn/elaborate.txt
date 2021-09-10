@@ -10,39 +10,42 @@ Information: Building the design 'Datapath'. (HDL-193)
 Presto compilation completed successfully.
 Information: Building the design 'hardwired_cu' instantiated from design 'DLX' with
 	the parameters "NBIT=32". (HDL-193)
-Warning:  ../src/a.a-CU.vhd:78: The initial value for signal 'CW_MEM' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  ../src/a.a-CU.vhd:119: The initial value for signal 'CW1' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  ../src/a.a-CU.vhd:120: The initial value for signal 'CW2' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  ../src/a.a-CU.vhd:121: The initial value for signal 'CW3' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:65: The initial value for signal 'CW_MEM' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:105: The initial value for signal 'CW1' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:106: The initial value for signal 'CW2' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:107: The initial value for signal 'CW3' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/a.a-CU.vhd:108: The initial value for signal 'CW4' is not supported for synthesis. Presto ignores it.  (ELAB-130)
 
-Statistics for case statements in always block at line 181 in file
+Statistics for case statements in always block at line 184 in file
 	'../src/a.a-CU.vhd'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           187            |    auto/auto     |
-|           189            |    auto/auto     |
+|           186            |    auto/auto     |
+|           188            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 251 in file
+Statistics for case statements in always block at line 225 in file
 	'../src/a.a-CU.vhd'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           256            |    auto/auto     |
-|           258            |    auto/auto     |
+|           227            |    auto/auto     |
+|           229            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine hardwired_cu_NBIT32 line 160 in file
+	in routine hardwired_cu_NBIT32 line 152 in file
 		'../src/a.a-CU.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|     ALU_OPC_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
-|       CW1_reg       | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
-|       CW2_reg       | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
-|       CW3_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     ALU_OPC_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       CW1_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       CW2_reg       | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       CW3_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       CW4_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     AluOP_E_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
 Information: Building the design 'IRAM' instantiated from design 'DLX' with
@@ -73,7 +76,6 @@ Presto compilation completed successfully.
 Information: Building the design 'Writeback'. (HDL-193)
 Presto compilation completed successfully.
 Information: Building the design 'HazardDetection'. (HDL-193)
-Warning:  ../src/a.b-DataPath-core/a.b.f-HazardDetection.vhd:24: The initial value for signal 'Bubble_det' is not supported for synthesis. Presto ignores it.  (ELAB-130)
 Presto compilation completed successfully.
 Information: Building the design 'mux21' instantiated from design 'Fetch' with
 	the parameters "NBIT=32". (HDL-193)
@@ -110,7 +112,7 @@ Statistics for case statements in always block at line 21 in file
 ===============================================
 Presto compilation completed successfully.
 Information: Building the design 'instruction_decomposition'. (HDL-193)
-Warning:  ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.c-instruction_decomposition.vhd:26: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
+Warning:  ../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.c-instruction_decomposition.vhd:22: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
 Presto compilation completed successfully.
 Information: Building the design 'regn' instantiated from design 'Decode' with
 	the parameters "N=5". (HDL-193)
@@ -124,18 +126,6 @@ Inferred memory devices in process
 |      DOUT_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
-Information: Building the design 'mux21' instantiated from design 'Decode' with
-	the parameters "NBIT=5". (HDL-193)
-Warning:  ../src/02-mux21.vhd:17: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
-
-Statistics for case statements in always block at line 15 in file
-	'../src/02-mux21.vhd'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|            17            |    auto/auto     |
-===============================================
-Presto compilation completed successfully.
 Information: Building the design 'register_file' instantiated from design 'Decode' with
 	the parameters "NBIT_ADD=5,NBIT_DATA=32". (HDL-193)
 
@@ -145,8 +135,8 @@ Inferred memory devices in process
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
 |      OUT2_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
 |      OUT1_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
@@ -191,12 +181,12 @@ Presto compilation completed successfully.
 Information: Building the design 'ALU' instantiated from design 'Execute' with
 	the parameters "NBIT=32". (HDL-193)
 
-Statistics for case statements in always block at line 96 in file
+Statistics for case statements in always block at line 85 in file
 	'../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            98            |    auto/auto     |
+|            87            |    auto/auto     |
 ===============================================
 Presto compilation completed successfully.
 Information: Building the design 'comparator' instantiated from design 'ALU_NBIT32' with
@@ -217,34 +207,11 @@ Presto compilation completed successfully.
 Information: Building the design 'P4Adder' instantiated from design 'ALU_NBIT32' with
 	the parameters "NBIT=32". (HDL-193)
 Presto compilation completed successfully.
-Information: Building the design 'BOOTHMUL' instantiated from design 'ALU_NBIT32' with
-	the parameters "numBit=16". (HDL-193)
-Warning:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier.vhd:40: The initial value for signal 'A_extend' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier.vhd:41: The initial value for signal 'A_minus' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Presto compilation completed successfully.
 Information: Building the design 'carry_generator' instantiated from design 'P4Adder_NBIT32' with
 	the parameters "NBIT=32,NBIT_PER_BLOCK=4". (HDL-193)
 Presto compilation completed successfully.
 Information: Building the design 'SUM_GENERATOR' instantiated from design 'P4Adder_NBIT32' with
 	the parameters "NBIT_PER_BLOCK=4,NBLOCKS=8". (HDL-193)
-Presto compilation completed successfully.
-Information: Building the design 'booth_encoder' instantiated from design 'BOOTHMUL_numBit16' with
-	the parameters "numBit=16". (HDL-193)
-Presto compilation completed successfully.
-Information: Building the design 'mux5to1' instantiated from design 'BOOTHMUL_numBit16' with
-	the parameters "numBit=32". (HDL-193)
-
-Inferred tri-state devices in process
-	in routine mux5to1_numBit32 line 17 in file
-		'../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.a-mux5to1.vhd'.
-=================================================
-| Register Name |       Type       | Width | MB |
-=================================================
-|     Z_tri     | Tri-State Buffer |  32   | N  |
-=================================================
-Presto compilation completed successfully.
-Information: Building the design 'rca_bhv' instantiated from design 'BOOTHMUL_numBit16' with
-	the parameters "numBit=32". (HDL-193)
 Presto compilation completed successfully.
 Information: Building the design 'PG_net'. (HDL-193)
 Presto compilation completed successfully.

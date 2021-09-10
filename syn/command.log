@@ -1,10 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version F-2011.09-SP3 for amd64 -- Jan 26, 2012
-<<<<<<< HEAD
-#@ # Date:   Wed Sep  8 19:09:28 2021
-=======
 #@ # Date:   Thu Sep  9 10:34:51 2021
->>>>>>> main
 #@ # Run by: ms21.21@localhost.localdomain
 #@ 
 
@@ -4807,13 +4803,9 @@ source DLX_syn.tcl
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.f-Gblock.vhd
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.g-rca.vhd
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.h-fa.vhd
-#@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.a-mux5to1.vhd
-#@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.b-booth_enc.vhd
-#@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.c-rca_bhv.vhd
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.a-comparator.vhd
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder.vhd
-#@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier.vhd
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.b-Branch_Cond_Unit.vhd
 #@ analyze -format vhdl -library WORK ../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.c-FWD_Unit.vhd
@@ -4855,16 +4847,9 @@ source DLX_syn.tcl
 #@ 
 #@ write -hierarchy -format ddc -output DLX_postsyn.ddc
 #@ write -hierarchy -format vhdl -output DLX_postsyn.vhdl
-<<<<<<< HEAD
-#@ write -hierarchy -format verilog -output ../netlist/DLX_postsyn.v
-#@ 
-#@ ungroup -all -flatten
-#@ change_names -hierarchy -rules verilog
-=======
 #@ 
 #@ change_names -hierarchy -rules verilog
 #@ write -f verilog -hierarchy -output ../netlist/DLX_postsyn.v
->>>>>>> main
 #@ write_sdf ../netlist/DLX.sdf
 #@ write_sdc ../netlist/DLX.sdc
 #@ # -- End source DLX_syn.tcl
