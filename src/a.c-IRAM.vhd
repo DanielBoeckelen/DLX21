@@ -79,9 +79,41 @@ begin  -- IRam_Bhe
   begin  -- process FILL_MEM_P
     if (Rst = '0') then
       --Iout <= (others => '0');
+
+---------------------------------------------------------------------
+--*******************************************************************
+
+       file_open(mem_fp, "../mem/basic_test.asm.mem", READ_MODE); 				--basic_test.asm.mem
+       
+       --file_open(mem_fp, "../mem/Branch.asm.mem", READ_MODE); 				--Branch.asm.mem
+
+       --file_open(mem_fp, "../mem/Branch2.asm.mem", READ_MODE); 				--Branch2.asm.mem
+
+       --file_open(mem_fp, "../mem/dlx_div.asm.mem", READ_MODE);				--dlx_div.asm.mem
+       
+       --file_open(mem_fp, "../mem/first_test.asm.mem", READ_MODE);				--first_test.asm.mem
+
+       --file_open(mem_fp, "../mem/jr.asm.mem", READ_MODE);						--jr.asm.mem
+
+       --file_open(mem_fp, "../mem/LoadStore.asm.mem", READ_MODE);				--LoadStore.asm.mem
+       
+       --file_open(mem_fp, "../mem/Mult0.asm.mem", READ_MODE);					--Mult0.asm.mem
+
+       --file_open(mem_fp, "../mem/Mult1.asm.mem", READ_MODE);					--Mult1.asm.mem
+
+       --file_open(mem_fp, "../mem/Mult3.asm.mem", READ_MODE);					--Mult3.asm.mem
+       
+       --file_open(mem_fp, "../mem/my_Jump.asm.mem", READ_MODE);				--my_Jump.asm.mem
+
+       --file_open(mem_fp, "../mem/test_memory_no_hazard.asm.mem", READ_MODE);	--test_memory_no_hazard.asm.mem
+       
+       --file_open(mem_fp, "../mem/test_pro_ins.asm.mem", READ_MODE);			--test_pro_ins.asm.mem
+
+       --file_open(mem_fp, "../mem/vector_mult.asm.mem", READ_MODE);			--vector_mult.asm.mem
       
-      file_open(mem_fp, "../mem/vector_mult.asm.mem", READ_MODE);
-      
+--*******************************************************************
+---------------------------------------------------------------------
+  
       index := 0;
       while (not endfile(mem_fp)) loop
         readline(mem_fp,file_line);

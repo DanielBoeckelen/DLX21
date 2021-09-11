@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim
 T_opt
-VfGC:M9k0c5K5E88=n_LAF2
+VPKn`0nPIV1=6;kcmob2z30
 06 6 4 ./work tb_dlx test 1
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
@@ -55,6 +55,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd
 w1630935830
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ealu_nbit32
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -113,6 +114,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.b-booth_enc.vhd
 w1630490148
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.b-booth_enc.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eboothmul
 w1631268881
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -154,6 +156,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier.vhd
 w1630490864
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ebranch_cond_unit
 w1625908687
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
@@ -191,6 +194,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.b-Branch_Cond_Unit.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.b-Branch_Cond_Unit.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ebranch_cond_unit_nbit32
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -254,6 +258,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.a-carry_generator_generic.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.a-carry_generator_generic.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ecarry_generator_nbit32_nbit_per_block4
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -315,6 +320,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.c-carry_select_basic.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.c-carry_select_basic.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ecarry_select_basic_n4_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -580,6 +586,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.a-comparator.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.a-comparator.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ecomparator_nbit32
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -714,6 +721,7 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 w1631106468
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_struct
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -730,6 +738,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Edecode
 w1631268881
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
@@ -773,6 +782,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.b-Decode.vhd
 w1630918187
 8../src/a.b-DataPath-core/a.b.b-Decode.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_struct
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -789,6 +799,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Edlx
 w1631268881
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
@@ -796,13 +807,13 @@ DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../src/a-DLX.vhd
 F../src/a-DLX.vhd
 l0
 L6
 V:hCcG2Zfe0S1eL2IQb@Rh2
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Adlx_rtl
@@ -828,7 +839,6 @@ V^hC3=HITzULWb;FW=_Joh3
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
-w1631106647
 Asyn_dlx_rtl
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -845,6 +855,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Edram
 w1631268881
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -881,6 +892,7 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 w1631106747
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eexecute
 w1631268881
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
@@ -929,6 +941,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute.vhd
 w1630937373
 8../src/a.b-DataPath-core/a.b.c-Execute.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_struct
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -945,6 +958,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eexecute_dw01_add_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -1022,6 +1036,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.h-fa.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.h-fa.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Efa_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -2728,6 +2743,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.a-Fetch.vhd
 8../src/a.b-DataPath-core/a.b.a-Fetch.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_struct
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -2744,6 +2760,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Efetch_dw01_add_3
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -2793,6 +2810,7 @@ VA:>LiXl<B1D2T5HzIR78n1
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eff_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -2897,6 +2915,7 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 nbody
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Efwd_unit
 w1631268881
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -2932,6 +2951,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.c-FWD_Unit.vhd
 w1630937338
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.c-FWD_Unit.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_bhv
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -2948,6 +2968,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Egblock
 w1617975815
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -2973,6 +2994,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.f-Gblock.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.f-Gblock.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Egblock_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -3246,6 +3268,7 @@ OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
 w1631116242
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ehardwired_cu_nbit32
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -3313,6 +3336,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.f-HazardDetection.vhd
 w1630849310
 8../src/a.b-DataPath-core/a.b.f-HazardDetection.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_arch
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -3329,6 +3353,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ehazarddetection_dw01_sub_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -3393,6 +3418,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.c-instruction_decomposition.vhd
 w1630665773
 8../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.c-instruction_decomposition.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_bhv
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -3409,6 +3435,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Pinstruction_set
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
@@ -3464,6 +3491,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd
 w1630419684
 8../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.b-instruction_type.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_bhv
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -3480,8 +3508,9 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eiram
-w1631268881
+w1631372970
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -3489,13 +3518,13 @@ DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP std textio K]Z^fghZ6B=BjnK5NomDT3
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../src/a.c-IRAM.vhd
 F../src/a.c-IRAM.vhd
 l0
 L13
 V0@dAP7IJ7RoY3HLLWKk5U1
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Airam_bhe
@@ -3517,11 +3546,10 @@ M2 work instruction_set
 M1 ieee numeric_std
 l66
 L24
-VPEE4Qgj9^n^jRJ_9nKU[g3
+VZQhzjZjhE0WFcV9IJ^W^M1
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
-w1631171859
 Ememory
 w1631268881
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
@@ -3562,6 +3590,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.d-Memory.vhd
 w1631106553
 8../src/a.b-DataPath-core/a.b.d-Memory.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_struct
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -3578,6 +3607,7 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Emux21
 w1618768225
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -3604,6 +3634,7 @@ Vc?F^n@;z:Xea@6kTV:RSe0
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Emux21_nbit32_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -3786,6 +3817,7 @@ VDiWEL]z66W=05jKdO7@SJ2
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Emux41_nbit32_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -3945,6 +3977,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.a-mux5to1.vhd
 w1630490135
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.a-mux5to1.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ep4adder
 w1618747496
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -3975,6 +4008,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Ep4adder_nbit32
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -4026,6 +4060,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.d-PG_net_generic.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.d-PG_net_generic.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Epg_net_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -4857,6 +4892,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.e-PGblock.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.e-PGblock.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Epgblock_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -5594,6 +5630,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.g-rca.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.g-rca.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Erca_bhv
 w1631268881
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -5629,6 +5666,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.c-rca_bhv.vhd
 w1630490153
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.d-multiplier-core/a.b.c.a.d.c-rca_bhv.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Erca_n4_0
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -6083,6 +6121,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
 w1631118912
 8../src/a.b-DataPath-core/a.b.b-Decode-core/a.b.b.a-registerfile.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eregister_file_nbit_add5_nbit_data32
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -6132,6 +6171,7 @@ VT_D:RO];BlMe>@H0n0@kH3
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eregn_n2
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -6605,6 +6645,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.b-shifter.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eshifter_nbit32
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -6666,6 +6707,7 @@ o-93 -work ./work
 tExplicit 1
 F../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.b-sum_generator.vhd
 8../src/a.b-DataPath-core/a.b.c-Execute-core/a.b.c.a-ALU-core/a.b.c.a.c-P4Adder-core/a.b.c.a.c.b-sum_generator.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Esum_generator_nbit_per_block4_nblocks8
 w1629533251
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
@@ -6695,13 +6737,13 @@ tExplicit 1
 Etb_dlx
 w1631268881
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+31
 8../tb/TB_DLX.vhd
 F../tb/TB_DLX.vhd
 l0
 L6
 Vi;YIdTjLdU[50lofeHV]`2
 OE;C;6.2g;35
-31
 o-93 -work ./work
 tExplicit 1
 Atest
@@ -6716,7 +6758,6 @@ V;>NdOS`L[3b0HEoHe1jYG0
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1
-w1630837999
 Ewriteback
 w1631268881
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
@@ -6756,6 +6797,7 @@ tExplicit 1
 F../src/a.b-DataPath-core/a.b.e-Writeback.vhd
 w1631116124
 8../src/a.b-DataPath-core/a.b.e-Writeback.vhd
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Asyn_struct
 DP work conv_pack_dlx :idU<hb`GPj_i;3SImR<51
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
@@ -6772,3 +6814,4 @@ tExplicit 1
 F../syn/DLX_postsyn.vhdl
 w1629533251
 8../syn/DLX_postsyn.vhdl
+d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
