@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim
 T_opt
-VPKn`0nPIV1=6;kcmob2z30
+Vhm2>VNm0dizj9[k9^UzgR3
 06 6 4 ./work tb_dlx test 1
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
@@ -3510,7 +3510,7 @@ w1629533251
 8../syn/DLX_postsyn.vhdl
 d/home/ms21.21/Desktop/GR21_DLX/DLX21/sim/DLX
 Eiram
-w1631372970
+w1631374120
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP work instruction_set FAGeccK]]e]^C]>9ZFAA?1
 DP work constants Zk;Ulc8;Fl:^BSZVa<iPB2
@@ -3546,7 +3546,7 @@ M2 work instruction_set
 M1 ieee numeric_std
 l66
 L24
-VZQhzjZjhE0WFcV9IJ^W^M1
+VPEE4Qgj9^n^jRJ_9nKU[g3
 OE;C;6.2g;35
 o-93 -work ./work
 tExplicit 1

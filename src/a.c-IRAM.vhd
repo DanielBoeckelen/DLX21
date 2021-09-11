@@ -83,7 +83,7 @@ begin  -- IRam_Bhe
 ---------------------------------------------------------------------
 --*******************************************************************
 
-       file_open(mem_fp, "../mem/basic_test.asm.mem", READ_MODE); 				--basic_test.asm.mem
+       --file_open(mem_fp, "../mem/basic_test.asm.mem", READ_MODE); 				--basic_test.asm.mem
        
        --file_open(mem_fp, "../mem/Branch.asm.mem", READ_MODE); 				--Branch.asm.mem
 
@@ -109,7 +109,7 @@ begin  -- IRam_Bhe
        
        --file_open(mem_fp, "../mem/test_pro_ins.asm.mem", READ_MODE);			--test_pro_ins.asm.mem
 
-       --file_open(mem_fp, "../mem/vector_mult.asm.mem", READ_MODE);			--vector_mult.asm.mem
+       file_open(mem_fp, "../mem/vector_mult.asm.mem", READ_MODE);			--vector_mult.asm.mem
       
 --*******************************************************************
 ---------------------------------------------------------------------
