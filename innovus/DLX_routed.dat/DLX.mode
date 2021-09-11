@@ -6,6 +6,7 @@ catch { setOptMode -activeHoldViews { default } }
 catch { setOptMode -activeSetupViews { default } }
 catch { setOptMode -autoHoldViews { default } }
 catch { setOptMode -autoSetupViews { default} }
+catch { setOptMode -autoTDGRSetupViews { default} }
 catch { setOptMode -deleteInst true }
 catch { setOptMode -drcMargin 0 }
 catch { setOptMode -effort high }
@@ -18,6 +19,7 @@ catch {setNanoRouteMode -quiet -drouteAntennaFactor 1.000000}
 catch {setNanoRouteMode -quiet -droutePostRouteSpreadWire "auto"}
 catch {setNanoRouteMode -quiet -drouteStartIteration 0}
 catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 10.100000}
 catch {setNanoRouteMode -quiet -routeExpPreserveConstraints true}
 catch {setNanoRouteMode -quiet -routeExpSignatureEco false}
 catch {setNanoRouteMode -quiet -routeWithSiDriven false}
@@ -28,6 +30,7 @@ catch {setNanoRouteMode -quiet -timingEngine ""}
 catch { setPlaceMode -place_design_floorplan_mode false }
 catch { setPlaceMode -place_detail_preroute_as_obs {1 2 3 4 5 6 7 8} }
 catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepFlatten true }
+catch { setUsefulSkewMode -ecoRoute false }
 catch { setSrouteMode -viaConnectToShape noshape }
 catch { setDelayCalMode -enable_high_fanout true }
 catch { setDelayCalMode -eng_copyNetPropToNewNet true }
@@ -35,6 +38,8 @@ catch { setDelayCalMode -engine aae }
 catch { setDelayCalMode -ignoreNetLoad false }
 catch { setDelayCalMode -SIAware true }
 catch { setPinAssignMode -pinEditInBatch false }
+catch { setTrialRouteMode -handlePreroute true }
+catch { setTrialRouteMode -keepMarkedOptRoutes true }
 catch { setAddRingMode -avoid_short false }
 catch { setAddRingMode -extend_over_row false }
 catch { setAddRingMode -ignore_rows false }

@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : DLX
 Version: F-2011.09-SP3
-Date   : Thu Sep  9 10:36:16 2021
+Date   : Fri Sep 10 18:55:49 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -15,9 +15,9 @@ Date   : Thu Sep  9 10:36:16 2021
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: DP/FetchStage/PC/DOUT_reg[10]
+  Startpoint: DP/FetchStage/IR/DOUT_reg[30]
               (rising edge-triggered flip-flop clocked by MY_CLK)
-  Endpoint: DP/FetchStage/PC/DOUT_reg[22]
+  Endpoint: DP/DecodeStage/rf/OUT2_reg[3]
             (rising edge-triggered flip-flop clocked by MY_CLK)
   Path Group: MY_CLK
   Path Type: max
@@ -30,41 +30,49 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock MY_CLK (rise edge)                                0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  DP/FetchStage/PC/DOUT_reg[10]/CK (DFFR_X1)              0.00 #     0.00 r
-  DP/FetchStage/PC/DOUT_reg[10]/QN (DFFR_X1)              0.06       0.06 f
-  DP/FetchStage/PC/U3/ZN (INV_X1)                         0.05       0.11 r
-  DP/FetchStage/PC/DOUT[10] (regn_N32_0)                  0.00       0.11 r
-  DP/FetchStage/add_54/A[10] (Fetch_DW01_add_1)           0.00       0.11 r
-  DP/FetchStage/add_54/U20/ZN (NAND4_X1)                  0.06       0.17 f
-  DP/FetchStage/add_54/U46/ZN (NOR2_X1)                   0.05       0.21 r
-  DP/FetchStage/add_54/U16/ZN (AND3_X2)                   0.07       0.28 r
-  DP/FetchStage/add_54/U53/ZN (AND2_X1)                   0.05       0.34 r
-  DP/FetchStage/add_54/U84/Z (XOR2_X1)                    0.03       0.37 f
-  DP/FetchStage/add_54/SUM[22] (Fetch_DW01_add_1)         0.00       0.37 f
-  DP/FetchStage/NPC_OUT[22] (Fetch)                       0.00       0.37 f
-  DP/MemoryStage/NPC_IN[22] (Memory)                      0.00       0.37 f
-  DP/MemoryStage/PCsel/A[22] (mux41_NBIT32_2)             0.00       0.37 f
-  DP/MemoryStage/PCsel/U98/ZN (AOI22_X1)                  0.05       0.42 r
-  DP/MemoryStage/PCsel/U100/ZN (NAND2_X1)                 0.03       0.45 f
-  DP/MemoryStage/PCsel/Z[22] (mux41_NBIT32_2)             0.00       0.45 f
-  DP/MemoryStage/PC_OUT[22] (Memory)                      0.00       0.45 f
-  DP/FetchStage/PC_EXT[22] (Fetch)                        0.00       0.45 f
-  DP/FetchStage/NPC_or_NPC_HDU/A[22] (mux21_NBIT32_0)     0.00       0.45 f
-  DP/FetchStage/NPC_or_NPC_HDU/U54/Z (MUX2_X1)            0.06       0.51 f
-  DP/FetchStage/NPC_or_NPC_HDU/Z[22] (mux21_NBIT32_0)     0.00       0.51 f
-  DP/FetchStage/PC/DIN[22] (regn_N32_0)                   0.00       0.51 f
-  DP/FetchStage/PC/U64/Z (MUX2_X1)                        0.07       0.58 f
-  DP/FetchStage/PC/DOUT_reg[22]/D (DFFR_X1)               0.01       0.59 f
-  data arrival time                                                  0.59
+  DP/FetchStage/IR/DOUT_reg[30]/CK (DFFR_X1)              0.00 #     0.00 r
+  DP/FetchStage/IR/DOUT_reg[30]/Q (DFFR_X1)               0.12       0.12 r
+  DP/FetchStage/IR/DOUT[30] (regn_N32_8)                  0.00       0.12 r
+  DP/FetchStage/INS_OUT[30] (Fetch)                       0.00       0.12 r
+  DP/DecodeStage/INS_IN[30] (Decode)                      0.00       0.12 r
+  DP/DecodeStage/ins_type/INST_IN[30] (instruction_type)
+                                                          0.00       0.12 r
+  DP/DecodeStage/ins_type/U16/ZN (INV_X1)                 0.04       0.15 f
+  DP/DecodeStage/ins_type/U27/ZN (AOI211_X1)              0.09       0.24 r
+  DP/DecodeStage/ins_type/U26/ZN (NOR3_X1)                0.02       0.26 f
+  DP/DecodeStage/ins_type/U7/ZN (OR2_X1)                  0.05       0.32 f
+  DP/DecodeStage/ins_type/U9/ZN (NAND3_X1)                0.04       0.36 r
+  DP/DecodeStage/ins_type/Itype (instruction_type)        0.00       0.36 r
+  DP/DecodeStage/ins_dec/Itype (instruction_decomposition)
+                                                          0.00       0.36 r
+  DP/DecodeStage/ins_dec/U86/ZN (NAND4_X1)                0.06       0.42 f
+  DP/DecodeStage/ins_dec/U68/ZN (AND2_X1)                 0.06       0.47 f
+  DP/DecodeStage/ins_dec/U71/ZN (NOR2_X1)                 0.09       0.56 r
+  DP/DecodeStage/ins_dec/ADD_RS2[3] (instruction_decomposition)
+                                                          0.00       0.56 r
+  DP/DecodeStage/rf/ADD_RS2[3] (register_file_NBIT_ADD5_NBIT_DATA32)
+                                                          0.00       0.56 r
+  DP/DecodeStage/rf/U2508/ZN (INV_X1)                     0.05       0.61 f
+  DP/DecodeStage/rf/U2493/ZN (NOR3_X1)                    0.10       0.70 r
+  DP/DecodeStage/rf/U84/Z (BUF_X1)                        0.04       0.75 r
+  DP/DecodeStage/rf/U2485/ZN (AND2_X1)                    0.05       0.80 r
+  DP/DecodeStage/rf/U436/Z (BUF_X2)                       0.07       0.87 r
+  DP/DecodeStage/rf/U433/ZN (AND2_X1)                     0.05       0.92 r
+  DP/DecodeStage/rf/U435/ZN (NOR3_X1)                     0.02       0.94 f
+  DP/DecodeStage/rf/U2410/ZN (NAND4_X1)                   0.03       0.97 r
+  DP/DecodeStage/rf/U74/ZN (NOR3_X1)                      0.02       1.00 f
+  DP/DecodeStage/rf/U2401/ZN (OAI222_X1)                  0.05       1.05 r
+  DP/DecodeStage/rf/OUT2_reg[3]/D (DFF_X2)                0.01       1.06 r
+  data arrival time                                                  1.06
 
-  clock MY_CLK (rise edge)                                0.63       0.63
-  clock network delay (ideal)                             0.00       0.63
-  DP/FetchStage/PC/DOUT_reg[22]/CK (DFFR_X1)              0.00       0.63 r
-  library setup time                                     -0.04       0.59
-  data required time                                                 0.59
+  clock MY_CLK (rise edge)                                1.10       1.10
+  clock network delay (ideal)                             0.00       1.10
+  DP/DecodeStage/rf/OUT2_reg[3]/CK (DFF_X2)               0.00       1.10 r
+  library setup time                                     -0.04       1.06
+  data required time                                                 1.06
   --------------------------------------------------------------------------
-  data required time                                                 0.59
-  data arrival time                                                 -0.59
+  data required time                                                 1.06
+  data arrival time                                                 -1.06
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 

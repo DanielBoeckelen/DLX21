@@ -13,7 +13,7 @@ D 16 ./work.constants Zk;Ulc8;Fl:^BSZVa<iPB2 3 1
 D 23 ./work.datapath(struct) 4?UjjbjCcL1@Y<9UfkIea0 35 1
 D 21 ./work.decode(struct) bz55H::joEo95<>SiWK8a3 10 1
 D 19 ./work.dlx(dlx_rtl) ^hC3=HITzULWb;FW=_Joh3 39 1
-D 21 ./work.dram(dram_bhe) Q8e@<YVY9=QAjTmQG`4042 37 1
+D 21 ./work.dram(dram_bhe) Q8e@<YVY9=QAjTmQG`4042 38 1
 D 22 ./work.execute(struct) =aSg1>T28V9:MAofk@zZM3 31 1
 D 21 ./work.fa(behavioral) =o<Y;3fB5IWb;D<3XbD`m2 21 1
 D 20 ./work.fetch(struct) 5]g>D6JKAH^9R5VigZ>Ed0 6 1
@@ -27,7 +27,7 @@ D 28 ./work.hazarddetection(arch) aF0dnOJKJG>k8:PlX^1SE1 34 1
 D 37 ./work.instruction_decomposition(bhv) RG>6SfUm6coh3?_2d]ZmO0 8 1
 D 22 ./work.instruction_set FAGeccK]]e]^C]>9ZFAA?1 2 1
 D 28 ./work.instruction_type(bhv) HE0IOaPK1jozhSmo^^dB:1 7 1
-D 21 ./work.iram(iram_bhe) PEE4Qgj9^n^jRJ_9nKU[g3 38 1
+D 21 ./work.iram(iram_bhe) PEE4Qgj9^n^jRJ_9nKU[g3 37 1
 D 21 ./work.memory(struct) [lBzd[L?mLzJ7gh7[7Xf73 32 1
 D 17 ./work.mux21(bhv) c?F^n@;z:Xea@6kTV:RSe0 4 1
 D 17 ./work.mux41(bhv) DiWEL]z66W=05jKdO7@SJ2 14 1
@@ -51,7 +51,10 @@ D 24 ./work.writeback(struct) Q0[e>Ql_VP6EfdEO6@N333 33 1
 2 0  0 1i4ZQ50KNcnbBF?hXkNZP1 37 34 1
 2 0  1 2TmEG[W[hlWcIka?];EL;0 38 35 1
 2 0  1 R37=fU;jMCY@KMRzTYLGz2 39 36 1
-2 0  1 E97?4OkoZ`Ih5WnTJf=X[2 40 37 1
+2 0  1 gI6odEnFmLfe``QTRDe2O3 40 37 1
+2 0  1 E97?4OkoZ`Ih5WnTJf=X[2 41 38 1
+2 0  1 M:;=04J<ncX=WbKOz9]oL0 42 39 1
+2 0  1 =UVI8j6JWE]^EoD_B]ah_0 43 40 1
 2 0  1 RL<?g:LibP:`XBRZ_oAQk2 31 28 1
 2 0  0 Oe7iV=Nc]kUKSOO8eATMP2 0 0 1
 2 0  0 _ldknLcgH>9YR2kEH3QO`0 1 1 1
@@ -84,6 +87,3 @@ D 24 ./work.writeback(struct) Q0[e>Ql_VP6EfdEO6@N333 33 1
 2 0  1 T648_G0a4W;@Pm8]YS]mO0 28 25 1
 2 0  1 3UPN8gefThgS4;2MD84X41 29 26 1
 2 0  1 U7[BGe`>kSBH@QBHTb=nd0 30 27 1
-2 0  1 gI6odEnFmLfe``QTRDe2O3 41 38 1
-2 0  1 =UVI8j6JWE]^EoD_B]ah_0 43 40 1
-2 0  1 M:;=04J<ncX=WbKOz9]oL0 42 39 1
