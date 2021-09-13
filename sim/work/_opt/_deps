@@ -8,26 +8,26 @@ D 22 ./work.boothmul(mixed) blf86`a<F[0?k4C_NlQHl3 29 1
 D 28 ./work.branch_cond_unit(bhv) iPOL[U36JTV<PgkLmY]a22 11 1
 D 30 ./work.carry_generator(struct) dIGcoz2<=0l28nCKUZm6?2 20 1
 D 33 ./work.carry_select_basic(struct) gPKoC8S:c0[W9c5BifIZ73 23 1
-D 22 ./work.comparator(bhv) YhR0HYPn8S<ggQdhW1cU00 15 1
-D 16 ./work.constants Zk;Ulc8;Fl:^BSZVa<iPB2 3 1
+D 22 ./work.comparator(bhv) W>cjHK2DF0KHk<kFG^9;93 15 1
+D 16 ./work.constants I930HCnk5S:==_gOPcKjR0 2 1
 D 23 ./work.datapath(struct) 4?UjjbjCcL1@Y<9UfkIea0 35 1
-D 21 ./work.decode(struct) bz55H::joEo95<>SiWK8a3 10 1
+D 21 ./work.decode(struct) hOGa7E];6^kI7WAdLj@i52 10 1
 D 19 ./work.dlx(dlx_rtl) ^hC3=HITzULWb;FW=_Joh3 39 1
-D 21 ./work.dram(dram_bhe) Q8e@<YVY9=QAjTmQG`4042 37 1
+D 21 ./work.dram(dram_bhe) Q8e@<YVY9=QAjTmQG`4042 38 1
 D 22 ./work.execute(struct) =aSg1>T28V9:MAofk@zZM3 31 1
 D 21 ./work.fa(behavioral) =o<Y;3fB5IWb;D<3XbD`m2 21 1
 D 20 ./work.fetch(struct) 5]g>D6JKAH^9R5VigZ>Ed0 6 1
 D 14 ./work.ff(bhv) A:>LiXl<B1D2T5HzIR78n1 12 1
-D 20 ./work.func_external Oe7iV=Nc]kUKSOO8eATMP2 1 1
-D 26 ./work.func_external(body) Oe7iV=Nc]kUKSOO8eATMP2 0 1
+D 20 ./work.func_external ;0=8B@hLoJRdo4JO?fRaf3 0 1
+D 26 ./work.func_external(body) Oe7iV=Nc]kUKSOO8eATMP2 3 1
 D 20 ./work.fwd_unit(bhv) Om9]=_=OO@@8a86mf5@0S1 13 1
 D 18 ./work.gblock(bhv) UGXiffie_R2bnXPhAn9]J3 18 1
 D 24 ./work.hardwired_cu(bhv) D4Ihb7]P?T@ahTf;@AG4l1 36 1
-D 28 ./work.hazarddetection(arch) aF0dnOJKJG>k8:PlX^1SE1 34 1
-D 37 ./work.instruction_decomposition(bhv) RG>6SfUm6coh3?_2d]ZmO0 8 1
-D 22 ./work.instruction_set FAGeccK]]e]^C]>9ZFAA?1 2 1
+D 28 ./work.hazarddetection(arch) 22izRAHeR7ioXi5mi0JZA0 34 1
+D 37 ./work.instruction_decomposition(bhv) EfghZ51:oi7bQKFglSNEl2 8 1
+D 22 ./work.instruction_set FAGeccK]]e]^C]>9ZFAA?1 1 1
 D 28 ./work.instruction_type(bhv) HE0IOaPK1jozhSmo^^dB:1 7 1
-D 21 ./work.iram(iram_bhe) PEE4Qgj9^n^jRJ_9nKU[g3 38 1
+D 21 ./work.iram(iram_bhe) PEE4Qgj9^n^jRJ_9nKU[g3 37 1
 D 21 ./work.memory(struct) [lBzd[L?mLzJ7gh7[7Xf73 32 1
 D 17 ./work.mux21(bhv) c?F^n@;z:Xea@6kTV:RSe0 4 1
 D 17 ./work.mux41(bhv) DiWEL]z66W=05jKdO7@SJ2 14 1
@@ -41,49 +41,49 @@ D 25 ./work.register_file(bhv) RJ^ZPIZnO0M4dCA_OO9YR1 9 1
 D 16 ./work.regn(bhv) T_D:RO];BlMe>@H0n0@kH3 5 1
 D 19 ./work.shifter(bhv) `db6m<ncE?AzN3K[:mlG90 16 1
 D 32 ./work.sum_generator(structural) <fHGak<<HkfAN>5cZ?=5o1 24 1
-D 19 ./work.tb_dlx(test) ;>NdOS`L[3b0HEoHe1jYG0 40 1
+D 19 ./work.tb_dlx(test) O_FO]PHJW2Ezz3Sj1H47m0 40 1
 D 24 ./work.writeback(struct) Q0[e>Ql_VP6EfdEO6@N333 33 1
+2 0  0 RBRF6CW7nVSY^Ldh`bO=S1 8 8 1
+2 0  0 Oe7iV=Nc]kUKSOO8eATMP2 3 3 1
+2 0  0 1o`mUY:OIYfNzYlDnSkoh2 21 18 1
+2 0  0 abh:8A8U=iT[fEeb[3=FM1 22 19 1
+2 0  1 :UhYEQGa;l8D0<LIS5E8b3 19 16 1
+2 0  1 T648_G0a4W;@Pm8]YS]mO0 28 25 1
+2 0  1 U7[BGe`>kSBH@QBHTb=nd0 30 27 1
+2 0  0 UnSJz2g=KIX40QRN665?H2 20 17 1
+2 0  1 9TQP8K7F>KR=:<MYVnK4g0 26 23 1
+2 0  1 3@lQc5@>ED:nF4[DcJOF:2 27 24 1
+2 0  1 UmHHoPlJ;C?dHeAfkei>V3 17 14 1
+2 0  0 SL0>0?cmBQ0ek]zl>2;9V0 16 13 1
+2 0  1 jENhWjUSHX2>X6UV^JVY03 23 20 1
+2 0  0 alc1^<W?g`gbKASnMYY>J0 36 33 1
+2 0  0 Ni=J6QNfZ]S3I:if[NW4^0 14 12 1
+2 0  1 QCia9<DZJ^4g4KFhb<m?V2 12 10 1
+2 0  1 BIaNOeBCBfBWf9[>D3iO42 18 15 1
+2 0  1 94GRM0CHWiSl9AA<A2Y1[1 5 5 1
+2 0  2 T@bG[ll`<PWBljRNZDjCT1 10 5 1
+2 0  3 Xi3V7l^=BQH5]NAd7Z5bU3 15 5 1
+2 0  0 ddNYb[R0WfM9PU0^d3W@Q1 7 7 1
+2 0  1 <Xim7jz2iL><gJ?a[SQzm1 6 6 1
+2 0  0 _ldknLcgH>9YR2kEH3QO`0 0 0 1
+2 0  0 5Lc4GTHG0WRmRO2_IR>5G3 1 1 1
+2 0  0 >5QR[gFC[S[ZB[=dU[bJL2 2 2 1
+2 0  1 M:;=04J<ncX=WbKOz9]oL0 42 39 1
+2 0  1 2TmEG[W[hlWcIka?];EL;0 38 35 1
+2 0  0 TYe3?8C9Q];=:0IYDHA5R0 37 34 1
+2 0  1 gI6odEnFmLfe``QTRDe2O3 40 37 1
+2 0  1 UFe;j=DjWc`kkN>Q8?HzT1 43 40 1
+2 0  1 EUX>lZeWf:CMI]6l1n?[]2 11 9 1
+2 0  1 ?O2i:ZQckHhTljR5T>E^R1 13 11 1
+2 0  1 5hgf3Z;AVgA:n:QVP4;O20 4 4 1
+2 0  2 <=OF02VOh^Ije:aemNDX_2 9 4 1
+2 0  1 3UPN8gefThgS4;2MD84X41 29 26 1
+2 0  1 mQT7ACifEI^SIDM6C43Z]3 25 22 1
+2 0  0 zIc=bQVgRRP3HWOEF95TE3 24 21 1
+2 0  1 E97?4OkoZ`Ih5WnTJf=X[2 41 38 1
+2 0  1 R37=fU;jMCY@KMRzTYLGz2 39 36 1
+2 0  1 RL<?g:LibP:`XBRZ_oAQk2 31 28 1
+2 0  0 81i7e8i2aP[P=B0n`Fi^j1 35 32 1
 2 0  1 SYkH@chR@Km3o^O@d6Qa@0 32 29 1
 2 0  1 Hm7=M0Rkkz5;ARb8iRV4X3 33 30 1
 2 0  1 d;<A82?a33O1e3;loKPR;0 34 31 1
-2 0  0 81i7e8i2aP[P=B0n`Fi^j1 35 32 1
-2 0  0 alc1^<W?g`gbKASnMYY>J0 36 33 1
-2 0  0 1i4ZQ50KNcnbBF?hXkNZP1 37 34 1
-2 0  1 2TmEG[W[hlWcIka?];EL;0 38 35 1
-2 0  1 R37=fU;jMCY@KMRzTYLGz2 39 36 1
-2 0  1 E97?4OkoZ`Ih5WnTJf=X[2 40 37 1
-2 0  1 RL<?g:LibP:`XBRZ_oAQk2 31 28 1
-2 0  0 Oe7iV=Nc]kUKSOO8eATMP2 0 0 1
-2 0  0 _ldknLcgH>9YR2kEH3QO`0 1 1 1
-2 0  0 5Lc4GTHG0WRmRO2_IR>5G3 2 2 1
-2 0  0 9FnKmbTbZl`a;]ZS>CRB;3 3 3 1
-2 0  1 5hgf3Z;AVgA:n:QVP4;O20 4 4 1
-2 0  2 8A[X;9VCWN^?:J`m=LlWK3 10 4 1
-2 0  1 94GRM0CHWiSl9AA<A2Y1[1 5 5 1
-2 0  2 KeHf_aH2ohMGiWiK4B@=G2 9 5 1
-2 0  3 OOOGEJ2LdjEB2TAe3cNf`3 15 5 1
-2 0  1 <Xim7jz2iL><gJ?a[SQzm1 6 6 1
-2 0  0 ddNYb[R0WfM9PU0^d3W@Q1 7 7 1
-2 0  0 HI9XNg7Ioa[KDB@hTHT_61 8 8 1
-2 0  1 EUX>lZeWf:CMI]6l1n?[]2 11 9 1
-2 0  1 W?a7?9bSWRJjXcd?iI5PH0 12 10 1
-2 0  1 ?O2i:ZQckHhTljR5T>E^R1 13 11 1
-2 0  0 Ni=J6QNfZ]S3I:if[NW4^0 14 12 1
-2 0  0 SL0>0?cmBQ0ek]zl>2;9V0 16 13 1
-2 0  1 UmHHoPlJ;C?dHeAfkei>V3 17 14 1
-2 0  1 QDzXSnTjk4e_YUX2NN3530 18 15 1
-2 0  1 :UhYEQGa;l8D0<LIS5E8b3 19 16 1
-2 0  0 UnSJz2g=KIX40QRN665?H2 20 17 1
-2 0  0 1o`mUY:OIYfNzYlDnSkoh2 21 18 1
-2 0  0 abh:8A8U=iT[fEeb[3=FM1 22 19 1
-2 0  1 jENhWjUSHX2>X6UV^JVY03 23 20 1
-2 0  0 zIc=bQVgRRP3HWOEF95TE3 24 21 1
-2 0  1 mQT7ACifEI^SIDM6C43Z]3 25 22 1
-2 0  1 9TQP8K7F>KR=:<MYVnK4g0 26 23 1
-2 0  1 3@lQc5@>ED:nF4[DcJOF:2 27 24 1
-2 0  1 T648_G0a4W;@Pm8]YS]mO0 28 25 1
-2 0  1 3UPN8gefThgS4;2MD84X41 29 26 1
-2 0  1 U7[BGe`>kSBH@QBHTb=nd0 30 27 1
-2 0  1 gI6odEnFmLfe``QTRDe2O3 41 38 1
-2 0  1 =UVI8j6JWE]^EoD_B]ah_0 43 40 1
-2 0  1 M:;=04J<ncX=WbKOz9]oL0 42 39 1

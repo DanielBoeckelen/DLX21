@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity regn is
+entity regn is -- A simple generic register, with active low reset
 	generic(N : integer);
 	port( DIN  : in std_logic_vector(N-1 downto 0);
 		  CLK  : in std_logic;

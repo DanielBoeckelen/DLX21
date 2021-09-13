@@ -1,0 +1,43 @@
+library verilog;
+use verilog.vl_types.all;
+entity Decode is
+    port(
+        CLK             : in     vl_logic;
+        RST             : in     vl_logic;
+        Bubble          : in     vl_logic;
+        RF_WE           : in     vl_logic;
+        ZERO_FLAG       : in     vl_logic;
+        PC_IN           : in     vl_logic_vector(31 downto 0);
+        INS_IN          : in     vl_logic_vector(31 downto 0);
+        ADD_WR          : in     vl_logic_vector(4 downto 0);
+        DATA_WR_IN      : in     vl_logic_vector(31 downto 0);
+        PC_OUT          : out    vl_logic_vector(31 downto 0);
+        A_OUT           : out    vl_logic_vector(31 downto 0);
+        B_OUT           : out    vl_logic_vector(31 downto 0);
+        IMM_OUT         : out    vl_logic_vector(31 downto 0);
+        ADD_RS1_HDU     : out    vl_logic_vector(4 downto 0);
+        ADD_RS2_HDU     : out    vl_logic_vector(4 downto 0);
+        ADD_WR_OUT      : out    vl_logic_vector(4 downto 0);
+        ADD_RS1_OUT     : out    vl_logic_vector(4 downto 0);
+        ADD_RS2_OUT     : out    vl_logic_vector(4 downto 0);
+        FE_OFN71_Rst    : in     vl_logic;
+        FE_OFN64_Rst    : in     vl_logic;
+        FE_OFN63_Rst    : in     vl_logic;
+        FE_OFN53_Rst    : in     vl_logic;
+        FE_OFN45_Rst    : in     vl_logic;
+        FE_OFN43_Rst    : in     vl_logic;
+        FE_OFN39_Rst    : in     vl_logic;
+        FE_OFN35_Rst    : in     vl_logic;
+        FE_OFN32_Rst    : in     vl_logic;
+        FE_OFN30_Rst    : in     vl_logic;
+        FE_OFN28_Rst    : in     vl_logic;
+        FE_OFN26_Rst    : in     vl_logic;
+        FE_OFN23_Rst    : in     vl_logic;
+        FE_OFN21_Rst    : in     vl_logic;
+        FE_OFN16_Rst    : in     vl_logic;
+        FE_OFN14_Rst    : in     vl_logic;
+        FE_OFN11_Rst    : in     vl_logic;
+        FE_OFN9_Rst     : in     vl_logic;
+        FE_OFN6_Rst     : in     vl_logic
+    );
+end Decode;

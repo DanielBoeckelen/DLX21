@@ -54,18 +54,11 @@ analyze -format vhdl -library WORK ../src/a-DLX.vhd
 #set power_preserve_rtl_hier_names true
 elaborate DLX -arch dlx_rtl -library WORK > ./elaborate.txt
 
-# Clock definition, first with 0 period and then iterate to find fmax, and uncertainty/delays
+# Clock definition, first with 0 period and then iterate to find fmax
+# THIS IS THE CLOCK PERIOD TO OBTAIN NULL SLACK
 create_clock -name "MY_CLK" -period 1.1 Clk
-#set_dont_touch_network MY_CLK
-#set_clock_uncertainty 0.07 [get_clocks MY_CLK]
-#set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] CLK]
-#set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
-### OR
-#set_max_delay 2 -from [all_inputs] -to [all_outputs]
-
-# Set a load to the output
-#set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
-#set_load $OLOAD [all_outputs]
+# MINIMUM PERIOD (obtained by setting clock period = 0 ns)
+#create_clock -name "MY_CLK" -period 0.93 Clk
 
 compile
 report_resources > ./report_resources.txt

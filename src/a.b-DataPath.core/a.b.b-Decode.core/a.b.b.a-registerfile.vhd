@@ -8,7 +8,7 @@ entity register_file is
  generic( NBIT_ADD: integer;
 		  NBIT_DATA: integer);
  port ( CLK: 		IN std_logic;
-        RST: 	IN std_logic;
+        RST: 		IN std_logic;
 	 	ENABLE: 	IN std_logic;
 	 	RD1: 		IN std_logic;
 	 	RD2: 		IN std_logic;
@@ -23,13 +23,9 @@ end register_file;
 
 architecture bhv of register_file is
 
-        
-        subtype REG_ADDR is natural range 0 to (2**NBIT_ADD - 1); -- using natural type
+    subtype REG_ADDR is natural range 0 to (2**NBIT_ADD - 1); -- using natural type
 	type REG_ARRAY is array(REG_ADDR) of std_logic_vector(NBIT_DATA-1 downto 0); 
 	signal REGISTERS : REG_ARRAY;
-
-        --signal state_RF: RF_OP := NOP;
-
 	
 begin 
  
@@ -45,8 +41,8 @@ begin
 
 				if(RD1 = '1') then -- read from register, port 1
 					if (WR = '1' and ADD_WR /= std_logic_vector(to_unsigned(0, ADD_WR'length))) and (ADD_WR = ADD_RS1) then
-						OUT1 <= DATAIN; --if the data to be written is needed as a source for the current instruction,
-								-- it is directly provided to the output of the register file
+						OUT1 <= DATAIN; -- if the data to be written is needed as a source for the current instruction,
+										-- it is directly provided to the output of the register file
 					else
 						OUT1 <= REGISTERS(to_integer(unsigned(ADD_RS1)));
 					end if;
@@ -54,8 +50,8 @@ begin
 
 				if(RD2 = '1') then -- read from register, port 2
 					if (WR = '1' and ADD_WR /= std_logic_vector(to_unsigned(0, ADD_WR'length))) and (ADD_WR = ADD_RS2) then
-						OUT2 <= DATAIN;--if the data to be written is needed as a source for the current instruction,
-								-- it is directly provided to the output of the register file
+						OUT2 <= DATAIN; --if the data to be written is needed as a source for the current instruction,
+										-- it is directly provided to the output of the register file
 					else
 						OUT2 <= REGISTERS(to_integer(unsigned(ADD_RS2)));
 					end if;

@@ -24,7 +24,7 @@ begin
 			ZERO <= '0';
 		else
 			case(JUMP_TYPE) is 
-				when "00" => PC_SEL <= "00"; -- Not a jump : NPC
+				when "00" => PC_SEL <= "00"; -- Not a jump : select NPC
 					ZERO <= '0';
 			
 				when "01" => if(ALU_OPC = BEQZS) then -- BEQZ/BNEZ : if taken, PC + IMM16, else NPC
@@ -40,14 +40,14 @@ begin
 					elsif(ALU_OPC = BNEZS) then
 		                                   
 						if(A /= std_logic_vector(to_unsigned(0, A'length))) then -- Branch Not Equal
-							PC_SEL <= "01";
+							PC_SEL <= "01"; -- PC + IMM16
 							ZERO <= '1';
 						else
 							PC_SEL <= "00";
 							ZERO <= '0';
 						end if;
 					else
-						PC_SEL <= "00"; -- Default case, should not be reachable
+						PC_SEL <= "00";
 						ZERO <= '0';
 					end if;
 				

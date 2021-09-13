@@ -1,3 +1,4 @@
+; Basic arithmetic test
 addi r1, r0, #8
 addi r2, r0, #7
 addi r9, r0, #1

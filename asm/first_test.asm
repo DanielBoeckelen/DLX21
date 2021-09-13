@@ -1,3 +1,4 @@
+; First basic arithmetic test
 addi r1,r0,#2
 subi r2,r1,#1
 addi r3,r1,#-4

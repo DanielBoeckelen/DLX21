@@ -1,3 +1,4 @@
+; This program divides 81 by 9 at each cycle until the result is 0
 addi r1, r0, 81
 addi r2, r0, 9
 xor r3, r3, r3

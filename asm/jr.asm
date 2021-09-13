@@ -1,5 +1,5 @@
 seq r25, r25, r25 ; r25 <= 1
-sne r20, r25, r20 ; just to try 
+sne r20, r25, r20 ; r20 <= 1 
 myloop:
 add r1, r1, r25     ; r1 <= 1, 17 , 145
 add r1, r25, r1     ; r1 <= 2, 18 , 146

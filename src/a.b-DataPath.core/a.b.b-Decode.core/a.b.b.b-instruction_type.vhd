@@ -24,7 +24,6 @@ begin
 		Itype <= '0';
 		Jtype <= '0';
 
-		-- What about NOP?
 		case opcode is
 			when RType_OP  =>  Rtype <= '1';
 			

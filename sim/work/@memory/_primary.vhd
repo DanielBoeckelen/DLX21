@@ -1,0 +1,40 @@
+library verilog;
+use verilog.vl_types.all;
+entity Memory is
+    port(
+        CLK             : in     vl_logic;
+        RST             : in     vl_logic;
+        MEM_EN_IN       : in     vl_logic;
+        DRAM_R_IN       : in     vl_logic;
+        DRAM_W_IN       : in     vl_logic;
+        PC_SEL          : in     vl_logic_vector(1 downto 0);
+        NPC_IN          : in     vl_logic_vector(31 downto 0);
+        NPC_ABS         : in     vl_logic_vector(31 downto 0);
+        NPC_REL         : in     vl_logic_vector(31 downto 0);
+        ALU_RES_IN      : in     vl_logic_vector(31 downto 0);
+        B_IN            : in     vl_logic_vector(31 downto 0);
+        ADD_WR_IN       : in     vl_logic_vector(4 downto 0);
+        DRAM_DATA_IN    : in     vl_logic_vector(31 downto 0);
+        LOAD_TYPE_IN    : in     vl_logic_vector(1 downto 0);
+        STORE_TYPE_IN   : in     vl_logic;
+        PC_OUT          : out    vl_logic_vector(31 downto 0);
+        DRAM_R_OUT      : out    vl_logic;
+        DRAM_W_OUT      : out    vl_logic;
+        DRAM_ADDR_OUT   : out    vl_logic_vector(31 downto 0);
+        DRAM_DATA_OUT   : out    vl_logic_vector(31 downto 0);
+        DATA_OUT        : out    vl_logic_vector(31 downto 0);
+        ALU_RES_OUT     : out    vl_logic_vector(31 downto 0);
+        OP_MEM          : out    vl_logic_vector(31 downto 0);
+        ADD_WR_MEM      : out    vl_logic_vector(4 downto 0);
+        ADD_WR_OUT      : out    vl_logic_vector(4 downto 0);
+        LOAD_TYPE_OUT   : out    vl_logic_vector(1 downto 0);
+        STORE_TYPE_OUT  : out    vl_logic;
+        FE_OFN73_Rst    : in     vl_logic;
+        FE_OFN66_Rst    : in     vl_logic;
+        FE_OFN51_Rst    : in     vl_logic;
+        FE_OFN47_Rst    : in     vl_logic;
+        FE_OFN41_Rst    : in     vl_logic;
+        FE_OFN37_Rst    : in     vl_logic;
+        FE_OFN18_Rst    : in     vl_logic
+    );
+end Memory;

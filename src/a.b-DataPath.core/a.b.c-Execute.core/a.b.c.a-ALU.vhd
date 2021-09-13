@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_signed.all;
 use IEEE.numeric_std.all;
---use IEEE.std_logic_arith.all;
 use work.constants.all;
 use work.instruction_set.all;
 
@@ -253,8 +252,8 @@ begin
 			when LHIS =>
 								LOGIC_ARITH <= '1';
 								LEFT_RIGHT <= '1';
-								A_SHF <= OP2;
-								B_SHF <= x"00000010"; -- 16
+								A_SHF <= OP2; -- Immediate is the operand to be shifted
+								B_SHF <= x"00000010"; -- 16 is the shift amount, equivalent to uploading IMM16 in the upper halfword
                                 select_type_sig <= "10"; --shift_res
                                 select_zero_sig <= '0';
 
@@ -310,8 +309,6 @@ begin
 
                                
 			when BEQZS =>
-                                --ADD_SUB <= '0';
-								--B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '1';
 
@@ -331,8 +328,6 @@ begin
 								select_mul <= '0';
                 
 			when BNEZS =>
-                                --ADD_SUB <= '0';
-								--B <= OP2;
                                 select_type_sig <= "00"; --add_sub_res
                                 select_zero_sig <= '1';
 
@@ -522,7 +517,7 @@ begin
 								select_mul <= '0';
 
 			when MULTS =>
-								A_MUL <= OP1(NBIT/2-1 downto 0);
+								A_MUL <= OP1(NBIT/2-1 downto 0); -- MUL operands are on 16 bits, while result is on 32 bits
 								B_MUL <= OP2(NBIT/2-1 downto 0);
 								select_mul <= '1';
 								select_zero_sig <= '0';
@@ -596,12 +591,12 @@ begin
 		port map(A => A_MUL, B => B_MUL, P => MUL_RES);
 
     Res_mux : mux41 generic map (NBIT => NBIT)
-            port map(A => ADD_SUB_RES, B => LOGIC_RES, C => SHIFT_RES, D => COMP_RES, S => select_type_sig, Z => sig_intraMux);
+            port map(A => ADD_SUB_RES, B => LOGIC_RES, C => SHIFT_RES, D => COMP_RES, S => select_type_sig, Z => sig_intraMux); -- Select ADD/SUB, LOGIC, SHIFT or COMP result
 
 	Mul_mux : mux21 generic map (NBIT => NBIT)
-			port map(A => sig_intraMux, B => MUL_RES, S => select_mul, Z => sig_ALU_RES);
+			port map(A => sig_intraMux, B => MUL_RES, S => select_mul, Z => sig_ALU_RES); -- Select one of the previous results or the MULT result
 
     Zeros_mux : mux21 generic map (NBIT => NBIT)
-            port map(A => sig_ALU_RES, B => (others => '0'), S => select_zero_sig, Z => ALU_RES);
+            port map(A => sig_ALU_RES, B => (others => '0'), S => select_zero_sig, Z => ALU_RES); -- Send out zero if ALU is not needed
 	
 end struct;

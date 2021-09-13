@@ -27,7 +27,6 @@ end component;
 begin
 
 	WBmux : mux21 generic map(NBIT => NBIT)
-		--port map(A => DATA_IN, B => ALU_RES_IN, S => WB_MUX_SEL, Z => DATA_OUT);
 		port map(A => ALU_RES_IN, B => DATA_IN, S => WB_MUX_SEL, Z => DATA_OUT);
 		
 	ADD_WR_OUT <= ADD_WR_IN;

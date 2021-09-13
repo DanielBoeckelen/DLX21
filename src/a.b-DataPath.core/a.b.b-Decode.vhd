@@ -8,9 +8,6 @@ entity Decode is
 	port( CLK          : in std_logic; 
 		  RST          : in std_logic;
 		  Bubble       : in std_logic;
-		  --REG_LATCH_EN : in std_logic; -- Enables the register file and the pipeline registers
-		  --RD1		   : in std_logic; -- Enables the read port 1 of the register file
-		  --RD2		   : in std_logic; -- Enables the read port 2 of the register file
 		  RF_WE		   : in std_logic; -- Enables the write port of the register file
 		  ZERO_FLAG    : in std_logic; -- Zero Flag coming from Execute stage, used as flush if branch taken
 		  PC_IN        : in std_logic_vector(NBIT-1 downto 0); -- PC coming from the Fetch stage
@@ -26,8 +23,6 @@ entity Decode is
 		  ADD_WR_OUT   : out std_logic_vector(NBIT_ADD-1 downto 0); -- ADD_WR output, will be used for writeback
 		  ADD_RS1_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0); -- RS1 address for forwarding
 		  ADD_RS2_OUT  : out std_logic_vector(NBIT_ADD-1 downto 0)); -- RS2 address for forwarding
-		  --LOAD_TYPE    : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
-		  --STORE_TYPE   : out std_logic); -- '0' SW, '1' SB   
 end Decode;
 
 architecture struct of Decode is
@@ -76,8 +71,6 @@ component instruction_decomposition is
 		  IMM        : out std_logic_vector(NBIT-1 downto 0); -- sent to intermediate reg in ID stage
 		  RD1		 : out std_logic; -- Enables the read port 1 of the register file
 		  RD2		 : out std_logic); -- Enables the read port 2 of the register file
-		  --LOAD_TYPE  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU; to DRAM
-		  --STORE_TYPE : out std_logic); -- '0' SW, '1' SB; to DRAM
 end component;
 
 component register_file is
@@ -103,9 +96,6 @@ end component;
 signal sig_Rtype, sig_Itype, sig_Jtype, sig_RST, RD1, RD2:  std_logic;
 signal sig_ADD_RS1, sig_ADD_RS2, sig_ADD_WR, sig_ADD_RS1HAZ, sig_ADD_RS2HAZ, sig_ADD_WRHAZ : std_logic_vector(NBIT_ADD-1 downto 0);		
 signal sig_IMM : std_logic_vector(NBIT-1 downto 0);
---signal sig_LOAD_TYPE : std_logic_vector(1 downto 0);
---signal sig_STORE_TYPE : std_logic;
---signal sig_A, sig_B : std_logic_vector(NBIT-1 downto 0);
 
 begin
 	
@@ -126,23 +116,24 @@ begin
 							IMM => sig_IMM,
 							RD1 => RD1,
 							RD2 => RD2);
-							--LOAD_TYPE => sig_LOAD_TYPE,
-							--STORE_TYPE => sig_STORE_TYPE);
 							
-	ADD_RS1_HDU <= sig_ADD_RS1;
+	ADD_RS1_HDU <= sig_ADD_RS1; -- Current instruction source addresses are sent to the Hazard Detection Unit
 	ADD_RS2_HDU <= sig_ADD_RS2;
 
 	regPC : regn generic map(N => NBIT)
 		port map(DIN => PC_IN, CLK => CLK, EN => '1', RST => sig_RST, DOUT => PC_OUT);
-		
-	--regA : regn generic map(N => NBIT)
-		--port map(DIN => sig_A, CLK => CLK, EN => REG_LATCH_EN, RST => RST, DOUT => A_OUT);
-	
-	--regB : regn generic map(N => NBIT)
-		--port map(DIN => sig_B, CLK => CLK, EN => REG_LATCH_EN, RST => RST, DOUT => B_OUT);
 	
 	regIMM : regn generic map(N => NBIT)
 		port map(DIN => sig_IMM, CLK => CLK, EN => '1', RST => sig_RST, DOUT => IMM_OUT);
+
+	muxRS1 : mux21 generic map(NBIT => NBIT_ADD)
+		port map(A => sig_ADD_RS1, B => (others => '0'), S => Bubble, Z => sig_ADD_RS1HAZ); -- If Bubble is asserted, send 0 as address to avoid unwanted writebacks
+
+	muxRS2 : mux21 generic map(NBIT => NBIT_ADD)
+		port map(A => sig_ADD_RS2, B => (others => '0'), S => Bubble, Z => sig_ADD_RS2HAZ); -- If Bubble is asserted, send 0 as address to avoid unwanted writebacks
+
+	muxWR : mux21 generic map(NBIT => NBIT_ADD)
+		port map(A => sig_ADD_WR, B => (others => '0'), S => Bubble, Z => sig_ADD_WRHAZ); -- If Bubble is asserted, send 0 as address to avoid unwanted writebacks
 		
 	regWR : regn generic map(N => NBIT_ADD)
 		port map(DIN => sig_ADD_WRHAZ, CLK => CLK, EN => '1', RST => sig_RST, DOUT => ADD_WR_OUT);
@@ -152,15 +143,6 @@ begin
 	
 	regRS2 : regn generic map(N => NBIT_ADD)
 		port map(DIN => sig_ADD_RS2HAZ, CLK => CLK, EN => '1', RST => sig_RST, DOUT => ADD_RS2_OUT);
-
-	muxRS1 : mux21 generic map(NBIT => NBIT_ADD)
-		port map(A => sig_ADD_RS1, B => (others => '0'), S => Bubble, Z => sig_ADD_RS1HAZ);
-
-	muxRS2 : mux21 generic map(NBIT => NBIT_ADD)
-		port map(A => sig_ADD_RS2, B => (others => '0'), S => Bubble, Z => sig_ADD_RS2HAZ);
-
-	muxWR : mux21 generic map(NBIT => NBIT_ADD)
-		port map(A => sig_ADD_WR, B => (others => '0'), S => Bubble, Z => sig_ADD_WRHAZ);
 
 	rf :register_file generic map(NBIT_ADD => NBIT_ADD, NBIT_DATA => NBIT)
 		port map(CLK => CLK,    
@@ -175,14 +157,5 @@ begin
 		DATAIN => DATA_WR_IN,
 		OUT1 => A_OUT, 
 		OUT2 => B_OUT);
-
-	--regLOAD : regn generic map(N => 2)
-		--port map(DIN => sig_LOAD_TYPE, CLK => CLK, EN => REG_LATCH_EN, RST => sig_RST, DOUT => LOAD_TYPE);
-	
-	--STORE_ff : ff port map( D => sig_STORE_TYPE,
-							--CLK => CLK,
-							--EN => '1',
-							--RST => sig_RST,
-							--Q => STORE_TYPE);
 		
 end struct;

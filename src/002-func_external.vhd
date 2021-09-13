@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
-
+-- Logarithm function. Used in the P4 Adder
 package func_external is
 
 function log2(input : integer) return integer;

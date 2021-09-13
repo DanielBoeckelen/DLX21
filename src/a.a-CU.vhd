@@ -7,13 +7,8 @@ use work.instruction_set.all;
 
 entity hardwired_cu is
     generic(NBIT : integer);
-	port (
-            -- decode cu signals
-			--REG_LATCH_EN : out std_logic; -- Enables the register file and the pipeline registers
-            --RD1		     : out std_logic; -- Enables the read port 1 of the register file
-			--RD2		     : out std_logic; -- Enables the read port 2 of the register file
-             
-            -- execute cu signals
+	port (             
+            -- Execute cu signals
             MUX_A_SEL     : out std_logic; -- Mux Selection for Operand A or NPC
 			MUX_B_SEL     : out std_logic_vector(1 downto 0); -- Mux Selection Operand B, IMM or 4 (used in PC+4)
 			ALU_OPC       : out aluOp; -- Operation type for ALU
@@ -21,20 +16,17 @@ entity hardwired_cu is
             DRAM_R_IN     : out std_logic; -- DRAM read enable
             JUMP_TYPE     : out std_logic_vector(1 downto 0);
      
-            -- memory cu signals
+            -- Memory cu signals
             MEM_EN_IN     : out std_logic; -- Register enable signal
 			DRAM_W_IN     : out std_logic; -- DRAM write enable
             RF_WE    	  : out std_logic; -- RF write enable, sent at this stage for forwarding check
-            --DRAM_EN_IN    : out std_logic; -- DRAM enable
 			LOAD_TYPE_IN  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
 		    STORE_TYPE_IN : out std_logic; -- '0' SW, '1' SB
 
-            -- writeback CU signals
-        
+            -- Writeback CU signals
 			WB_MUX_SEL    : out std_logic; -- Control signal for WB mux
-	      	  
-			  
-			-- INPUTS
+
+			-- Inputs
 			INS_IN : in std_logic_vector(NBIT-1 downto 0);
 			Bubble : in std_logic;
 			Clk    : in std_logic;
@@ -71,7 +63,7 @@ architecture bhv of hardwired_cu is
 
 ---------------------------------------------------------------------
   
-    -- Control word look-up table, control bits in the order (D, EXE, MEM, WB) in which they are sent to the datapath.
+    -- Control word look-up table, control bits in the order (EX, MEM, WB) in which they are sent to the datapath.
 
 	type mem_array is array (integer range 0 to MICROCODE_MEM_SIZE - 1) of std_logic_vector(CW_SIZE - 1 downto 0);
 
@@ -111,18 +103,17 @@ architecture bhv of hardwired_cu is
                                    "1101011" & "101000" & '0'  -- JALR register
                                  ); 
         
-	signal IR_opcode : std_logic_vector(OPCODE_size-1 downto 0);  -- OpCode part of IR
+	signal IR_opcode : std_logic_vector(OPCODE_size-1 downto 0);  -- Opcode part of IR
   	signal IR_func : std_logic_vector(Func_size-1 downto 0);   -- Func part of IR when Rtype
-  	signal CW   : std_logic_vector(CW_SIZE - 1 downto 0); -- full control word read from cw_mem
+  	signal CW   : std_logic_vector(CW_SIZE - 1 downto 0); -- Full control word read from cw_mem
 
     -- Control words are shifted to the correct cycle
-  	signal CW1 : std_logic_vector(CW_SIZE-1 downto 0) := (others => '0'); --1st,2nd,3rd
-  	signal CW2 : std_logic_vector(CW_SIZE-1 - 7 downto 0) := (others => '0'); --2nd,3rd
-    signal CW3 : std_logic_vector(CW_SIZE-1 - 13 downto 0) := (others => '0'); --3rd
-        
+  	signal CW1 : std_logic_vector(CW_SIZE-1 downto 0) := (others => '0'); -- 1st,2nd,3rd
+  	signal CW2 : std_logic_vector(CW_SIZE-1 - 7 downto 0) := (others => '0'); -- 2nd,3rd
+    signal CW3 : std_logic_vector(CW_SIZE-1 - 13 downto 0) := (others => '0'); -- 3rd
 
     -- AluOp
-      signal AluOP_E: aluop;
+    signal AluOP_E: aluop;
         
 begin
 
@@ -131,8 +122,7 @@ begin
   	IR_func <= INS_IN (Func_begin downto Func_end);
 
 	-- Control signal assignments
-
-        
+    
 	-- Execute
     MUX_A_SEL <= CW1(13);    
 	MUX_B_SEL(1) <= CW1(12);
@@ -155,7 +145,6 @@ begin
     -- Write Back
     WB_MUX_SEL <= CW3(0);
     
-
 	-- Pipelining process
 	CU_PROC: process(Clk, Rst)
 	begin
@@ -172,16 +161,14 @@ begin
 				CW2 <= CW1(CW_SIZE-1 - 7 downto 0);
 				CW3 <= CW2(CW_SIZE-1 - 13 downto 0);
 			
-				ALU_OPC <= AluOP_E;
-		
+				ALU_OPC <= AluOP_E;		
 		end if;
 	end process CU_PROC;
 
 	-- Generation of the output control signals based on the values in the control word look-up table
    	CW_GEN : process (IR_opcode, IR_func, Bubble)
-   	begin
-	
-	if(Bubble = '1') then
+   	begin	
+	if(Bubble = '1') then -- If Bubble has been asserted, turn the current instruction into a NOP
 		CW <= (others => '0');
 	else
 		case(IR_opcode) is
@@ -250,7 +237,7 @@ begin
     -- Generation of the ALU control signals
    	ALUOPC_GEN : process (IR_opcode, IR_func, Bubble)
    	begin
-	if(Bubble = '1') then
+	if(Bubble = '1') then -- If Bubble has been asserted, turn the current instruction into a NOP
 		AluOP_E <= NOP;
 	else
 		case (IR_opcode) is

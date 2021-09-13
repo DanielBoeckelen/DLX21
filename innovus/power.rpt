@@ -1,0 +1,82 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+*	
+*
+* 	Date & Time:	2021-Sep-12 15:12:02 (2021-Sep-12 13:12:02 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: DLX
+*
+*	Liberty Libraries used: 
+*	        default: /software/dk/nangate45/liberty/NangateOpenCellLibrary_typical_ecsm_nowlm.lib
+*
+*	Power Domain used: 
+*
+*       Power View : default
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: 0.000000
+*
+*       Sequential Element Activity: N.A.
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile power.rpt
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        4.64297946 	   92.6945%
+Total Switching Power:       0.00000000 	    0.0000%
+Total Leakage Power:         0.36592770 	    7.3055%
+Total Power:                 5.00890721 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         4.643           0      0.1212       4.764       95.11 
+Macro                                  0           0           0           0           0 
+IO                                     0           0           0           0           0 
+Combinational                          0           0      0.2447      0.2447       4.885 
+Clock (Combinational)                  0           0           0           0           0 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                              4.643           0      0.3659       5.009         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Default                   1.1      4.643           0      0.3659       5.009         100 
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+* 		Highest Average Power: DP/DecodeStage/rf/OUT2_reg_3_ (DFF_X2): 	  0.003432 
+* 		Highest Leakage Power:    FE_PHC189_FE_OFN96_Rst (BUF_X16): 	 0.0003445 
+* 		Total Cap: 	5.20897e-11 F
+* 		Total instances in design:  9482
+* 		Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+* 		Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+

@@ -8,7 +8,7 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-do simulate.do
+source compile.tcl
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
@@ -85,7 +85,8 @@ do simulate.do
 # -- Loading package instruction_set
 # -- Compiling entity instruction_type
 # -- Compiling architecture bhv of instruction_type
-# ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(29): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(28): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(30): Case choice must be a locally static expression.
 # ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(31): Case choice must be a locally static expression.
 # ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(32): Case choice must be a locally static expression.
 # ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(33): Case choice must be a locally static expression.
@@ -115,9 +116,8 @@ do simulate.do
 # ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(57): Case choice must be a locally static expression.
 # ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(58): Case choice must be a locally static expression.
 # ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(59): Case choice must be a locally static expression.
-# ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(60): Case choice must be a locally static expression.
+# ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(61): Case choice must be a locally static expression.
 # ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(62): Case choice must be a locally static expression.
-# ** Warning: ../src/a.b-DataPath.core/a.b.b-Decode.core/a.b.b.b-instruction_type.vhd(63): Case choice must be a locally static expression.
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
@@ -303,7 +303,20 @@ do simulate.do
 # -- Loading package instruction_set
 # -- Compiling entity hardwired_cu
 # -- Compiling architecture bhv of hardwired_cu
+# ** Warning: ../src/a.a-CU.vhd(175): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(177): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(178): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(179): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(180): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(181): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(182): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(183): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(184): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(185): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(186): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(187): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(188): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(189): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(190): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(191): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(192): Case choice must be a locally static expression.
@@ -311,8 +324,6 @@ do simulate.do
 # ** Warning: ../src/a.a-CU.vhd(194): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(195): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(196): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(197): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(198): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(199): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(200): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(201): Case choice must be a locally static expression.
@@ -324,6 +335,8 @@ do simulate.do
 # ** Warning: ../src/a.a-CU.vhd(207): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(208): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(209): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(210): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(211): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(212): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(213): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(214): Case choice must be a locally static expression.
@@ -344,20 +357,20 @@ do simulate.do
 # ** Warning: ../src/a.a-CU.vhd(229): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(230): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(231): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(232): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(233): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(234): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(235): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(236): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(237): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(238): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(239): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(240): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(241): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(242): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(243): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(244): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(246): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(247): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(248): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(249): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(250): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(251): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(252): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(253): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(254): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(255): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(256): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(257): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(258): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(259): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(260): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(261): Case choice must be a locally static expression.
@@ -365,8 +378,6 @@ do simulate.do
 # ** Warning: ../src/a.a-CU.vhd(263): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(264): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(265): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(266): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(267): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(268): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(269): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(270): Case choice must be a locally static expression.
@@ -378,6 +389,8 @@ do simulate.do
 # ** Warning: ../src/a.a-CU.vhd(276): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(277): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(278): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(279): Case choice must be a locally static expression.
+# ** Warning: ../src/a.a-CU.vhd(280): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(281): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(282): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(283): Case choice must be a locally static expression.
@@ -398,19 +411,6 @@ do simulate.do
 # ** Warning: ../src/a.a-CU.vhd(298): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(299): Case choice must be a locally static expression.
 # ** Warning: ../src/a.a-CU.vhd(300): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(301): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(302): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(303): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(304): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(305): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(306): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(307): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(308): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(309): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(310): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(311): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(312): Case choice must be a locally static expression.
-# ** Warning: ../src/a.a-CU.vhd(313): Case choice must be a locally static expression.
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
@@ -480,8 +480,8 @@ do simulate.do
 # Loading work.decode(struct)#1
 # Loading work.instruction_type(bhv)
 # Loading work.instruction_decomposition(bhv)
-# Loading work.regn(bhv)#2
 # Loading work.mux21(bhv)#2
+# Loading work.regn(bhv)#2
 # Loading work.register_file(bhv)#1
 # Loading work.execute(struct)#1
 # Loading work.branch_cond_unit(bhv)#1
@@ -516,353 +516,266 @@ do simulate.do
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
 # Loading work.iram(iram_bhe)#1
 # Loading work.dram(dram_bhe)#1
-# vsim -t 100ps -novopt work.TB_DLX(test) 
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Refreshing ./work.tb_dlx(test)
-# Loading work.tb_dlx(test)
-# Refreshing ./work.constants
-# Loading work.constants
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
-# Refreshing ./work.instruction_set
-# Loading work.instruction_set
-# Refreshing ./work.dlx(dlx_rtl)
-# Loading work.dlx(dlx_rtl)
-# Refreshing ./work.datapath(struct)
-# Loading work.datapath(struct)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
-# Refreshing ./work.fetch(struct)
-# Loading work.fetch(struct)
-# Refreshing ./work.mux21(bhv)
-# Loading work.mux21(bhv)
-# Refreshing ./work.regn(bhv)
-# Loading work.regn(bhv)
-# Refreshing ./work.decode(struct)
-# Loading work.decode(struct)
-# Refreshing ./work.instruction_type(bhv)
-# Loading work.instruction_type(bhv)
-# Refreshing ./work.instruction_decomposition(bhv)
-# Loading work.instruction_decomposition(bhv)
-# Refreshing ./work.register_file(bhv)
-# Loading work.register_file(bhv)
-# Refreshing ./work.execute(struct)
-# Loading work.execute(struct)
-# Refreshing ./work.branch_cond_unit(bhv)
-# Loading work.branch_cond_unit(bhv)
-# Refreshing ./work.ff(bhv)
-# Loading work.ff(bhv)
-# Refreshing ./work.fwd_unit(bhv)
-# Loading work.fwd_unit(bhv)
-# Refreshing ./work.mux41(bhv)
-# Loading work.mux41(bhv)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_signed(body)
-# Refreshing ./work.alu(struct)
-# Loading work.alu(struct)
-# Refreshing ./work.comparator(bhv)
-# Loading work.comparator(bhv)
-# Refreshing ./work.shifter(bhv)
-# Loading work.shifter(bhv)
-# Refreshing ./work.p4adder(struct)
-# Loading work.p4adder(struct)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.math_real(body)
-# Refreshing ./work.func_external(body)
-# Loading work.func_external(body)
-# Refreshing ./work.carry_generator(struct)
-# Loading work.carry_generator(struct)
-# Refreshing ./work.pg_net(bhv)
-# Loading work.pg_net(bhv)
-# Refreshing ./work.gblock(bhv)
-# Loading work.gblock(bhv)
-# Refreshing ./work.pgblock(bhv)
-# Loading work.pgblock(bhv)
-# Refreshing ./work.sum_generator(structural)
-# Loading work.sum_generator(structural)
-# Refreshing ./work.carry_select_basic(struct)
-# Loading work.carry_select_basic(struct)
-# Refreshing ./work.rca(structural)
-# Loading work.rca(structural)
-# Refreshing ./work.fa(behavioral)
-# Loading work.fa(behavioral)
-# Refreshing ./work.boothmul(mixed)
-# Loading work.boothmul(mixed)
-# Refreshing ./work.booth_encoder(structural)
-# Loading work.booth_encoder(structural)
-# Refreshing ./work.mux5to1(bhv)
-# Loading work.mux5to1(bhv)
-# Refreshing ./work.rca_bhv(behavioral)
-# Loading work.rca_bhv(behavioral)
-# Refreshing ./work.memory(struct)
-# Loading work.memory(struct)
-# Refreshing ./work.writeback(struct)
-# Loading work.writeback(struct)
-# Refreshing ./work.hazarddetection(arch)
-# Loading work.hazarddetection(arch)
-# Refreshing ./work.hardwired_cu(bhv)
-# Loading work.hardwired_cu(bhv)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
-# Refreshing ./work.iram(iram_bhe)
-# Loading work.iram(iram_bhe)
-# Refreshing ./work.dram(dram_bhe)
-# Loading work.dram(dram_bhe)
+add wave sim:/tb_dlx/u1/dp/decodestage/rf/registers
+run 500 ns
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/iram_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/hdu
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/hdu
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/hdu
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/hdu
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/shift
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/alu0/shift
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage/fwd
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/executestage
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/fetchstage
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/fetchstage
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dlx/u1/dp/fetchstage
+#    Time: 0 ns  Iteration: 0  Instance: /tb_dlx/u1/dp/fetchstage
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/iram_i
 # ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/iram_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/fwd
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul
+#    Time: 0 ns  Iteration: 1  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/iram_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
+#    Time: 0 ns  Iteration: 2  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__0/sumcase1/rca0
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/iram_i
 # ** Warning: CONV_INTEGER(UNSIGNED) input array has 32 bits and MSB is not zero.
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/iram_i
 # ** Error: (vsim-3858) STD_LOGIC_TEXTIO procedure HREAD : Parameter L designates an empty string.
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/iram_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/iram_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 3  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__6/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__5/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__4/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__3/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__2/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
+#    Time: 0 ns  Iteration: 5  Instance: /tb_dlx/u1/dp/executestage/alu0/booth_mul/sum_loop__1/sumcase_i/rca_i
 # ** Warning: NUMERIC_STD.TO_INTEGER is returning a negative result.
-#    Time: 14500 ps  Iteration: 0  Instance: /tb_dlx/u1/dram_i
+#    Time: 23 ns  Iteration: 0  Instance: /tb_dlx/u1/dram_i
 # ** Warning: NUMERIC_STD.TO_INTEGER is returning a negative result.
-#    Time: 16500 ps  Iteration: 0  Instance: /tb_dlx/u1/dram_i
+#    Time: 27 ns  Iteration: 0  Instance: /tb_dlx/u1/dram_i
 # ** Warning: NUMERIC_STD.TO_INTEGER is returning a negative result.
-#    Time: 44500 ps  Iteration: 0  Instance: /tb_dlx/u1/dram_i
+#    Time: 83 ns  Iteration: 0  Instance: /tb_dlx/u1/dram_i
+quit -sim

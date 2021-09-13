@@ -83,6 +83,6 @@ begin
 		port map(DIN => ALU_RES_IN, CLK => CLK, EN => MEM_EN_IN, RST => RST, DOUT => ALU_RES_OUT);
 		
 	PCsel: mux41 generic map(NBIT => NBIT)
-		port map( A => NPC_IN, B => NPC_REL, C => NPC_ABS, D => (others => '0'), S => PC_SEL, Z => PC_OUT);
+		port map( A => NPC_IN, B => NPC_REL, C => NPC_ABS, D => (others => '0'), S => PC_SEL, Z => PC_OUT); -- Selection between normal NPC, Relative NPC or Absolute NPC
 
 end struct;

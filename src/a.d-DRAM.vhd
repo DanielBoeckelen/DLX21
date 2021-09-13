@@ -1,6 +1,5 @@
 library ieee;
 use ieee.std_logic_1164.all;
---use ieee.std_logic_arith.all;
 use ieee.numeric_std.all;
 use std.textio.all;
 use ieee.std_logic_textio.all;
@@ -18,8 +17,8 @@ entity DRAM is
 	DATA_IN    : in std_logic_vector(D_SIZE-1 downto 0);
 	LOAD_TYPE  : in std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU
 	STORE_TYPE : in std_logic; -- '0' SW, '1' SB
-	DRAM_W     : in std_logic;
-	DRAM_R     : in std_logic;
+	DRAM_W     : in std_logic; -- Write enable
+	DRAM_R     : in std_logic; -- Read enable
 	DATA_OUT   : out std_logic_vector(D_SIZE-1 downto 0)
     );
 end DRAM;
@@ -49,9 +48,8 @@ architecture DRam_Bhe of DRAM is
 			--
 			DATA_OUT <= (others => '0');			
 		elsif(Clk = '1' and Clk'event) then
-			if(to_integer(unsigned(ADDR_IN)) >= 0) then
-				if(DRAM_R = '1') then -- Load
-				--if(rising_edge(DRAM_R)) then
+			if(to_integer(unsigned(ADDR_IN)) >= 0) then -- Avoids errors generated when the datapath computes and sends negative values in cycles which are not loads/stores
+				if(DRAM_R = '1') then -- Load (Read) enable
 					case (LOAD_TYPE) is
 						when "00" => -- LW
 							DATA_OUT <= DRAMmem(to_integer(unsigned(ADDR_IN)));
@@ -63,8 +61,7 @@ architecture DRam_Bhe of DRAM is
 							DATA_OUT <= x"0000" & DRAMmem(to_integer(unsigned(ADDR_IN)))(15 downto 0);
 						when others => NULL;
 					end case;
-				elsif(DRAM_W = '1') then -- Store
-				--elsif(rising_edge(DRAM_W)) then
+				elsif(DRAM_W = '1') then -- Store (Write) enable
 					if(STORE_TYPE = '0') then -- SW
 						DRAMmem(to_integer(unsigned(ADDR_IN))) <= DATA_IN;
 					else -- SB: Load only a byte into the lower byte of the memory row

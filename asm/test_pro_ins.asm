@@ -1,3 +1,4 @@
+; Tests pro instructions, same as course material
 addi r1, r0, #16384
 addi r2, r0, #16384
 nop

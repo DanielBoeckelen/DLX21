@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity ff is
+entity ff is -- Generic flip flop, with reset active low
 	port( D   : in std_logic;
 		  CLK : in std_logic;
 		  EN  : in std_logic;

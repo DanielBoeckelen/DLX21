@@ -15,8 +15,6 @@ entity instruction_decomposition is
 		  IMM        : out std_logic_vector(NBIT-1 downto 0); -- sent to intermediate reg in ID stage
 		  RD1		 : out std_logic; -- Enables the read port 1 of the register file
 		  RD2		 : out std_logic); -- Enables the read port 2 of the register file
-		  --LOAD_TYPE  : out std_logic_vector(1 downto 0); -- "00" LW, "01" LB, "10" LBU, "11" LHU; to DRAM
-		  --STORE_TYPE : out std_logic); -- '0' SW, '1' SB; to DRAM
 end instruction_decomposition;
 
 architecture bhv of instruction_decomposition is
@@ -24,10 +22,9 @@ architecture bhv of instruction_decomposition is
 begin
 	
 	inst_decomp : process(INST_IN, Rtype, Itype, Jtype)
-	variable Func : std_logic_vector(Func_begin downto Func_end) := (others => '0');
 	begin
 
-		ADD_RS1 <= (others => '0');
+		ADD_RS1 <= (others => '0'); -- Avoids inferred latches
 		ADD_RS2 <= (others => '0');
 		ADD_WR <= (others => '0');
 		IMM <= (others => '0');
@@ -58,21 +55,6 @@ begin
 				ADD_WR <= INST_IN(RDI_begin downto RDI_end); -- Normal I-Type instruction
 			end if;
 
-				--STORE_TYPE <= '0';
-			--elsif(INST_IN(OPCODE_begin downto OPCODE_end) = SB_OP) then
-				--ADD_RS2 <= INST_IN(RDI_begin downto RDI_end); -- If SB, this allows to use RD as a source register, performing M[imm16 + R[regA]] <= R[regB], and it will also be used for forwarding.
-				--STORE_TYPE <= '1';
-			--end if;
-
-			--case (INST_IN(OPCODE_begin downto OPCODE_end)) is -- Assignment of LOAD_TYPE
-				--when LW_OP => LOAD_TYPE <= "00";
-				--when LB_OP => LOAD_TYPE <= "01";
-				--when LBU_OP => LOAD_TYPE <= "10";
-				--when LHU_OP => LOAD_TYPE <= "11";
-				--when others => NULL;
-			--end case;
-
-			Func := INST_IN(Func_begin downto Func_end);
 			IMM <= (NBIT-1 downto I_IMM_size => INST_IN(I_IMM_begin)) & INST_IN(I_IMM_begin downto I_IMM_end);
 
 		elsif (Jtype = '1') then
