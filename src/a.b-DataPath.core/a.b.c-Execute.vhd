@@ -94,8 +94,8 @@ end component;
 
 component FWD_Unit is
 	port ( RST 	      : in std_logic;
-		   ADD_RS1    : in std_logic_vector(NBIT_ADD-1 downto 0); -- From ID stage, for forwarding
-		   ADD_RS2    : in std_logic_vector(NBIT_ADD-1 downto 0); -- From ID stage, for forwarding
+		   ADD_RS1    : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address of instruction currently in Execute
+		   ADD_RS2    : in std_logic_vector(NBIT_ADD-1 downto 0); -- Address of instruction currently in Execute
 		   ADD_WR_MEM : in std_logic_vector(NBIT_ADD-1 downto 0); -- MEM stage write address, for forwarding
 		   ADD_WR_WB  : in std_logic_vector(NBIT_ADD-1 downto 0); -- WB stage write address, for forwarding
 		   RF_WE_MEM  : in std_logic; -- RF Write signal for instruction currently in MEM stage
