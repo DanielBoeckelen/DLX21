@@ -61,7 +61,7 @@ create_clock -name "MY_CLK" -period 1.1 Clk
 #create_clock -name "MY_CLK" -period 0.93 Clk
 
 compile
-report_resources > ./report_resources.txt
+report_resources -hierarchy > ./report_resources.txt
 report_timing > ./report_timing.txt
 report_area > ./report_area.txt
 report_power > ./report_power.txt
