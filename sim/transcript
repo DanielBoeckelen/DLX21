@@ -463,7 +463,6 @@ source compile.tcl
 # -- Loading package instruction_set
 # -- Loading entity dlx
 # vsim work.tb_DLX 
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading /software/mentor/modelsim_6.2g/linux/../std.standard
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
 # Loading work.tb_dlx(test)#1
